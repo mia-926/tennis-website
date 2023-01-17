@@ -1,0 +1,16 @@
+/* @import url('https://fonts.googleapis.com/css?family=Josefin+Sans'); */
+
+div{
+    padding-left: 2em;
+    padding-right: 2em;
+}
+
+.black{
+    color: black;
+    /* font-family: 'Josefin Sans', cursive; */
+}
+
+#basic-nav-dropdown{
+    color:black;
+    /* font-family: 'Josefin Sans', cursive; */
+}
