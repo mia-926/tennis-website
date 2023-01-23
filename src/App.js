@@ -1,11 +1,13 @@
 import React from 'react';
-import BootstrapNav from './components/navBar/LeftNav';
 import { MyNavBar } from './components/navBar/MyNavBar';
+import { Background } from './components/homepage/Background';
+
 
 
 function App() {
   return (
     <div className = "App">
+      <Background/>
       <MyNavBar/>
     </div>
   );
