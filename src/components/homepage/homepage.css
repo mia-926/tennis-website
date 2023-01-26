@@ -6,3 +6,18 @@ img{
     float:right;
 }
 
+.whiteb{
+    border-radius: 10;
+    border-width:medium;
+    border-color: #294539;
+    color: #294539;
+    background-color: white;
+}
+
+.greenb{
+    border-radius: 10;
+    border-width:medium;
+    border-color: #294539;
+    background-color: #294539;
+    color: white;
+}
