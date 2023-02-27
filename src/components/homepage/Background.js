@@ -1,23 +1,55 @@
 import React, { useState, useEffect } from 'react';
 import "./homepage.css";
 import backgroundPic from '../../images/croppedSerena.png';
-// import smallerPic from '../../images/1300image.png';
+import widePic from '../../images/wideView.png';
+import { Circles } from './Circles';
 
 export const Background = () => {
-    // const [imageURL, setimageURL] = useState(window.innerWidth >= 1300 ? backgroundPic : smallerPic);
-    const [imageHeight, setimageHeight] = useState(window.innerHeight)
-
-    const handleResize = () => {
-        setimageHeight(window.innerHeight)
-
-        // if (window.innerWidth < 1300){
-        //     setimageURL(smallerPic)
-        // }
-        // else{
-        //     setimageURL(backgroundPic)
-        // }
+    const position = () => {
+        if(window.innerWidth > 990){
+            return("right");
+        }
+        else{
+            return("relative");
+        }
     }
+    const width = () => {
+        if(window.innerWidth > 990){
+            return("auto");
+        }
+        else{
+            return(window.innerWidth);
+        }
+    }
+    const height = () => {
+        if(window.innerWidth > 990){
+            return(window.innerHeight);
+        }
+        else{
+            return('auto');
+        }
+    }
+
+    const [imageURL, setimageURL] = useState(window.innerWidth >= 900 ? backgroundPic : widePic);
+    const [imageHeight, setimageHeight] = useState(() => height());
+    const [imageWidth, setimageWidth] = useState(() => width());
+    const [imagePosition, setImagePosition] = useState(() => position());
+
+
     useEffect(() =>{
+        const handleResize = () => {
+            setImagePosition(position());
+            if(position() === "right"){
+                setimageHeight(window.innerHeight);
+                setimageWidth('auto');
+                setimageURL(backgroundPic);
+            }
+            else{
+                setimageHeight('auto');
+                setimageWidth(window.innerWidth);
+                setimageURL(widePic);
+            }
+        }
         window.addEventListener('resize', handleResize)
 
         return () => {
@@ -25,8 +57,10 @@ export const Background = () => {
         }
     }, [])
 
-    return(
-        <img style={{height: imageHeight}} src = {backgroundPic} alt="background"/>
+    return(<div>
+        <img style={{height: imageHeight, width:imageWidth, float: imagePosition}} src = {imageURL} alt="background"/>
+        <Circles/>
+        </div>
     );
 }
 
