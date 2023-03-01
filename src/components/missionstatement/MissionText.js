@@ -5,7 +5,7 @@ export const MissionText = () => {
 
     return(
         <div>
-            <Circles/>
+            <GreenCircles/>
         </div>
     );
 }
