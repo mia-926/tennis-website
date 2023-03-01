@@ -3,6 +3,7 @@ import { MyNavBar } from './components/navBar/MyNavBar';
 import { Background } from './components/homepage/Background';
 import { Circles } from './components/homepage/Circles';
 import { Text } from './components/homepage/Text';
+import { GreenCircles } from './components/missionstatement/GreenCircles';
 
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
       <Circles/>
       <MyNavBar/>
       <Text/>
+      <GreenCircles/>
     </div>
   );
 }
