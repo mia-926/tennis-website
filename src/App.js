@@ -12,7 +12,7 @@ function App() {
     <div className = "App">
       {/*<Background/>*/}
       {/*<Circles/>*/}
-      {/*<MyNavBar/>*/}
+      <MyNavBar/>
       {/*<Text/>*/}
       <GreenCircles/>
     </div>
