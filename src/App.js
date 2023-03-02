@@ -6,6 +6,7 @@ import { Text } from './components/homepage/Text';*/
 import {SignUp} from "./components/signUp/SignUp"
 
 function App() {
+
   return (
     <div className = "App">
       {/*<Background/>
@@ -15,6 +16,8 @@ function App() {
       <SignUp/>
     </div>
   );
+
 }
 
 export default App;
+
