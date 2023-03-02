@@ -1,0 +1,45 @@
+.form-control {
+    float: center;  
+    border-radius: 10px;
+    border-width: 3px;
+    border-color:   #000000;
+  }
+  
+
+  .form-check-input {
+    float: center; 
+    border-width: 2px;
+    border-color: #000000;
+    margin-left: 0px;
+    margin-right: 10px;
+  }
+  
+  .form-check-label {
+    float: center;
+    margin-right: 7%;
+    padding-left: 0;
+  }
+  .checkbox-container {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .submit-Button{
+    float: center; 
+    width: 100%;
+    border-radius: 15px;
+    background-color: #294539
+
+  }
+
+  .submit-Button:hover{
+    background-color: #121e19;
+  }
+
+ .form-check-checkbox-container{
+    width: 100%;    
+    align-items: center;
+    float: center;
+ }

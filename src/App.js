@@ -12,6 +12,7 @@ import {Home} from './components/homepage/Home';
 // import { Text } from './components/homepage/Text';
 import { MyNavBar } from './components/navBar/MyNavBar';
 import { CalendarPage } from './components/calendar/CalendarPage';
+import { SignUp } from './components/signUp/SignUp';
 
 function App() {
   let component
@@ -25,6 +26,9 @@ function App() {
       break 
     case "/join-lesson":
       component = <CalendarPage/>
+      break
+    case "/create-account":
+      component = <SignUp/>
       break
 
   }
@@ -52,4 +56,3 @@ function App() {
 }
 
 export default App;
-
