@@ -1,0 +1,22 @@
+.container{
+    display: flex; 
+    flex-direction: column; 
+    width: 60%;
+    float:left;
+}
+
+.title {
+    display: flex;
+    flex: 3;
+    justify-content: center;
+    align-items: center;
+    z-index: 0;
+  }
+
+.form{
+    display: flex;
+    flex: 9;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
