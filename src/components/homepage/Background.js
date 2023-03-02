@@ -59,7 +59,7 @@ export const Background = () => {
 
     return(<div>
         <img style={{height: imageHeight, width:imageWidth, float: imagePosition}} src = {imageURL} alt="background"/>
-        <Circles/>
+
         </div>
     );
 }
