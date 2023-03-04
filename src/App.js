@@ -13,6 +13,7 @@ import {Home} from './components/homepage/Home';
 import { MyNavBar } from './components/navBar/MyNavBar';
 import { CalendarPage } from './components/calendar/CalendarPage';
 import { SignUp } from './components/signUp/SignUp';
+import { MissionText } from './components/missionstatement/MissionText';
 
 function App() {
   let component
@@ -30,6 +31,9 @@ function App() {
     case "/create-account":
       component = <SignUp/>
       break
+    case "/mission":
+      component = <MissionText/>
+      break
 
   }
 
@@ -39,7 +43,8 @@ function App() {
       {/*<Circles/>*/}
       <MyNavBar/>
       {/*<Text/>*/}
-      <GreenCircles/>
+      
+      {component}
     </div>
   );
 

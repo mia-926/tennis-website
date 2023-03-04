@@ -3,7 +3,7 @@ import {Names} from './Names';
 import { Participants } from './Participants';
 import { Input } from './Input';
 import './fonts.css';
-import './right.css'
+import './right.css';
 
 const instructorNames = [
     "Ethan",
