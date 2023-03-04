@@ -1,13 +1,17 @@
 .form-control {
-    float: center;  
     border-radius: 10px;
     border-width: 3px;
     border-color:   #000000;
   }
   
-
+.forgot{
+  padding-top: 1.0%;
+  color: #000000;
+  text-decoration: none;
+  float: right;
+  font-size: 75%;
+}
   .form-check-input {
-    float: center; 
     border-width: 1px;
     border-color: #000000;
     margin-left: 0px;
@@ -24,10 +28,12 @@
     opacity: 0;
   }
   .form-check-label {
-    margin-left: 32%;
-    float: center;
+    margin-left: 37%;
     margin-right: 2%;
     padding-left: 0;
+  }
+  .forgot:hover{
+    color: #294539;
   }
   .checkbox-container {
     display: flex;
