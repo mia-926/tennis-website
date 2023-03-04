@@ -13,6 +13,7 @@ import {Home} from './components/homepage/Home';
 import { MyNavBar } from './components/navBar/MyNavBar';
 import { CalendarPage } from './components/calendar/CalendarPage';
 import { SignUp } from './components/signUp/SignUp';
+import{Login} from "./components/login/Login";
 
 function App() {
   let component
@@ -30,7 +31,9 @@ function App() {
     case "/create-account":
       component = <SignUp/>
       break
-
+    case "/login":
+      component = <Login/>
+      break
   }
 
   return (

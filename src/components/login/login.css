@@ -1,20 +1,20 @@
-.c{
+.l{
     flex-direction: column; 
     width: 70%;
     float:left;
     display: flex; 
     flex-wrap:nowarp;
-    justify-content: space-around;  
+    justify-content: space-around;
 }
 
-.t {
+.b {
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 0;
   }
 
-.f{
+.p{
     display: flex;
     justify-content: center;
     align-items: center;
