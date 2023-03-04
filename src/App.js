@@ -13,6 +13,7 @@ import {Home} from './components/homepage/Home';
 import { MyNavBar } from './components/navBar/MyNavBar';
 import { CalendarPage } from './components/calendar/CalendarPage';
 import { SignUp } from './components/signUp/SignUp';
+
 import{Login} from "./components/login/Login";
 import { Routes, Route, BrowserRouter as Router } from 'react-router-dom';
 
@@ -32,6 +33,7 @@ import { Routes, Route, BrowserRouter as Router } from 'react-router-dom';
   );
 }*/
 
+
 function App() {
   let component
 
@@ -48,14 +50,20 @@ function App() {
     case "/create-account":
       component = <SignUp/>
       break
+
     case "/login":
       component = <Login/>
       break
+
   }
 
   return (
     <div className = "App">
+      {/*<Background/>*/}
+      {/*<Circles/>*/}
       <MyNavBar/>
+      {/*<Text/>*/}
+      
       {component}
     </div>
   );
