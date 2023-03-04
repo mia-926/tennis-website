@@ -8,7 +8,7 @@ export const SignUp = () => {
   return (
     <div >
         <GreenCircles/>
-        <div className='container' style = {{paddingTop: 100}}>
+        <div className='c' style = {{paddingTop: 100}}>
             <div className='title'>
             <Title/>
             </div>

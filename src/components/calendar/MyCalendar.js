@@ -43,22 +43,24 @@ export const MyCalendar = (props) => {
         
     }, [value])
     function getMonthName(monthNumber) {
-        const date = new Date();
-        date.setMonth(monthNumber - 1);
-      
+        const date = new Date(monthNumber);
+        console.log(date);   
         return date.toLocaleString('en-US', { month: 'long' });
       }
 
     function getDayName(dateStr)
       {
+       
           var date = new Date(dateStr);
-          return date.toLocaleDateString('en-US', { weekday: 'long' });        
+    
+          return date.toLocaleDateString('en-US', { weekday: 'long' }); 
+          
       }
 
     return (
         <div className='container' >
             <div style={{flex:1}}>
-            <DateText  isLesson = {isLesson} location = {props.location[lessonTime]} address = {props.address[lessonTime]} time = {props.times[lessonTime]} weekDay = {getDayName(value.getDay())} day = {value.getDate()} month = {getMonthName(value.getMonth())} />
+            <DateText  isLesson = {isLesson} location = {props.location[lessonTime]} address = {props.address[lessonTime]} time = {props.times[lessonTime]} weekDay = {getDayName(value)} day = {value.getDate()} month = {getMonthName(value)} />
             </div>
             <div style={{flex:1}} className='contain'>
             <Calendar onChange={onChange} value={value}
@@ -71,7 +73,7 @@ export const MyCalendar = (props) => {
             />
             </div>
             <div style={{flex:1}}>
-             <Instructors isLesson = {isLesson} max = {props.max[lessonTime]} students = {props.students[lessonTime]} people = {props.instructor[lessonTime]}/>
+             <Instructors lessonId = {props.lessonId[lessonTime]} isLesson = {isLesson} max = {props.max[lessonTime]} students = {props.students[lessonTime]} people = {props.instructor[lessonTime]}/>
              </div>
         </div>
     );

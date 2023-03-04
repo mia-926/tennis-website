@@ -4,6 +4,7 @@ import { Participants } from './Participants';
 import { Input } from './Input';
 import './fonts.css';
 import './right.css'
+import racketImage from "../../../images/rackets.jpg";
 
 
 
@@ -26,7 +27,7 @@ export const Instructors = (props) => {
             <div >
             <h2 className='inter'>PARTICIPANTS</h2>
             <Participants max = {props.max} students = {studentNames}/>
-            <Input/>
+            <Input lessonId = {props.lessonId}/>
             </div>
 
             </div>
@@ -36,6 +37,7 @@ export const Instructors = (props) => {
             <div className='contain' style = {{marginTop:20}}>
             <h2 className='inter'>No Lesson Today</h2>
             <p>Click on a circled day to join a lesson!</p>
+            <img style ={{borderRadius: 50, marginTop:50}} src = {racketImage}></img>
             </div>
         );
     }
