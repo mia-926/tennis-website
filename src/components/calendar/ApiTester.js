@@ -9,7 +9,8 @@ export const ApiTester = (props) => {
     const[kids, getKids] = useState([]);
     const[max, getMax] = useState([])
     const[instructor, getInstructor] = useState([]);
-    const[dateList, setDateList] = useState([])
+    const[dateList, setDateList] = useState([]);
+    const[lessonIds, setLessonId] = useState([]);
     const {menu, lessons} = props;
 
 
@@ -35,6 +36,7 @@ useEffect(() => {
                 location.push(lessons[i].location);
                 address.push(lessons[i].address);
                 coordinates.push(lessons[i].coordinates);
+                lessonIds.push(lessons[i]._id);
 
             }
             console.log(lessons)
@@ -45,7 +47,7 @@ useEffect(() => {
 
     return(
         <div>
-        <MyCalendar  location = {location} address = {address} coordinates = {coordinates} max = {max} students = {kids} instructor = {instructor} dateList = {dateList} times = {time}/>
+        <MyCalendar lessonId = {lessonIds} location = {location} address = {address} coordinates = {coordinates} max = {max} students = {kids} instructor = {instructor} dateList = {dateList} times = {time}/>
         </div>
     )
 
