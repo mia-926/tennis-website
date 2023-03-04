@@ -1,21 +1,21 @@
 import axios from "axios";
 
-import React, { useEffect, useRef, useState, useContext} from 'react';
+import React, { useEffect, useRef, useState} from 'react';
 
-import AuthContext from "../../context/AuthProvider";
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import "./logininputStyle.css";
+import useAuth from "../hooks/useAuth";
+
 
 export const LoginInput = () => {
   const errRef = useRef();
-  const {auth} = useContext(AuthContext)
-  console.log(auth)
-  const {setAuth} = useContext(AuthContext)
+  const {setAuth} = useAuth();
+
   const [password, setPasswordValue] = useState('');
   const [username, setUsername] = useState('');
   const [errMsg, setErrMsg] = useState('')
-  const [keepLogin, setkeepLogin] = useState(false);
+  const [keepLogin, setkeepLogin] = useState(true);
 
   useEffect(()=>{
     setErrMsg('')
@@ -37,8 +37,7 @@ export const LoginInput = () => {
           console.log(response.data)
           let _id = response.data
           setAuth({username, password, keepLogin, _id})
-          console.log(auth)
-          //window.location.href = '/join-lesson'
+          window.location.href = '/join-lesson'
         })
         .catch(err => {
           if(!err?.response){
@@ -79,7 +78,7 @@ export const LoginInput = () => {
     <Form.Group className="mb-3" controlId="formEmailList">
   <div className="form-check-checkbox-container">
     <label className="form-check-label" htmlFor="formCheck-1">Keep me logged in</label>
-    <input value={keepLogin} onChange={handlekeepLogin} className="form-check-input" type="checkbox" id="formCheck-1" />
+    <input value={keepLogin} onChange={handlekeepLogin} className="form-check-input" type="checkbox" id="formCheck-1" checked= {keepLogin}/>
   </div>
     </Form.Group>
     <Button onClick={submit} className="submit-Button" style = {{height: 60}} variant="primary">

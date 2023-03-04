@@ -38,50 +38,56 @@ export const Input = () => {
     const data = { email: String(email), emailList: Boolean(emailList), username: String(username), password: String(password)};
     console.log(data)
     axios.post('https://tennis-backend-bnldi3x7oq-uw.a.run.app/api/authUser', data)
-        .then (response => {
-          console.log("first")
-          console.log(response.data)
-          axios.post('https://tennis-backend-bnldi3x7oq-uw.a.run.app/api/user', data)
-            .then (response => {
-              console.log("second")
-              console.log(response.data)
-              login(password, username)
-            })
-            .catch(err =>{
-              setErrMsg("Error Try Again")
-              errRef.current.focus();
-            })
-        })
-        .catch(err => {
-          if(!err?.response){
-             setErrMsg("No Server Response")
-          }
-          else if(err.response?.status === 399){
-            setErrMsg("Password must be at least 6 characters")
-          }
-          else if(err.response?.status === 398){
-            setErrMsg("Username must be at least 4 characters")
-          }
-          else if(err.response?.status === 397){
-            setErrMsg("Username Taken")
-          }
-          else if(err.response?.status === 396){
-            setErrMsg("Email Taken")
-          }
-          else if(err.response?.status === 401){
-            setErrMsg("Please Enter Password")
-          }
-          else if(err.response?.status === 402){
-            setErrMsg("Please Enter Username")
-          }
-          else if(err.response?.status === 403){
-            setErrMsg("Please Enter Email")
-          }
-          else{
+      .then (response => {
+        console.log("first")
+        console.log(response.data)
+        axios.post('https://tennis-backend-bnldi3x7oq-uw.a.run.app/api/user', data)
+          .then (response => {
+            console.log("second")
+            console.log(response.data)
+            login(username, password)
+          })
+          .catch(err =>{
             setErrMsg("Error Try Again")
+            errRef.current.focus();
+          })
+      })
+      .catch(err => {
+        if(!err?.response){
+            setErrMsg("No Server Response")
+        }
+        else {
+          switch(err.response?.status){
+            case 399:
+              setErrMsg("Password must be at least 6 characters")
+              break
+            case 395:
+              setErrMsg("Invalid Email")
+              break
+            case 398:
+              setErrMsg("Username must be at least 4 characters")
+              break
+            case 397:
+              setErrMsg("Username Taken")
+              break
+            case 396:
+              setErrMsg("Email Taken")
+              break
+            case 401:
+              setErrMsg("Please Enter Password")
+              break
+            case 402:
+              setErrMsg("Please Enter Username")
+              break
+            case 403:
+              setErrMsg("Please Enter Email")
+              break
+            default:
+              setErrMsg("Error Try Again")
           }
-          errRef.current.focus();
-        })
+        }
+        errRef.current.focus();
+      })
   }
 
   function login(user, pwd){
