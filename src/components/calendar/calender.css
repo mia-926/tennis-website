@@ -1,10 +1,12 @@
 
 
-.container{
+.myContainer{
+
     display: flex; 
     flex-direction: row;
     flex-wrap:nowarp;
     justify-content: space-around;
+    align-items: center;
 }
 img{
     width: 60%;

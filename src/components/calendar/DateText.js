@@ -11,7 +11,7 @@ if(props.isLesson){
         <div>
          
 
-        <div className='inter contain'>
+        <div className='inter myContain'>
            <h2>{props.weekDay}, {props.month} {props.day}</h2>
            <hr
          style={{
@@ -48,7 +48,7 @@ if(props.isLesson){
 }
 else{
     return(<div>
-                <div className='inter contain'>
+                <div className='inter myContain'>
            <h2>{props.weekDay}, {props.month} {props.day}</h2>
            <hr
          style={{
@@ -76,7 +76,7 @@ else{
          />
 
         </div>
-        <MyCarousel/>
+        {/* <MyCarousel/> */}
     </div>);
 }
 }

@@ -58,7 +58,7 @@ export const MyCalendar = (props) => {
       }
 
     return (
-        <div className='container' >
+        <div className='myContainer'>
             <div style={{flex:1}}>
             <DateText  isLesson = {isLesson} location = {props.location[lessonTime]} address = {props.address[lessonTime]} time = {props.times[lessonTime]} weekDay = {getDayName(value)} day = {value.getDate()} month = {getMonthName(value)} />
             </div>

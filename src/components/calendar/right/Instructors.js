@@ -23,7 +23,7 @@ export const Instructors = (props) => {
         }
         console.log(instructorNames)
         return (
-            <div className='contain'>
+            <div className='myContain'>
             <h2 className='inter'>INSTRUCTORS</h2>
             <Names names = {instructorNames}/>
             <div >
@@ -36,7 +36,7 @@ export const Instructors = (props) => {
         );
     }else{
         return (
-            <div className='contain' style = {{marginTop:20}}>
+            <div className='myContain' style = {{marginTop:20}}>
             <h2 className='inter'>No Lesson Today</h2>
             <p>Click on a circled day to join a lesson!</p>
             <img style ={{borderRadius: 50, marginTop:50}} src = {racketImage}></img>
