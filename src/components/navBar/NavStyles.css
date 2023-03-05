@@ -5,15 +5,19 @@
     padding-right: 2em;
 } */
 
-.black{
+#black{
     color: black;
     /* font-family: 'Josefin Sans', cursive; */
 }
-.white{
+#white{
     color: white;
 }
 
-#basic-nav-dropdown{
-    color:black;
-    /* font-family: 'Josefin Sans', cursive; */
+
+
+.navbar .home {
+    color: white;
+}
+.navbar .other-page {
+    color: white;
 }

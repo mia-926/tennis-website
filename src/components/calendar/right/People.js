@@ -28,7 +28,7 @@ function ListItem(props)
             people.map((person, index) => {
                 console.log(person);
                 return (
-                    <div key ={person}>
+                    <div key ={index}>
                         <p>{person}</p>
                     </div>
 
