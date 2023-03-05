@@ -5,15 +5,12 @@ import React  from 'react';
 // import { Switch, Route } from 'react-router-dom';
 
 import {Home} from './components/homepage/Home';
-//import { MyCalendar } from './components/calendar/MyCalendar';
-// import { CalendarPage } from './components/calendar/CalendarPage';
-// import { Background } from './components/homepage/Background';
-// import { Circles } from './components/homepage/Circles';
-// import { Text } from './components/homepage/Text';
 import { MyNavBar } from './components/navBar/MyNavBar';
 import { CalendarPage } from './components/calendar/CalendarPage';
 import { SignUp } from './components/signUp/SignUp';
+import { MissionText } from './components/missionstatement/MissionText';
 import{Login} from "./components/login/Login";
+import{NewHome} from "./components/newHomepage/NewHome";
 import { Routes, Route, BrowserRouter as Router } from 'react-router-dom';
 
 /*function App() {
@@ -32,30 +29,46 @@ import { Routes, Route, BrowserRouter as Router } from 'react-router-dom';
   );
 }*/
 
+
 function App() {
   let component
-
+  let color = "white";
   switch (window.location.pathname) {
     case "/%257Btennis-website%257D":
-      component = <Home/>
+      component = <NewHome/>
+      color = "white";
       break
     case "/home":
-      component = <Home/>
+      component = <NewHome/>
+      color = "white"
       break 
     case "/join-lesson":
       component = <CalendarPage/>
+      color= "black"
       break
     case "/create-account":
       component = <SignUp/>
+      color= "black"
       break
+
     case "/login":
       component = <Login/>
+      color= "black"
       break
+    case "/mission":
+      component = <MissionText/>
+      color= "black"
+      break
+
   }
 
   return (
     <div className = "App">
-      <MyNavBar/>
+      {/*<Background/>*/}
+      {/*<Circles/>*/}
+      <MyNavBar color = {color}/>
+      {/*<Text/>*/}
+      
       {component}
     </div>
   );

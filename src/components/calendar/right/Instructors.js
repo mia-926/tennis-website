@@ -3,8 +3,10 @@ import {Names} from './Names';
 import { Participants } from './Participants';
 import { Input } from './Input';
 import './fonts.css';
+
 import './right.css'
 import racketImage from "../../../images/rackets.jpg";
+
 
 
 
@@ -27,7 +29,7 @@ export const Instructors = (props) => {
             <div >
             <h2 className='inter'>PARTICIPANTS</h2>
             <Participants max = {props.max} students = {studentNames}/>
-            <Input lessonId = {props.lessonId}/>
+            <Input max = {props.max} students = {studentNames} lessonId = {props.lessonId}/>
             </div>
 
             </div>

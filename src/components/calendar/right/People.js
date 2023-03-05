@@ -24,6 +24,4 @@ export const People = (props) => {
         return <h3>No People</h3>;
     }
 };
-    
-    
 

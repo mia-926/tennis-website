@@ -3,14 +3,17 @@ import Nav from 'react-bootstrap/Nav';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import "./NavStyles.css";
 
-function BootstrapNav() {
+function BootstrapNav(props) {
+  const myColor = props.color;
+  console.log(myColor)
   return (
-    <Nav className="me-auto color">
-      <Nav.Link className = "black" href="/home">Home</Nav.Link>
-      <Nav.Link className = "black" href="/instructors">Instructors</Nav.Link>
-      <Nav.Link className = "black" href="/mission">Mission</Nav.Link>
-      <Nav.Link className = "black" href="/join-lesson">Join a lesson</Nav.Link>
-      <NavDropdown title="Account" id="basic-nav-dropdown">
+    
+    <Nav className="me-auto color"  >
+      <Nav.Link  style={{color:myColor}} href="/home ">Home</Nav.Link>
+      <Nav.Link  style={{color:myColor}} href="/instructors">Instructors</Nav.Link>
+      <Nav.Link  style={{color:myColor}} href="/mission">Mission</Nav.Link>
+      <Nav.Link  style={{color:myColor}} href="/join-lesson">Join a lesson</Nav.Link>
+      <NavDropdown title="Account"  id={myColor}>
         <NavDropdown.Item href="#action/3.1">Settings</NavDropdown.Item>
         <NavDropdown.Item href="#action/3.2">
           Lesson History
@@ -22,6 +25,7 @@ function BootstrapNav() {
         </NavDropdown.Item>
       </NavDropdown>
     </Nav>
+
   );
 }
 

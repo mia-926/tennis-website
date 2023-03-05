@@ -30,6 +30,7 @@ export const Input = (props) => {
     })
   }
 
+  if(props.students.length < props.max){
   return (
     <div>
       {/* <Participants max = {props.max} students = {props.students} newNames={newNames}/> */}
@@ -47,6 +48,14 @@ export const Input = (props) => {
         </div>
     </div>
   );
+  }
+  else{
+    return(
+      <div>
+        <h1>Lesson is Full</h1>
+      </div>
+    )
+  }
 
 }
 
