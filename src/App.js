@@ -5,17 +5,12 @@ import React  from 'react';
 // import { Switch, Route } from 'react-router-dom';
 
 import {Home} from './components/homepage/Home';
-//import { MyCalendar } from './components/calendar/MyCalendar';
-// import { CalendarPage } from './components/calendar/CalendarPage';
-// import { Background } from './components/homepage/Background';
-// import { Circles } from './components/homepage/Circles';
-// import { Text } from './components/homepage/Text';
 import { MyNavBar } from './components/navBar/MyNavBar';
 import { CalendarPage } from './components/calendar/CalendarPage';
 import { SignUp } from './components/signUp/SignUp';
 import { MissionText } from './components/missionstatement/MissionText';
 import{Login} from "./components/login/Login";
-import{NewHome} from "./components/newHomepage/NewHome"
+import{NewHome} from "./components/newHomepage/NewHome";
 import { Routes, Route, BrowserRouter as Router } from 'react-router-dom';
 
 /*function App() {
