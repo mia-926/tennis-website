@@ -52,7 +52,7 @@ export const MyCalendar = (props) => {
       }
       console.log("MyCalender"+props.students[lessonTime])
     return (
-        <div className='container' >
+        <div className='myContainer'>
             <div style={{flex:1}}>
             <DateText  isLesson = {isLesson} location = {props.location[lessonTime]} address = {props.address[lessonTime]} time = {props.times[lessonTime]} weekDay = {getDayName(value)} day = {value.getDate()} month = {getMonthName(value)} />
             </div>

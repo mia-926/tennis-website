@@ -7,6 +7,7 @@ import { Instructors } from './right/Instructors';
 import { ApiCall } from './ApiCall';
 import { ReloadProvider } from '../../context/ReloadProvider';
 
+
 export const CalendarPage = () => {
     const {auth} = useAuth()
 
