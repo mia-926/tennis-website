@@ -14,12 +14,12 @@ export const Instructors = (props) => {
         const instructorNames = props.people;
         let studentNames;
         if(props.students){
-        studentNames = props.students;
+            studentNames = props.students;
+            console.log("Instructors"+studentNames)
         }
         else{
             studentNames = [];
         }
-        console.log(instructorNames)
         return (
             <div className='contain'>
             <h2 className='inter'>INSTRUCTORS</h2>

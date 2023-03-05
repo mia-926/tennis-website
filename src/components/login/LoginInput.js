@@ -34,7 +34,6 @@ export const LoginInput = () => {
     const data = { username: String(username), password: String(password)};
     axios.post('https://tennis-backend-bnldi3x7oq-uw.a.run.app/api/authPassword', data)
         .then (response => {
-          console.log(response.data)
           let _id = response.data
           setAuth({username, password, keepLogin, _id})
           window.location.href = '/join-lesson'

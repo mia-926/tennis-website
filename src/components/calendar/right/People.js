@@ -1,42 +1,29 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import './fonts.css';
-const people = [
-    "Tyler",
-    "Ganhee",
-    "Seb",
-    "Nester"
-]
-
-function ListItem(props)
- {
-    const value = props.value;
-    return(<li>{value}</li>
-    );
- }
 
 
-
-
-    export const People = (props) => {
-    //return props.names.map((name) => <li className='inter'>{name}</li>);
-    const people =props.names;
+export const People = (props) => {
+    const [people, setPeople] = useState(props.names);
     
+    console.log("final prop names"+props.names )
+    useEffect(() => {
+      setPeople(props.names);
+      console.log("final" + people)
+    }, [props.names]);
     
 
-    if(people.length > 0){
-        return (
-            people.map((person, index) => {
-                console.log(person);
-                return (
-                    <div key ={person}>
-                        <p>{person}</p>
-                    </div>
-
-                    )
-            })
-        )}else{
-            return (<h3>No People</h3>)
-        }
- 
-}
+    if (people.length > 0) {
+        return people.map((person, index) => {
+          return (
+            <div key={index}>
+              <p>{person}</p>
+            </div>
+          );
+        });
+    } else {
+        return <h3>No People</h3>;
+    }
+};
+    
+    
 

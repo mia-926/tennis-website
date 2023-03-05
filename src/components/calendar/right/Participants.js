@@ -11,7 +11,7 @@ import Accordion from 'react-bootstrap/Accordion';
 export const Participants = (props) => {
   const taken = props.students.length;
   const total = props.max;
-  console.log(props.students)
+  console.log("participants students"+props.students)
     return (<div>
             <Accordion defaultActiveKey="0">
               <Accordion.Item eventKey="0">

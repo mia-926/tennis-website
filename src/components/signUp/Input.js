@@ -36,15 +36,10 @@ export const Input = () => {
 
   function make(){
     const data = { email: String(email), emailList: Boolean(emailList), username: String(username), password: String(password)};
-    console.log(data)
     axios.post('https://tennis-backend-bnldi3x7oq-uw.a.run.app/api/authUser', data)
       .then (response => {
-        console.log("first")
-        console.log(response.data)
         axios.post('https://tennis-backend-bnldi3x7oq-uw.a.run.app/api/user', data)
           .then (response => {
-            console.log("second")
-            console.log(response.data)
             login(username, password)
           })
           .catch(err =>{
@@ -94,11 +89,9 @@ export const Input = () => {
     const data = { username: String(user), password: String(pwd)};
     axios.post('https://tennis-backend-bnldi3x7oq-uw.a.run.app/api/authPassword', data)
         .then (response => {
-          console.log(response.data)
           let _id = response.data
           let keepLogin = true
           setAuth({user, pwd, keepLogin, _id})
-          console.log(auth)
           window.location.href = '/join-lesson'
         })
         .catch(err => {
