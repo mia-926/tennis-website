@@ -8,11 +8,11 @@ export const SignUp = () => {
   return (
     <div >
         <GreenCircles/>
-        <div className='c' style = {{paddingTop: 100}}>
-            <div className='title'>
+        <div className='c' style = {{paddingTop: 150}}>
+            <div className='t' style = {{flex: 3}}>
             <Title/>
             </div>
-            <div className='form'>
+            <div className='f' style = {{flex: 8}}>
             <Input/>
             </div>
         </div>
