@@ -17,6 +17,14 @@
     margin-left: 0px;
     margin-right: 10px;
   }
+  .form-check-input:checked{
+    background-color: #294539;
+    border-width: 1px;
+    border-color: #000000;
+    margin-left: 0px;
+    margin-right: 10px;
+  }
+
   .errmsg{
     padding-top: 5%;
     font-size:  130%;

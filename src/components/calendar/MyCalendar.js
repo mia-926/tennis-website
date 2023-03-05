@@ -31,20 +31,14 @@ export const MyCalendar = (props) => {
         
             if(newDate.toDateString() === dt.toDateString()){
                setLessonTime(i);
-               console.log(lessonTime)
-               console.log(newDate.getHours())
                setCurrentDay(i);
-               console.log("hi");
-               console.log(props.instructor[lessonTime])
                setIsLesson(true);
-               console.log(isLesson)
             }
         }
         
     }, [value])
     function getMonthName(monthNumber) {
         const date = new Date(monthNumber);
-        console.log(date);   
         return date.toLocaleString('en-US', { month: 'long' });
       }
 
@@ -56,7 +50,7 @@ export const MyCalendar = (props) => {
           return date.toLocaleDateString('en-US', { weekday: 'long' }); 
           
       }
-
+      console.log("MyCalender"+props.students[lessonTime])
     return (
         <div className='myContainer'>
             <div style={{flex:1}}>

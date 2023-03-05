@@ -2,56 +2,73 @@ import React, {useState, useEffect} from 'react';
 import { MyCalendar } from './MyCalendar';
 
 export const ApiTester = (props) => {
-    const[time, getTime] = useState([]);
-    const[location, getLocation] = useState([]);
-    const[address, getAddress] = useState([]);
-    const[coordinates, getCoordinates] = useState([]);
-    const[kids, getKids] = useState([]);
-    const[max, getMax] = useState([])
-    const[instructor, getInstructor] = useState([]);
-    const[dateList, setDateList] = useState([]);
-    const[lessonIds, setLessonId] = useState([]);
+    const [time, setTime] = useState([]);
+    const [location, setLocation] = useState([]);
+    const [address, setAddress] = useState([]);
+    const [coordinates, setCoordinates] = useState([]);
+    const [kids, setKids] = useState([]);
+    const [max, setMax] = useState([])
+    const [instructor, setInstructor] = useState([]);
+    const [dateList, setDateList] = useState([]);
+    const [lessonIds, setLessonIds] = useState([]);
     const {menu, lessons} = props;
 
+    useEffect(() => {
+        const newTime = [];
+        const newLocation = [];
+        const newAddress = [];
+        const newCoordinates = [];
+        const newKids = [];
+        const newMax = [];
+        const newInstructor = [];
+        const newDateList = [];
+        const newLessonIds = [];
 
+        for(let i = 0; i < lessons.length; i++){
+            newTime.push(lessons[i].time);
+            let date, month, year;
 
-   // console.log(currentLesson);
+            date = (lessons[i].date).substring(8, 10);
+            month = (lessons[i].date).substring(5, 7); 
+            year = (lessons[i].date).substring(0, 4);
 
-useEffect(() => {
-        if(lessons.length > 0){
-            for(let i = 0; i < lessons.length && dateList.length < lessons.length; i++){
-                time.push(lessons[i].time)
-                let date, month, year;
-
-                date = (lessons[i].date).substring(8, 10);
-                month = (lessons[i].date).substring(5, 7); 
-                year = (lessons[i].date).substring(0, 4);
-
-                
-
-                dateList.push(month + '/' + date + '/' +year);
-                instructor.push(lessons[i].instructors);
-                kids.push(lessons[i].studentsNames);
-                max.push(lessons[i].maxStudents);
-                location.push(lessons[i].location);
-                address.push(lessons[i].address);
-                coordinates.push(lessons[i].coordinates);
-                lessonIds.push(lessons[i]._id);
-
-            }
-            console.log(lessons)
+            newDateList.push(month + '/' + date + '/' +year);
+            newInstructor.push(lessons[i].instructors);
+            newKids.push(lessons[i].studentsNames);
+            newMax.push(lessons[i].maxStudents);
+            newLocation.push(lessons[i].location);
+            newAddress.push(lessons[i].address);
+            newCoordinates.push(lessons[i].coordinates);
+            newLessonIds.push(lessons[i]._id);
         }
-        
-        
-}, [lessons])
 
-    return(
+        setTime(newTime);
+        setLocation(newLocation);
+        setAddress(newAddress);
+        setCoordinates(newCoordinates);
+        setKids(newKids);
+        setMax(newMax);
+        setInstructor(newInstructor);
+        setDateList(newDateList);
+        setLessonIds(newLessonIds);
+    }, [lessons])
+
+    return (
         <div>
-        <MyCalendar lessonId = {lessonIds} location = {location} address = {address} coordinates = {coordinates} max = {max} students = {kids} instructor = {instructor} dateList = {dateList} times = {time}/>
+            <MyCalendar
+                lessonId={lessonIds}
+                location={location}
+                address={address}
+                coordinates={coordinates}
+                max={max}
+                students={kids}
+                instructor={instructor}
+                dateList={dateList}
+                times={time}
+            />
         </div>
-    )
-
-    }
+    );
+}
 
 
 

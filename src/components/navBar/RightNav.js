@@ -7,7 +7,6 @@ function BootstrapNav() {
   const {setAuth} = useAuth();
   const {auth} = useAuth()
   function signOut(){
-    console.log("test")
     setAuth({})
     window.location.href = "/home";
   }

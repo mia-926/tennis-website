@@ -4,23 +4,26 @@ import {Participants} from './Participants';
 import './right.css';
 import './fonts.css';
 import axios from 'axios';
+import useReload from '../../hooks/useReload';
 
 export const Input = (props) => {
   const [inputValue, setInputValue] = useState('');
   const [didRegister, setDidRegiser] = useState('');
   const [newNames, setNewNames] = useState("");
+  const {reload} = useReload()
+  const {setReload} = useReload();
 
   function handleChange(event) {
     setInputValue(event.target.value);
   }
-  console.log(newNames)
   function patch(){
     const data = {_id: String(props.lessonId), studentName:String(inputValue), student: String("666")};
     console.log(data);
     axios.patch("https://tennis-backend-bnldi3x7oq-uw.a.run.app/api/lessonAddStudent", data)
     .then(response => {
       setNewNames(inputValue);
-      console.log(newNames)
+      console.log(reload)
+      setReload(!reload)
     })
     .catch(err => {
       setDidRegiser("Failed to add to Register. Try again later.")
