@@ -12,11 +12,11 @@ export const Participants = (props) => {
   const taken = props.students.length;
   const total = props.max;
   console.log(props.students)
-    return (<div>
+    return (<div style={{maxHeight: 400}}>
             <Accordion defaultActiveKey="0">
               <Accordion.Item eventKey="0">
                 <Accordion.Header className='inter'> {taken} out of {total} slots taken</Accordion.Header>
-                <Accordion.Body>
+                <Accordion.Body style={{ maxHeight: 150, overflow: "auto" }}>
                     <People names = {props.students}/>
                 </Accordion.Body>
               </Accordion.Item>

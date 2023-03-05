@@ -15,6 +15,7 @@ import { CalendarPage } from './components/calendar/CalendarPage';
 import { SignUp } from './components/signUp/SignUp';
 import { MissionText } from './components/missionstatement/MissionText';
 import{Login} from "./components/login/Login";
+import{NewHome} from "./components/newHomepage/NewHome"
 import { Routes, Route, BrowserRouter as Router } from 'react-router-dom';
 
 /*function App() {
@@ -36,26 +37,32 @@ import { Routes, Route, BrowserRouter as Router } from 'react-router-dom';
 
 function App() {
   let component
-
+  let color = "white";
   switch (window.location.pathname) {
     case "/%257Btennis-website%257D":
-      component = <Home/>
+      component = <NewHome/>
+      color = "white";
       break
     case "/home":
-      component = <Home/>
+      component = <NewHome/>
+      color = "white"
       break 
     case "/join-lesson":
       component = <CalendarPage/>
+      color= "black"
       break
     case "/create-account":
       component = <SignUp/>
+      color= "black"
       break
 
     case "/login":
       component = <Login/>
+      color= "black"
       break
     case "/mission":
       component = <MissionText/>
+      color= "black"
       break
 
   }
@@ -64,7 +71,7 @@ function App() {
     <div className = "App">
       {/*<Background/>*/}
       {/*<Circles/>*/}
-      <MyNavBar/>
+      <MyNavBar color = {color}/>
       {/*<Text/>*/}
       
       {component}

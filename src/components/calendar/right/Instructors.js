@@ -29,7 +29,7 @@ export const Instructors = (props) => {
             <div >
             <h2 className='inter'>PARTICIPANTS</h2>
             <Participants max = {props.max} students = {studentNames}/>
-            <Input lessonId = {props.lessonId}/>
+            <Input max = {props.max} students = {studentNames} lessonId = {props.lessonId}/>
             </div>
 
             </div>

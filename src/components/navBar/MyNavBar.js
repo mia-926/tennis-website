@@ -8,14 +8,14 @@ import Container from 'react-bootstrap/Container';
 
 
 
-export const MyNavBar = () => {
+export const MyNavBar = (props) => {
   return (
     <div>
       <Navbar fixed = "top" expand = "lg">
         {/* <Container> */}
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
-            <LeftNav/>
+            <LeftNav color = {props.color}/>
             <RightNav/>
           </Navbar.Collapse>
         {/* </Container> */}
