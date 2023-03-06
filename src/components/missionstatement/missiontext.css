@@ -4,4 +4,20 @@
     align-items: center;
     width: 70%;
     justify-content: center;
+    position: absolute
+}
+
+.column2 {
+    text-align: center;
+    justify-content: center;
+    width: 100%;
+    padding: 1rem;
+  }
+
+.imagebox {
+    margin-top: 100%;
+    margin: 3%;
+    height: 60rem;
+    width: 100rem;
+    opacity: 30%;
 }
