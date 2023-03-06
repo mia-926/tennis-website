@@ -11,13 +11,26 @@ import { Instructors } from './right/Instructors';
 
 
 export const MyCalendar = (props) => {
+    const mark = props.dateList
+    const checkToday = () => {
+        const dt = new Date(Date.now);
+        for(let i = 0; i < mark.length; i++){
+            let newDate = new Date((mark[i]));
+ 
+          
+              if(newDate.toDateString() === dt.toDateString()){
+                return true;
+              }
+          }
+          return false;
+    }
 
     const [value, onChange] = useState(new Date());
     const [currentDay, setCurrentDay] = useState(0);
     const [lessonTime, setLessonTime] = useState("0");
     const [isLesson, setIsLesson] = useState(false);
     
-    const mark = props.dateList
+
    
 
     useEffect(() => {
@@ -50,9 +63,8 @@ export const MyCalendar = (props) => {
           return date.toLocaleDateString('en-US', { weekday: 'long' }); 
           
       }
-      console.log("MyCalender"+props.students[lessonTime])
     return (
-        <div className='myContainer'>
+        <div style={{position:'relative'}} className='myContainer'>
             <div style={{flex:1}}>
             <DateText  isLesson = {isLesson} location = {props.location[lessonTime]} address = {props.address[lessonTime]} time = {props.times[lessonTime]} weekDay = {getDayName(value)} day = {value.getDate()} month = {getMonthName(value)} />
             </div>
