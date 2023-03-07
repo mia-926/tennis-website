@@ -34,8 +34,8 @@ export const Input = (props) => {
   return (
     <div>
       {/* <Participants max = {props.max} students = {props.students} newNames={newNames}/> */}
-        <div className='inter contain'>
-        <label  className='contain'>
+        <div className='inter myContain'>
+        <label  className='myContain'>
             Participant Name
             <div>
                 <input type="text" value={inputValue} onChange={handleChange} />
@@ -51,7 +51,7 @@ export const Input = (props) => {
   }
   else{
     return(
-      <div>
+      <div className='inter' style={{alignSelf:'center'}}>
         <h1>Lesson is Full</h1>
       </div>
     )

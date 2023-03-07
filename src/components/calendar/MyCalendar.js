@@ -64,12 +64,12 @@ export const MyCalendar = (props) => {
           
       }
     return (
-        <div style={{position:'relative'}} className='myContainer'>
+        <div style={{position:'relative', paddingLeft:50, paddingRight:50}} className='myContainer'>
             <div style={{flex:1}}>
-            <DateText  isLesson = {isLesson} location = {props.location[lessonTime]} address = {props.address[lessonTime]} time = {props.times[lessonTime]} weekDay = {getDayName(value)} day = {value.getDate()} month = {getMonthName(value)} />
+            <DateText coordinates={props.coordinates[lessonTime]} isLesson = {isLesson} location = {props.location[lessonTime]} address = {props.address[lessonTime]} time = {props.times[lessonTime]} weekDay = {getDayName(value)} day = {value.getDate()} month = {getMonthName(value)} />
             </div>
-            <div style={{flex:1}} className='contain'>
-            <Calendar onChange={onChange} value={value}
+            <div style={{flex:3, alignSelf: 'center', width:'100%'}} className='myContain'>
+            <Calendar onChange={onChange} value={value} style={{height: '100%', width: '100%' }}
             
             tileClassName={({ date, view }) => {
                 if(mark.find(x=>x===moment(date).format("MM/DD/YYYY"))){
@@ -84,6 +84,28 @@ export const MyCalendar = (props) => {
         </div>
     );
 }
+
+
+// return (
+//   <div style={{position:'relative', paddingLeft:50, paddingRight:50}} className='myContainer'>
+//       <div style={{flex:1}}>
+//       <DateText coordinates={props.coordinates[lessonTime]} isLesson = {isLesson} location = {props.location[lessonTime]} address = {props.address[lessonTime]} time = {props.times[lessonTime]} weekDay = {getDayName(value)} day = {value.getDate()} month = {getMonthName(value)} />
+//       </div>
+//       <div style={{flex:3, alignSelf: 'center', width:'100%'}} className='myContain'>
+//       <Calendar onChange={onChange} value={value} style={{height: '100%', width: '100%' }}
+      
+//       tileClassName={({ date, view }) => {
+//           if(mark.find(x=>x===moment(date).format("MM/DD/YYYY"))){
+//            return  'highlight'
+//           }
+//           }}
+//       />
+//       </div>
+//       <div style={{flex:1}}>
+//        <Instructors lessonId = {props.lessonId[lessonTime]} isLesson = {isLesson} max = {props.max[lessonTime]} students = {props.students[lessonTime]} people = {props.instructor[lessonTime]}/>
+//        </div>
+//   </div>
+// );
 
 //(value, event) => alert('Clicked day: ', value)
 

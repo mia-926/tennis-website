@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import {AbiImage} from './AbiImage';
 import { Footer } from '../Footer';
-
+import { Testimonials } from './testimonials/Testimonial';
 
 import useAuth from "../hooks/useAuth";
 import { Circle } from './Circle';
@@ -39,8 +39,14 @@ export const NewHome = () => {
     <HomeTitle/>
     <Description style={{position:'absolute'}}/>
      <AbiImage/>
+     <div>
+        <Testimonials/>
     </div>
+
+    </div>
+    <div style={{paddingTop:300}}>
     <Footer/>
+    </div>
     </div>
   );
 }

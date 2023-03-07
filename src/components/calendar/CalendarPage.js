@@ -7,6 +7,7 @@ import { Instructors } from './right/Instructors';
 import { ApiCall } from './ApiCall';
 import { ReloadProvider } from '../../context/ReloadProvider';
 import { BottomCirlces } from './BottomCircles';
+import { MyMap } from './MyMap';
 
 
 export const CalendarPage = () => {
@@ -16,10 +17,13 @@ export const CalendarPage = () => {
         return (
             <div style={{paddingTop: 100}}>
                 <ReloadProvider>
+                <h1 className="unna" style={{textAlign:'center', paddingBottom:50, letterSpacing:'.5em'}}>JOIN A LESSON</h1>
                 <BottomCirlces/>
                 <ApiCall/>
 
                 </ReloadProvider>
+
+                
             </div>
         );
     }
