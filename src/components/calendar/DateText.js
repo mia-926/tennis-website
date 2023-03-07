@@ -1,6 +1,8 @@
 import React, {useState} from 'react';
 import{MyCarousel} from "./MyCarousel";
 import westlakePic from '../../images/westlake.png';
+import { MyMap } from './MyMap';
+
 
 export const DateText = (props) => {
     const lessonTime = props.time;
@@ -38,7 +40,7 @@ if(props.isLesson){
          }}
          />
 
-             <img src={westlakePic}></img>
+            <MyMap coordinates={props.coordinates}/>
 
             <h3 style={{textAlign: 'center', fontSize: '1.7em'}}>Location: {props.location}</h3>
             <h5 style={{textAlign: 'center', fontSize: '1.2em'}}>{props.address}</h5>
