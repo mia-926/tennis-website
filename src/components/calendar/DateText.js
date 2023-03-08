@@ -6,6 +6,7 @@ import { MyMap } from './MyMap';
 
 export const DateText = (props) => {
     const lessonTime = props.time;
+    const nextLesson = "Friday, February 2";
 
 if(props.isLesson){
 
@@ -64,7 +65,7 @@ else{
          />
   
             <div style={{padding:0, margin:0}}>
-                <h3>{""}</h3>
+                <h3>{"No Lesson"}</h3>
             </div>
             <hr
          style={{
@@ -77,8 +78,15 @@ else{
          }}
          />
 
+        <div style={{padding:0, margin:0, textAlign:'center'}}>
+                <h3>Next Available <br></br> Lesson:</h3>
+            </div>
+
+            <div style={{padding:0, margin:0, textAlign:'center'}}>
+                <h3>{nextLesson}</h3>
+            </div>
+
         </div>
-        {/* <MyCarousel/> */}
     </div>);
 }
 }

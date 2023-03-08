@@ -23,7 +23,7 @@ useEffect(() => {
 }, []);
   return (
 
-    <div style={{position: 'absolute', top:height-scrollPosition*1.5, paddingTop:250, marginBottom: 200, display: 'flex', flexDirection:'row', alignContent:"center", justifyContent:"center", width:window.innerWidth}}>
+    <div style={{position: 'absolute', top:height-scrollPosition*1.5, paddingTop:500, marginBottom: 200, display: 'flex', flexDirection:'row', alignContent:"center", justifyContent:"center", width:window.innerWidth}}>
     <div style={{width:'80%'}}>
         <TestimonialCard/>
   </div>

@@ -44,7 +44,7 @@ function App() {
       break 
     case "/join-lesson":
       component = <CalendarPage/>
-      color= "black"
+      color= "white"
       break
     case "/create-account":
       component = <SignUp/>
