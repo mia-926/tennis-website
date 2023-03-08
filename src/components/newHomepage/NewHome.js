@@ -33,10 +33,12 @@ export const NewHome = () => {
 
 
   return (
-    <div>
-    <div style={{display:'flex', flexDirection: 'column', height:imageHeight}}>
-    <Circle/>
-    <HomeTitle/>
+    <div className='homeBody'>
+    <div style={{display:'flex', flexDirection: 'column', height:imageHeight, background: '#D3D3D3'}}>
+   
+  
+    <HomeTitle style={{zIndex:1}}/>
+    <Circle  style={{zIndex:2, position:'relative'}}/>
     <Description style={{position:'absolute'}}/>
      <AbiImage/>
      <div>
@@ -44,7 +46,7 @@ export const NewHome = () => {
     </div>
 
     </div>
-    <div style={{paddingTop:300}}>
+    <div style={{marginTop:400}}>
     <Footer/>
     </div>
     </div>

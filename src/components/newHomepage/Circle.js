@@ -38,7 +38,15 @@ export const Circle = (props) =>
         <div >
             <svg style = {{position: 'absolute'}} height = {imageHeight} width = {imageWidth} >
 
-            <ellipse cx={imageWidth/2} cy={imageHeight*1.45-scrollPosition}rx = {imageWidth} ry={imageHeight/1.3} fill = "white"/>
+            <ellipse 
+            cx={imageWidth/2} 
+            cy={imageHeight*1.4-scrollPosition}
+            rx = {imageWidth/1.2}
+            ry={imageHeight/1.3} 
+            fill = "white"
+             stroke="#D3D3D3" 
+             opacity={1}
+             stroke-width="40"/>
             </svg>
             
         </div>

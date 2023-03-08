@@ -64,12 +64,10 @@ export const MyCalendar = (props) => {
           
       }
     return (
-        <div style={{position:'relative', paddingLeft:50, paddingRight:50}} className='myContainer'>
-            <div style={{flex:1}}>
-            <DateText coordinates={props.coordinates[lessonTime]} isLesson = {isLesson} location = {props.location[lessonTime]} address = {props.address[lessonTime]} time = {props.times[lessonTime]} weekDay = {getDayName(value)} day = {value.getDate()} month = {getMonthName(value)} />
-            </div>
-            <div style={{flex:3, alignSelf: 'center', width:'100%'}} className='myContain'>
-            <Calendar onChange={onChange} value={value} style={{height: '100%', width: '100%' }}
+        <div style={{position:'relative', paddingLeft:50, paddingRight:50, paddingTop: 150}} className='myContainer'>
+            <div style={{flex:1, alignSelf: 'center', paddingRight:250}} className='myContain'>
+              <h3 style={{color:"white"}}>Join a Lesson</h3>
+            <Calendar onChange={onChange} value={value} style={{height: 'auto', width: '50%'}}
             
             tileClassName={({ date, view }) => {
                 if(mark.find(x=>x===moment(date).format("MM/DD/YYYY"))){
@@ -77,6 +75,9 @@ export const MyCalendar = (props) => {
                 }
                 }}
             />
+            </div>
+            <div style={{flex:1}}>
+            <DateText coordinates={props.coordinates[lessonTime]} isLesson = {isLesson} location = {props.location[lessonTime]} address = {props.address[lessonTime]} time = {props.times[lessonTime]} weekDay = {getDayName(value)} day = {value.getDate()} month = {getMonthName(value)} />
             </div>
             <div style={{flex:1}}>
              <Instructors lessonId = {props.lessonId[lessonTime]} isLesson = {isLesson} max = {props.max[lessonTime]} students = {props.students[lessonTime]} people = {props.instructor[lessonTime]}/>
