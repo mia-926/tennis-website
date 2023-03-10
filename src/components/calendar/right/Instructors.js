@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {Names} from './Names';
 import { Participants } from './Participants';
 import { Input } from './Input';
@@ -19,6 +19,13 @@ export const Instructors = (props) => {
         setMessage ("You will receive an email if a lesson is scheduled on this day.");
         setRequestMessage("Requested")
     }
+
+    useEffect(() => {
+        setMessage("");
+        setRequestMessage("Request for Lesson");
+    }, [props.value])
+
+
     console.log(message);
     if(props.isLesson){
 
@@ -27,7 +34,6 @@ export const Instructors = (props) => {
         let studentNames;
         if(props.students){
             studentNames = props.students;
-            console.log("Instructors"+studentNames)
         }
         else{
             studentNames = [];

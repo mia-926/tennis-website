@@ -28,6 +28,8 @@ export const Input = (props) => {
     .catch(err => {
       setDidRegiser("Failed to add to Register. Try again later.")
     })
+
+    setInputValue("");
   }
 
   if(props.students.length < props.max){
