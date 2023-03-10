@@ -3,6 +3,21 @@ import React, { useState, useEffect } from 'react';
 
 export const GreenCircles = (props) =>
 {
+    const [imageHeight, setimageHeight] = useState(window.innerHeight);
+    const [imageWidth, setimageWidth] = useState(window.innerWidth);
+
+    useEffect(() =>{
+        const handleResize = () => {
+            setimageWidth(window.innerWidth);
+            setimageHeight(window.innerHeight);
+        }
+        window.addEventListener('resize', handleResize)
+
+        return () => {
+            window.removeEventListener('resize', handleResize)
+        }
+    }, [])
+    
     return (
         <div >
             <svg style = {{position: 'absolute'}} height = {window.innerHeight} width = {window.innerWidth} >
