@@ -5,13 +5,38 @@ import "./calender.css";
 import moment from 'moment';
 import { DateText } from './DateText';
 import { Instructors } from './right/Instructors';
+import { AdminCalendar } from './admin/adminCalendar';
 
 
+// useEffect(() => {
+//   const fetchData = async () => {
+//     // fetch data from API
+//     const apiData = await fetch('https://example.com/api');
+//     const data = await apiData.json();
+//     // call firstDay function after data is loaded
+//     firstDay(data);
+//   };
 
-
+//const [nextDay, setNextDay] = useState('Loading...');
 
 export const MyCalendar = (props) => {
     const mark = props.dateList
+
+    function getMonthName(monthNumber) {
+      const date = new Date(monthNumber);
+      return date.toLocaleString('en-US', { month: 'long' });
+    }
+
+  function getDayName(dateStr)
+    {
+     
+        var date = new Date(dateStr);
+  
+        return date.toLocaleDateString('en-US', { weekday: 'long' }); 
+        
+    }
+
+    
     const checkToday = () => {
         const dt = new Date(Date.now);
         for(let i = 0; i < mark.length; i++){
@@ -24,15 +49,20 @@ export const MyCalendar = (props) => {
           }
           return false;
     }
+    const firstDay = () => {
+      if(mark.length > 0){
+        let newDate = new Date(mark[0]);
+        setNextDay(mark[0]);
+      }
+    }
 
     const [value, onChange] = useState(new Date());
     const [currentDay, setCurrentDay] = useState(0);
-    const [lessonTime, setLessonTime] = useState("0");
+    const [lessonTime, setLessonTime] = useState(0);
     const [isLesson, setIsLesson] = useState(false);
-    
-
+    const [nextDay, setNextDay] = useState(()=>firstDay());
    
-
+    
     useEffect(() => {
         
         setIsLesson(false);
@@ -48,21 +78,25 @@ export const MyCalendar = (props) => {
                setIsLesson(true);
             }
         }
-        
-    }, [value])
-    function getMonthName(monthNumber) {
-        const date = new Date(monthNumber);
-        return date.toLocaleString('en-US', { month: 'long' });
-      }
-
-    function getDayName(dateStr)
-      {
-       
-          var date = new Date(dateStr);
+        let run = true;
+        for(let i = 0; i < mark.length && run; i++){
+          let newDate = new Date((mark[i]));
+          // console.log(newDate)
+          // console.log(value)
+            if(value < newDate){
+              setNextDay(getDayName(newDate) + ", " + getMonthName(newDate) + " " + ((newDate).getDate()));
+              run = false;
+            }
+        }
+        if(run === true){
+          setNextDay("No upcoming Lessons")
+        }
     
-          return date.toLocaleDateString('en-US', { weekday: 'long' }); 
-          
-      }
+
+    }, [value])
+
+ 
+
     return (
         <div style={{position:'relative', paddingLeft:50, paddingRight:50, paddingTop: 150}} className='myContainer'>
             <div style={{flex:1, alignSelf: 'center', paddingRight:250}} className='myContain'>
@@ -76,12 +110,44 @@ export const MyCalendar = (props) => {
                 }}
             />
             </div>
-            <div style={{flex:1}}>
-            <DateText coordinates={props.coordinates[lessonTime]} isLesson = {isLesson} location = {props.location[lessonTime]} address = {props.address[lessonTime]} time = {props.times[lessonTime]} weekDay = {getDayName(value)} day = {value.getDate()} month = {getMonthName(value)} />
+            <div style = {{flex:1}}>
+                <AdminCalendar 
+                weekDay = {getDayName(value)} 
+                day = {value.getDate()} 
+                month = {getMonthName(value)} 
+                value = {value}
+                isLesson = {isLesson}
+                coordinates={props.coordinates[lessonTime]} 
+                location = {props.location[lessonTime]} 
+                address = {props.address[lessonTime]}
+                time = {props.times[lessonTime]} 
+                max = {props.max[lessonTime]} 
+                instructors = {props.instructor[lessonTime]}
+                />
+            </div>
+            {/* <div style={{flex:1}}>
+            <DateText 
+              index = {lessonTime}
+              coordinates={props.coordinates[lessonTime]} 
+              isLesson = {isLesson} 
+              location = {props.location[lessonTime]} 
+              address = {props.address[lessonTime]}
+              time = {props.times[lessonTime]} 
+              weekDay = {getDayName(value)} 
+              day = {value.getDate()} 
+              month = {getMonthName(value)} 
+              nextDay = {nextDay}
+              />
             </div>
             <div style={{flex:1}}>
-             <Instructors lessonId = {props.lessonId[lessonTime]} isLesson = {isLesson} max = {props.max[lessonTime]} students = {props.students[lessonTime]} people = {props.instructor[lessonTime]}/>
-             </div>
+             <Instructors 
+              lessonId = {props.lessonId[lessonTime]} 
+              isLesson = {isLesson} max = {props.max[lessonTime]} 
+              students = {props.students[lessonTime]} 
+              people = {props.instructor[lessonTime]}
+              value = {value}/>
+
+             </div> */}
         </div>
     );
 }

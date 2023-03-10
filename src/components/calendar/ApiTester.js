@@ -31,6 +31,7 @@ export const ApiTester = (props) => {
             date = (lessons[i].date).substring(8, 10);
             month = (lessons[i].date).substring(5, 7); 
             year = (lessons[i].date).substring(0, 4);
+            console.log(lessons[i].date);
 
             newDateList.push(month + '/' + date + '/' +year);
             newInstructor.push(lessons[i].instructors);

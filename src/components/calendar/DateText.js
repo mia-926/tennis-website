@@ -6,7 +6,9 @@ import { MyMap } from './MyMap';
 
 export const DateText = (props) => {
     const lessonTime = props.time;
-    const nextLesson = "Friday, February 2";
+    let nextLesson = props.nextDay;
+
+
 
 if(props.isLesson){
 
