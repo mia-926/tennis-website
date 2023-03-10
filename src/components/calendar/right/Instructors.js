@@ -7,12 +7,22 @@ import './fonts.css';
 import './right.css'
 import racketImage from "../../../images/rackets.jpg";
 
-
+import Button from 'react-bootstrap/Button';
 
 
 export const Instructors = (props) => {
+    const[message, setMessage] = useState("");
+    const[requestMessage, setRequestMessage] = useState("Request for Lesson");
 
+    
+    function email(){
+        setMessage ("You will receive an email if a lesson is scheduled on this day.");
+        setRequestMessage("Requested")
+    }
+    console.log(message);
     if(props.isLesson){
+
+        
         const instructorNames = props.people;
         let studentNames;
         if(props.students){
@@ -37,9 +47,13 @@ export const Instructors = (props) => {
     }else{
         return (
             <div className='myContain' style = {{marginTop:20}}>
-            <h2 className='inter'>No Lesson Today</h2>
             <p>Click on a circled day to join a lesson!</p>
-            <img style ={{borderRadius: 50, marginTop:50}} src = {racketImage}></img>
+            <p className='inter'>Can't make other days?</p>
+            <h5 style={{textAlign:'center'}}className='inter'>Request to have a lesson on the selected day.</h5>
+        
+            <Button className="greenb btn btn-primary buttonHover"onClick={email}>{requestMessage}</Button>
+            <p style={{height:20, textAlign:"center", marginTop:40}}>{message}</p>
+            
             </div>
         );
     }

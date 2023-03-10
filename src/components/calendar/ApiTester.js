@@ -53,6 +53,7 @@ export const ApiTester = (props) => {
         setLessonIds(newLessonIds);
     }, [lessons])
 
+    console.log(coordinates[0])
     return (
         <div>
             <MyCalendar

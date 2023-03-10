@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import {AbiImage} from './AbiImage';
 import { Footer } from '../Footer';
-
+import { Testimonials } from './testimonials/Testimonial';
 
 import useAuth from "../hooks/useAuth";
 import { Circle } from './Circle';
@@ -33,14 +33,22 @@ export const NewHome = () => {
 
 
   return (
-    <div>
-    <div style={{display:'flex', flexDirection: 'column', height:imageHeight}}>
-    <Circle/>
-    <HomeTitle/>
+    <div className='homeBody'>
+    <div style={{display:'flex', flexDirection: 'column', height:imageHeight, background: '#D3D3D3'}}>
+   
+  
+    <HomeTitle style={{zIndex:1}}/>
+    <Circle  style={{zIndex:2, position:'relative'}}/>
     <Description style={{position:'absolute'}}/>
      <AbiImage/>
+     <div>
+        <Testimonials/>
     </div>
+
+    </div>
+    <div style={{marginTop:400}}>
     <Footer/>
+    </div>
     </div>
   );
 }

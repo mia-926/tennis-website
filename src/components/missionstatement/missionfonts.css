@@ -2,6 +2,7 @@
 @import url("https://fonts.gstatic.com");
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap");
   @import url('https://fonts.googleapis.com/css2?family=Gloock&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
 
   @import url('https://fonts.googleapis.com/css2?family=Gloock&display=swap');
   @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Gloock&family=Quicksand:wght@300&display=swap');
@@ -9,7 +10,7 @@
   @import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
 
 .statementfonts{
-    font-family: 'Gloock', sans-serif;
+    font-family: 'Raleway', sans-serif;
     font-weight: 700;
     font-size: 500%;
 }
