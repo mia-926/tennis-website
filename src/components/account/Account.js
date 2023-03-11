@@ -13,7 +13,7 @@ import { MsgProvider } from '../../context/MsgProvider';
 export const Account = () => {
     const {auth} = useAuth()
     const {setlastWindow} = useAuth();
-
+    const{lastWindow} = useAuth()
     if(auth?._id != undefined){
     return (
         <MsgProvider>
@@ -50,9 +50,17 @@ export const Account = () => {
         )
     }
     else{
-        setlastWindow("/account")
-        return (
-            window.location.href = '/login'
-        );
+        if(lastWindow == "/home"){
+            setlastWindow("/account")
+            return (
+                window.location.href = '/home'
+            );
+        }
+        else{
+            setlastWindow("/account")
+            return (
+                window.location.href = '/login'
+            );
+        }
     }
 }

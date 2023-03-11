@@ -10,9 +10,11 @@ import { Text } from './Text';
 import useAuth from "../hooks/useAuth";
 
 export const Home = () => {
+  const {setlastWindow} = useAuth()
   const {setAuth} = useAuth();
   const {auth} = useAuth()
   useEffect(() => {
+    setlastWindow("/join-lesson")
     if(auth != undefined && !auth?.keepLogin){
         setAuth({})
     }
