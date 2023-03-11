@@ -8,6 +8,8 @@ import useAuth from "../hooks/useAuth";
 import { Circle } from './Circle';
 import { HomeTitle } from './HomeTitle';
 import { Description } from './Description';
+import {BottomCircle} from './BottomCircle';
+import { Banner } from './Banner';
 
 export const NewHome = () => {
   const {setAuth} = useAuth();
@@ -33,17 +35,22 @@ export const NewHome = () => {
 
 
   return (
-    <div className='homeBody'>
+    <div className='homeBody' style={{marginBottom:400}}>
+      <Testimonials/>
     <div style={{display:'flex', flexDirection: 'column', height:imageHeight, background: '#D3D3D3'}}>
    
+
+    <HomeTitle style={{zIndex:3}}/>
   
-    <HomeTitle style={{zIndex:1}}/>
-    <Circle  style={{zIndex:2, position:'relative'}}/>
+    <BottomCircle  style={{zIndex:1}}/>
+    <Circle  style={{zIndex:4, position:'relative'}}/>
+      <Banner/>
     <Description style={{position:'absolute'}}/>
-     <AbiImage/>
-     <div>
+     <AbiImage style={{zIndex:2}}/>
+
+     {/* <div style={{position: 'absolute', top: 0, left: 0,  zIndex:1, borderRadius:"50%"}}>
         <Testimonials/>
-    </div>
+    </div> */}
 
     </div>
     <div style={{marginTop:400}}>
@@ -52,3 +59,4 @@ export const NewHome = () => {
     </div>
   );
 }
+

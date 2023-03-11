@@ -7,6 +7,20 @@ import React, { useState, useEffect } from 'react';
 export const Testimonials = () => {
 const height = window.innerHeight;
 
+    const [imageHeight, setimageHeight] = useState(window.innerHeight);
+    const [imageWidth, setimageWidth] = useState(window.innerWidth);
+
+    useEffect(() =>{
+        const handleResize = () => {
+            setimageWidth(window.innerWidth);
+            setimageHeight(window.innerHeight);
+        }
+        window.addEventListener('resize', handleResize)
+
+        return () => {
+            window.removeEventListener('resize', handleResize)
+        }
+    }, [])
 
 const [scrollPosition, setScrollPosition] = useState(0);
 
@@ -22,9 +36,9 @@ useEffect(() => {
     };
 }, []);
   return (
-
-    <div style={{position: 'absolute', top:height-scrollPosition*1.5, paddingTop:500, marginBottom: 200, display: 'flex', flexDirection:'row', alignContent:"center", justifyContent:"center", width:window.innerWidth}}>
-    <div style={{width:'80%'}}>
+     
+   <div style={{position: 'absolute', top:height-50, marginBottom: 200, display: 'flex', flexDirection:'row', alignContent:"center", justifyContent:"center", width:window.innerWidth}}>
+    <div style={{width:'2000px'}}>
         <TestimonialCard/>
   </div>
   </div>

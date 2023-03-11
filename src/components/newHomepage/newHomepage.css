@@ -2,6 +2,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&family=Unna:ital,wght@1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap');
+
 .abiImage{
     float:left;
 }
@@ -17,10 +19,17 @@
     font-family: 'Raleway', sans-serif;
 }
 
+.railwayBold{
+  font-family: 'Raleway', sans-serif;
+  font-weight: bold;
+}
+
+
 .homeTitle{
     font-size: 500%;
     letter-spacing: .6rem;
     line-height: 90%;
+    font-weight: bold;
   
 }
 
@@ -36,19 +45,63 @@
 }
 
 .descriptionContainer{
-    font-size: 170%;
+    font-size: 150%;
     align-items: center;
     display: flex;
     flex-direction: column;
     text-align: center;
-    font-weight: 100;
-}
-
-.carousel-control-next,
-.carousel-control-prev /*, .carousel-indicators */ {
-    filter: invert(100%);
 }
 
 .homeBody{
     background: white;
+}
+
+.carousel {
+    width:100%;
+    height:100px;
+    margin: auto;
+  }
+
+
+  .carousel-caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, .6);
+  }
+  
+  .carousel-caption h3, .carousel-caption p {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, .6);
+  }
+
+  .carousel-control-prev, .carousel-control-next {
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    padding-top: 600px;
+    color:white;
+  }
+  
+  .carousel-control-prev-icon, .carousel-control-next-icon {
+    height: 40px !important;
+    width: 40px !important;
+  }
+  
+.carousel-indicators{
+    transform: translateY(-600);
+}
+
+.carousel-indicators {
+    top: 50%;
+   padding-top:600px;
+  }
+
+.btn:hover{
+  background: #1e332a;
+  border-color: #1e332a;
 }

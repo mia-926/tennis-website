@@ -7,13 +7,13 @@ import axios from 'axios';
 import { Instructors } from '../right/Instructors';
 
 
-export const AdminCalendar = (props) => {
-    const [inputTime, setInputTime] = useState('');
-    const [inputLocation, setInputLocation] = useState('');
-    const [inputAddress, setInputAddress] = useState('');
-    const [inputInstructors, setInputInstructors] = useState([]);
-    const [inputLimit, setInputLimit] = useState('');
-    const [inputNotes, setInputNotes] = useState('');
+export const AdminEdit = (props) => {
+    const [inputTime, setInputTime] = useState(props.time);
+    const [inputLocation, setInputLocation] = useState(props.location);
+    const [inputAddress, setInputAddress] = useState(props.address);
+    const [inputInstructors, setInputInstructors] = useState(props.instructors);
+    const [inputLimit, setInputLimit] = useState(props.max);
+    const [inputNotes, setInputNotes] = useState("");
 
     
 
@@ -27,17 +27,25 @@ export const AdminCalendar = (props) => {
 
 
   function patch(){
-    const data = {date: String(props.value), time:String(inputTime), instructors:(inputInstructors), studentNames:([]), location: String(inputLocation), maxStudents: parseInt(inputLimit) };
+    const data = Object.assign({ _id: String(props.lessonId) }, 
+    inputTime !== props.time && { inputTime },
+    inputLocation !== props.location && { inputLocation },
+    inputAddress !== props.inputAddress && { inputAddress },
+    inputInstructors !== null && { inputInstructors },
+    inputLimit !== props.max && { inputLimit },
+    inputNotes !== null && { inputNotes },
+);
     console.log(data);
-    axios.post("https://tennis-backend-bnldi3x7oq-uw.a.run.app/api/lesson", data)
+    axios.patch("https://tennis-backend-bnldi3x7oq-uw.a.run.app/api/lesson", data)
     .then(response => {
-      console.log("lesson added")
+      console.log("lesson edited")
     })
     .catch(err => {
       console.log(err)
     })
   }
 
+//   if(!(props.isLesson)){
     return(
         <div className='inter myContain' style={{width: '800px'}}>
             <div style={{display: 'flex', flexDirection: "column", justifyContent:"center"}}>
@@ -66,9 +74,8 @@ export const AdminCalendar = (props) => {
                     {/* Address */}
                     <Form.Group className="mb-3" controlId="formBasicAddress">
                         <Form.Label>Address</Form.Label>
-                        <Form.Control style={{width:"500px"}}autoComplete = "off" value = {inputAddress} onChange = {handleChangeAddress}type="Address" placeholder="Enter address" />
+                        <Form.Control style={{width:"500px"}} autoComplete = "off" value = {inputAddress} onChange = {handleChangeAddress}type="Address" placeholder="Enter address" />
                     </Form.Group>
-
                     </div>
                     {/* Instructors */}
 
@@ -99,8 +106,8 @@ export const AdminCalendar = (props) => {
                     </div>
                     </div>
                 <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                <Button style={{width:'300px'}} onClick={patch} className= "button roundedInput" variant="success" >
-                    Add Lesson
+                <Button style={{width:'300px'}} onClick={patch} className= "button" variant="success" >
+                    Edit Lesson
                 </Button>
                 </div>
                 </Form>
@@ -110,7 +117,3 @@ export const AdminCalendar = (props) => {
     }
 
 
-
-
-
-//}
