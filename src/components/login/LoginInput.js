@@ -11,6 +11,7 @@ import useAuth from "../hooks/useAuth";
 export const LoginInput = () => {
   const errRef = useRef();
   const {setAuth} = useAuth();
+  const {lastWindow} = useAuth()
 
   const [password, setPasswordValue] = useState('');
   const [username, setUsername] = useState('');
@@ -34,9 +35,18 @@ export const LoginInput = () => {
     const data = { username: String(username), password: String(password)};
     axios.post('https://tennis-backend-bnldi3x7oq-uw.a.run.app/api/authPassword', data)
         .then (response => {
-          let _id = response.data
-          setAuth({username, password, keepLogin, _id})
-          window.location.href = '/join-lesson'
+          let _id = response.data._id
+          let email = response.data.email
+          let emailList = response.data.emailList
+          let admin = response.data.admin
+          console.log(response.data)
+          setAuth({username, password, keepLogin, _id, emailList, email, admin})
+          if(lastWindow != null){
+            window.location.href = lastWindow
+          }
+          else{
+            window.location.href = "/join-lesson"
+          }
         })
         .catch(err => {
           if(!err?.response){

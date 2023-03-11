@@ -4,14 +4,15 @@ import React  from 'react';
 
 // import { Switch, Route } from 'react-router-dom';
 
-import {Home} from './components/homepage/Home';
+//import {Home} from './components/homepage/Home';
 import { MyNavBar } from './components/navBar/MyNavBar';
 import { CalendarPage } from './components/calendar/CalendarPage';
 import { SignUp } from './components/signUp/SignUp';
 import { MissionText } from './components/missionstatement/MissionText';
 import{Login} from "./components/login/Login";
+import{Account} from "./components/account/Account";
 import{NewHome} from "./components/newHomepage/NewHome";
-import { Routes, Route, BrowserRouter as Router } from 'react-router-dom';
+//import { Routes, Route, BrowserRouter as Router } from 'react-router-dom';
 
 /*function App() {
   return (
@@ -59,6 +60,14 @@ function App() {
       component = <MissionText/>
       color= "black"
       break
+    case "/account":
+      component = <Account/>
+      color= "black"
+      break
+    default:
+      component = <NewHome/>
+      color = "white"
+      break 
 
   }
 

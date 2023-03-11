@@ -13,6 +13,7 @@ import { GreyCircle } from './GreyCircle';
 
 export const CalendarPage = () => {
     const {auth} = useAuth()
+    const {setlastWindow} = useAuth();
 
     if(auth?._id != undefined){
         return (
@@ -30,6 +31,7 @@ export const CalendarPage = () => {
         );
     }
     else{
+        setlastWindow("/join-lesson")
         return (
             window.location.href = '/login'
         );

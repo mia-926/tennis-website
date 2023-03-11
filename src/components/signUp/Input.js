@@ -5,12 +5,14 @@ import React, { useEffect, useRef, useState, useContext} from 'react';
 import AuthContext from "../../context/AuthProvider";
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import useAuth from "../hooks/useAuth";
+
 import "./inputStyle.css";
 
 export const Input = () => {
   const errRef = useRef();
-  const {setAuth} = useContext(AuthContext)
-  const {auth} = useContext(AuthContext)
+  const {lastWindow} = useAuth()
+  const {setAuth} = useAuth()
   const [password, setPasswordValue] = useState('');
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
@@ -89,10 +91,19 @@ export const Input = () => {
     const data = { username: String(user), password: String(pwd)};
     axios.post('https://tennis-backend-bnldi3x7oq-uw.a.run.app/api/authPassword', data)
         .then (response => {
-          let _id = response.data
+          let _id = response.data._id
+          let email = response.data.email
+          let emailList = response.data.emailList
+          let admin = response.data.admin
           let keepLogin = true
-          setAuth({user, pwd, keepLogin, _id})
-          window.location.href = '/join-lesson'
+          setAuth({username, password, keepLogin, _id, emailList, email, admin})
+
+          if(lastWindow != null){
+            window.location.href = lastWindow
+          }
+          else{
+            window.location.href = "/join-lesson"
+          }
         })
         .catch(err => {
           setErrMsg("Error Try Again")
