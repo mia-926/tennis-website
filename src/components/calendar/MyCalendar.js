@@ -5,7 +5,9 @@ import "./calender.css";
 import moment from 'moment';
 import { DateText } from './DateText';
 import { Instructors } from './right/Instructors';
-import { AdminCalendar } from './admin/adminCalendar';
+import { AdminCalendar } from './admin/AdminCalendar';
+import { AdminEdit } from './admin/AdminEdit';
+
 
 
 // useEffect(() => {
@@ -96,7 +98,7 @@ export const MyCalendar = (props) => {
     }, [value])
 
  
-
+if(isLesson){
     return (
         <div style={{position:'relative', paddingLeft:50, paddingRight:50, paddingTop: 150}} className='myContainer'>
             <div style={{flex:1, alignSelf: 'center', paddingRight:250}} className='myContain'>
@@ -111,7 +113,7 @@ export const MyCalendar = (props) => {
             />
             </div>
             <div style = {{flex:1}}>
-                <AdminCalendar 
+                <AdminEdit
                 weekDay = {getDayName(value)} 
                 day = {value.getDate()} 
                 month = {getMonthName(value)} 
@@ -123,6 +125,7 @@ export const MyCalendar = (props) => {
                 time = {props.times[lessonTime]} 
                 max = {props.max[lessonTime]} 
                 instructors = {props.instructor[lessonTime]}
+                lessonId = {props.lessonId[lessonTime]}
                 />
             </div>
             {/* <div style={{flex:1}}>
@@ -149,7 +152,33 @@ export const MyCalendar = (props) => {
 
              </div> */}
         </div>
-    );
+    );}else{
+      return (
+        <div style={{position:'relative', paddingLeft:50, paddingRight:50, paddingTop: 150}} className='myContainer'>
+            <div style={{flex:1, alignSelf: 'center', paddingRight:250}} className='myContain'>
+              <h3 style={{color:"white"}}>Join a Lesson</h3>
+            <Calendar onChange={onChange} value={value} style={{height: 'auto', width: '50%'}}
+            
+            tileClassName={({ date, view }) => {
+                if(mark.find(x=>x===moment(date).format("MM/DD/YYYY"))){
+                 return  'highlight'
+                }
+                }}
+            />
+            </div>
+            <div style = {{flex:1}}>
+                <AdminCalendar 
+                weekDay = {getDayName(value)} 
+                day = {value.getDate()} 
+                month = {getMonthName(value)} 
+                value = {value}
+                isLesson = {isLesson}
+                />
+            </div>
+        </div>);
+      
+
+    }
 }
 
 
