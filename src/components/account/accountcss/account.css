@@ -1,4 +1,5 @@
 .accountFullContainer{
+    z-index: 10;
     flex-direction: column; 
     width: 85%;
     float:left;
@@ -8,15 +9,15 @@
 }
 .accountGreenCircles{
     width: 50%;
-    position: "absolute"; 
     top: 0; 
     left: 0;
-     z-index: 20;
-     border: 5px;
-     border-color: #FFFFFF
+    z-index: 100;
+    border: 5px;
+    border-color: #FFFFFF
 }
 .accountTitleDiv {
     flex:1;
+    display:flex;
     margin-left: 4%;
     justify-content: left;
     align-items: left;

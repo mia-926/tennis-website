@@ -45,12 +45,15 @@
 
   .submit-Button{
     float: center; 
+    border-color: #294539;
     width: 100%;
     border-radius: 15px;
     background-color: #294539
 
   }
-
+  .submit-Button:active{
+    background-color: #121e19 !important;
+}
   .submit-Button:hover{
     background-color: #121e19;
   }

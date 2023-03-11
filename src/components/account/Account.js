@@ -6,7 +6,9 @@ import {UserInfo} from "./inputs/UserInfo"
 import {History} from "./inputs/History"
 import {Upcoming} from "./inputs/Upcoming"
 import {Password} from "./inputs/Password"
+import {DeleteButton} from "./inputs/DeleteButton"
 import useAuth from '../hooks/useAuth';
+import { MsgProvider } from '../../context/MsgProvider';
 
 export const Account = () => {
     const {auth} = useAuth()
@@ -14,13 +16,15 @@ export const Account = () => {
 
     if(auth?._id != undefined){
     return (
+        <MsgProvider>
         <div>
             <div className='accountGreenCircles'>
             <GreenCircles/>
             </div>
-            <div className = "accountFullContainer"style = {{paddingTop: 75, height: window.innerHeight}}>
+            <div className = "accountFullContainer" style = {{paddingTop: 75, height: window.innerHeight}}>
                 <div  className = "accountTitleDiv">
                     <Title/>
+                    <DeleteButton/>
                 </div>
                 <div  className = "accountChangeDiv">
                     <div className = "accountUserInfo">
@@ -42,6 +46,7 @@ export const Account = () => {
                 </div>
             </div>
         </div>
+        </MsgProvider>
         )
     }
     else{

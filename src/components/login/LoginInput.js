@@ -39,7 +39,6 @@ export const LoginInput = () => {
           let email = response.data.email
           let emailList = response.data.emailList
           let admin = response.data.admin
-          console.log(response.data)
           setAuth({username, password, keepLogin, _id, emailList, email, admin})
           if(lastWindow != null){
             window.location.href = lastWindow
