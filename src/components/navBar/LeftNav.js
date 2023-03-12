@@ -13,6 +13,7 @@ function BootstrapNav(props) {
       <Nav.Link  style={{color:myColor}} href="/instructors">Instructors</Nav.Link>
       <Nav.Link  style={{color:myColor}} href="/mission">Mission</Nav.Link>
       <Nav.Link  style={{color:myColor}} href="/join-lesson">Join a lesson</Nav.Link>
+      <Nav.Link  style={{color:myColor}} href="/admin-page">Admin</Nav.Link>
       <NavDropdown title="Account"  id={myColor}>
         <NavDropdown.Item href="#action/3.1">Settings</NavDropdown.Item>
         <NavDropdown.Item href="#action/3.2">

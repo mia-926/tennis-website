@@ -4,6 +4,7 @@ import westlakePic from '../../images/westlake.png';
 import { MyMap } from './MyMap';
 
 
+
 export const DateText = (props) => {
     const lessonTime = props.time;
     let nextLesson = props.nextDay;
@@ -47,6 +48,7 @@ if(props.isLesson){
 
             <h3 style={{textAlign: 'center', fontSize: '1.7em'}}>Location: {props.location}</h3>
             <h5 style={{textAlign: 'center', fontSize: '1.2em'}}>{props.address}</h5>
+           
 
         </div></div>
     );

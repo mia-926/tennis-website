@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import "./homepage.css";
-import backgroundPic from '../../images/croppedSerena.png';
-import widePic from '../../images/wideView.png';
+import backgroundPic from'../../images/racket.jpg';
+import widePic from '../../images/croppedRacket.jpg';
 import { Circles } from './Circles';
 import { Text } from './Text';
 

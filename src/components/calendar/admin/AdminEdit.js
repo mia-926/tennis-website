@@ -8,37 +8,56 @@ import { Instructors } from '../right/Instructors';
 
 
 export const AdminEdit = (props) => {
-    const [inputTime, setInputTime] = useState(props.time);
-    const [inputLocation, setInputLocation] = useState(props.location);
-    const [inputAddress, setInputAddress] = useState(props.address);
-    const [inputInstructors, setInputInstructors] = useState(props.instructors);
-    const [inputLimit, setInputLimit] = useState(props.max);
+    const [time, settime] = useState(props.time);
+    const [location, setlocation] = useState(props.location);
+    const [address, setaddress] = useState(props.address);
+    const [instructors, setinstructors] = useState(props.instructors);
+    const [maxStudents, setmaxStudents] = useState(props.max);
     const [inputNotes, setInputNotes] = useState("");
+    const [students, setStudents] = useState([]);
+    const [studentCount, setStudentCount] = useState(0);
 
     
+    useEffect(() => {
+        settime(props.time);
+        setlocation(props.location);
+        setaddress(props.address);
+        setinstructors(props.instructors);
+        setmaxStudents(props.max);
+        let studentFormatted = '';
+        for(let i = 0; i < props.students.length; i++){
+            studentFormatted += props.students[i] + "\n";
+        }
+        setStudents(studentFormatted);
+        setStudentCount(props.students.length);
+        
+        
 
-  function handleChangeTime(event) { setInputTime(event.target.value);}
-  function handleChangeLocation(event) { setInputLocation(event.target.value);}
-  function handleChangeAddress(event) { setInputAddress(event.target.value);}
-  function handleChangeInstructors(event) {setInputInstructors(event.target.value.split(","));}
-  function handleChangeLimit(event) { setInputLimit(event.target.value);}
+    }, [props.lessonId])
+
+  function handleChangeTime(event) { settime(event.target.value);}
+  function handleChangeLocation(event) { setlocation(event.target.value);}
+  function handleChangeAddress(event) { setaddress(event.target.value);}
+  function handleChangeInstructors(event) {setinstructors(event.target.value.split(","));}
+  function handleChangeLimit(event) { setmaxStudents(event.target.value);}
   function handleChangeNotes(event) { setInputNotes(event.target.value);}
 
 
 
   function patch(){
     const data = Object.assign({ _id: String(props.lessonId) }, 
-    inputTime !== props.time && { inputTime },
-    inputLocation !== props.location && { inputLocation },
-    inputAddress !== props.inputAddress && { inputAddress },
-    inputInstructors !== null && { inputInstructors },
-    inputLimit !== props.max && { inputLimit },
+    time !== props.time && { time },
+    location !== props.location && { location },
+    address !== props.address && { address },
+    instructors !== null && { instructors },
+    maxStudents !== props.max && { maxStudents },
     inputNotes !== null && { inputNotes },
 );
     console.log(data);
     axios.patch("https://tennis-backend-bnldi3x7oq-uw.a.run.app/api/lesson", data)
     .then(response => {
       console.log("lesson edited")
+      console.log(response)
     })
     .catch(err => {
       console.log(err)
@@ -60,13 +79,13 @@ export const AdminEdit = (props) => {
                     {/* TIME */}
                 <Form.Group className="mb-3" controlId="formBasicTime">
                     <Form.Label>Time</Form.Label>
-                    <Form.Control autoComplete = "off" value = {inputTime} onChange = {handleChangeTime}type="time"/>
+                    <Form.Control autoComplete = "off" value = {time} onChange = {handleChangeTime}type="time"/>
                 </Form.Group>
 
                   {/* Location */}
                   <Form.Group className="mb-3" controlId="formBasicLocation">
                     <Form.Label>Location</Form.Label>
-                    <Form.Control autoComplete = "off" value = {inputLocation} onChange = {handleChangeLocation} placeholder="Ex. Westlake High School" style={{width:"210px"}}/>
+                    <Form.Control autoComplete = "off" value = {location} onChange = {handleChangeLocation} placeholder="Ex. Westlake High School" style={{width:"210px"}}/>
                 </Form.Group>
                 </div>
 
@@ -74,16 +93,18 @@ export const AdminEdit = (props) => {
                     {/* Address */}
                     <Form.Group className="mb-3" controlId="formBasicAddress">
                         <Form.Label>Address</Form.Label>
-                        <Form.Control style={{width:"500px"}} autoComplete = "off" value = {inputAddress} onChange = {handleChangeAddress}type="Address" placeholder="Enter address" />
+                        <Form.Control style={{width:"500px"}} autoComplete = "off" value = {address} onChange = {handleChangeAddress}type="Address" placeholder="Enter address" />
                     </Form.Group>
                     </div>
-                    {/* Instructors */}
+                    {/* students */}
 
                     
                     <div style={{display: 'flex', flexDirection: "row", justifyContent: "space-between"}}>
-                    <Form.Group className="mb-3" controlId="formBasicNotes">
-                        <Form.Label>Notes</Form.Label>
-                        <Form.Control as="textarea" rows = {5}autoComplete = "off" value = {inputNotes} onChange = {handleChangeNotes} placeholder="Enter Notes"  style={{height: '200px'}}/>
+                    <Form.Group className="mb-3 bold" controlId="formBasicNotes">
+                        <Form.Label>Students {studentCount} out of {maxStudents}</Form.Label>
+                        <Form.Control disabled as="textarea" rows = {5}autoComplete = "off" value = {inputNotes} onChange = {handleChangeNotes} 
+                        placeholder={students}  
+                            style={{height: '200px'}} className="FormControl requests" />
                     </Form.Group>
 
 
@@ -93,15 +114,15 @@ export const AdminEdit = (props) => {
 
                     <Form.Group className="mb-3" controlId="formBasicLimit">
                         <Form.Label>Student Limit</Form.Label>
-                        <Form.Control autoComplete = "off" value = {inputLimit} onChange = {handleChangeLimit} placeholder="Enter Student Limit" />
+                        <Form.Control autoComplete = "off" value = {maxStudents} onChange = {handleChangeLimit} placeholder="Enter limit" />
                     </Form.Group>
 
 
 
-                    {/* Notes */}
+                    {/* instructors */}
                     <Form.Group className="mb-3" controlId="formBasicInstructors">
                         <Form.Label>Instructors</Form.Label>
-                        <Form.Control as="textarea" rows = {5} autoComplete = "off" value = {inputInstructors} onChange = {handleChangeInstructors} placeholder="Enter Instructors with comma in bewtween" style={{width:200, height:100}}/>
+                        <Form.Control as="textarea" rows = {5} autoComplete = "off" value = {instructors} onChange = {handleChangeInstructors} placeholder="Enter Instructors with comma in bewtween" style={{width:200, height:100}}/>
                     </Form.Group>
                     </div>
                     </div>

@@ -9,18 +9,6 @@ import { AdminCalendar } from './admin/AdminCalendar';
 import { AdminEdit } from './admin/AdminEdit';
 
 
-
-// useEffect(() => {
-//   const fetchData = async () => {
-//     // fetch data from API
-//     const apiData = await fetch('https://example.com/api');
-//     const data = await apiData.json();
-//     // call firstDay function after data is loaded
-//     firstDay(data);
-//   };
-
-//const [nextDay, setNextDay] = useState('Loading...');
-
 export const MyCalendar = (props) => {
     const mark = props.dateList
 
@@ -83,8 +71,6 @@ export const MyCalendar = (props) => {
         let run = true;
         for(let i = 0; i < mark.length && run; i++){
           let newDate = new Date((mark[i]));
-          // console.log(newDate)
-          // console.log(value)
             if(value < newDate){
               setNextDay(getDayName(newDate) + ", " + getMonthName(newDate) + " " + ((newDate).getDate()));
               run = false;
@@ -96,9 +82,8 @@ export const MyCalendar = (props) => {
     
 
     }, [value])
-
  
-if(isLesson){
+ 
     return (
         <div style={{position:'relative', paddingLeft:50, paddingRight:50, paddingTop: 150}} className='myContainer'>
             <div style={{flex:1, alignSelf: 'center', paddingRight:250}} className='myContain'>
@@ -112,23 +97,7 @@ if(isLesson){
                 }}
             />
             </div>
-            <div style = {{flex:1}}>
-                <AdminEdit
-                weekDay = {getDayName(value)} 
-                day = {value.getDate()} 
-                month = {getMonthName(value)} 
-                value = {value}
-                isLesson = {isLesson}
-                coordinates={props.coordinates[lessonTime]} 
-                location = {props.location[lessonTime]} 
-                address = {props.address[lessonTime]}
-                time = {props.times[lessonTime]} 
-                max = {props.max[lessonTime]} 
-                instructors = {props.instructor[lessonTime]}
-                lessonId = {props.lessonId[lessonTime]}
-                />
-            </div>
-            {/* <div style={{flex:1}}>
+            <div style={{flex:1}}>
             <DateText 
               index = {lessonTime}
               coordinates={props.coordinates[lessonTime]} 
@@ -150,35 +119,9 @@ if(isLesson){
               people = {props.instructor[lessonTime]}
               value = {value}/>
 
-             </div> */}
+             </div>
         </div>
-    );}else{
-      return (
-        <div style={{position:'relative', paddingLeft:50, paddingRight:50, paddingTop: 150}} className='myContainer'>
-            <div style={{flex:1, alignSelf: 'center', paddingRight:250}} className='myContain'>
-              <h3 style={{color:"white"}}>Join a Lesson</h3>
-            <Calendar onChange={onChange} value={value} style={{height: 'auto', width: '50%'}}
-            
-            tileClassName={({ date, view }) => {
-                if(mark.find(x=>x===moment(date).format("MM/DD/YYYY"))){
-                 return  'highlight'
-                }
-                }}
-            />
-            </div>
-            <div style = {{flex:1}}>
-                <AdminCalendar 
-                weekDay = {getDayName(value)} 
-                day = {value.getDate()} 
-                month = {getMonthName(value)} 
-                value = {value}
-                isLesson = {isLesson}
-                />
-            </div>
-        </div>);
-      
-
-    }
+    );
 }
 
 
