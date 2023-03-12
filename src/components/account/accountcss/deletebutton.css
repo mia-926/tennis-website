@@ -12,7 +12,7 @@
 }
 
 .account-delete-button:hover{
-    background-color: #4b1616;
+    background-color: #4b1616 !important;
 }
 
 .account-delete-button:active{
