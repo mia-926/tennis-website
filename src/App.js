@@ -13,6 +13,7 @@ import{Account} from "./components/account/Account";
 import{NewHome} from "./components/newHomepage/NewHome";
 import { AdminCalendarPage } from './components/calendar/AdminCalendarPage';
 import {Home} from './components/homepage/Home';
+import {LearnMorePage} from './components/learnMore/LearMorePage';
 
 
 
@@ -49,7 +50,10 @@ function App() {
       component = <AdminCalendarPage/>
       color="white"
       break
-
+    case "/learn-more":
+      component = <LearnMorePage/>
+      
+      break
     case "/account":
       component = <Account/>
       color= "black"
