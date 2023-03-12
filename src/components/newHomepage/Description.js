@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Testimonials } from './testimonials/Testimonial';
-
+import "./newHomepage.css"
 
 
 export const Description = () => {

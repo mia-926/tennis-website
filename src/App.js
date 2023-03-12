@@ -4,13 +4,15 @@ import React  from 'react';
 
 // import { Switch, Route } from 'react-router-dom';
 
-import {Home} from './components/homepage/Home';
+//import {Home} from './components/homepage/Home';
 import { MyNavBar } from './components/navBar/MyNavBar';
 import { CalendarPage } from './components/calendar/CalendarPage';
 import { SignUp } from './components/signUp/SignUp';
 import{Login} from "./components/login/Login";
+import{Account} from "./components/account/Account";
 import{NewHome} from "./components/newHomepage/NewHome";
 import { AdminCalendarPage } from './components/calendar/AdminCalendarPage';
+
 
 
 function App() {
@@ -44,6 +46,18 @@ function App() {
       break
     case "/admin-page":
       component = <AdminCalendarPage/>
+      color="white"
+      break
+
+    case "/account":
+      component = <Account/>
+      color= "black"
+      break
+    default:
+      component = <NewHome/>
+      color = "white"
+      break 
+
 
   }
 
