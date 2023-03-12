@@ -21,7 +21,7 @@ export const GreyCircle = () =>
 
     return (
         <div>
-            <svg style = {{position: 'absolute'}} height = {window.innerHeight} width = {window.innerWidth} >
+            <svg style = {{position: 'absolute', overflow:"visible"}} height = {window.innerHeight} width = {window.innerWidth} >
             
             
             <ellipse cx="1250"

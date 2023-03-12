@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import homeImage from '../../images/croppedAbi.png';
+import homeImage from '../../images/uncroppedAbi.png';
 import "./newHomepage.css";
 
 
