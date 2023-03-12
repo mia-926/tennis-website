@@ -46,10 +46,9 @@ export const Text = () => {
 
     return(
         <div className = "firstDiv" style = {{top: windowHeight, width: windowWidth}}>
-            <h2 className = 'freegroupfont' style = {{flex: 2, fontSize: 30}}>Free Group Tennis Lessons In Westlake Village</h2>
-            <div style={{flexDirection: 'row', paddingTop: 40}}>
-                <a style = {{marginRight: 10, width: 120, paddingTop: 8, paddingBottom: 8}}className="greenb btn btn-primary" href="join" role="button">Join a Lesson</a>
-                <a style = {{marginLeft: 10, width: 120, paddingTop: 20, paddingBottom: 20}} className="whiteb btn btn-outline-primary" href="learn" role="button">Learn More</a>
+            <h1 className = 'statementfonts' style = {{flex: 2, fontSize: 50}}>OUR MISSION</h1>
+            <div style={{flexDirection: 'row', paddingTop: 40, paddingLeft:60, paddingRight:60}}>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
             </div>
         </div>
     );

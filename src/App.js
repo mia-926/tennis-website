@@ -8,27 +8,11 @@ import React  from 'react';
 import { MyNavBar } from './components/navBar/MyNavBar';
 import { CalendarPage } from './components/calendar/CalendarPage';
 import { SignUp } from './components/signUp/SignUp';
-import { MissionText } from './components/missionstatement/MissionText';
 import{Login} from "./components/login/Login";
 import{Account} from "./components/account/Account";
 import{NewHome} from "./components/newHomepage/NewHome";
-//import { Routes, Route, BrowserRouter as Router } from 'react-router-dom';
+import { AdminCalendarPage } from './components/calendar/AdminCalendarPage';
 
-/*function App() {
-  return (
-    <Router>
-      <div className="App">
-        <MyNavBar />
-        <Routes>
-          <Route exact path={['/', '/home']} component={Home} />
-          <Route exact path="/join-lesson" component={CalendarPage} />
-          <Route exact path="/create-account" component={SignUp} />
-          <Route exact path="/login" component={Login} />
-        </Routes>
-      </div>
-    </Router>
-  );
-}*/
 
 
 function App() {
@@ -57,9 +41,14 @@ function App() {
       color= "black"
       break
     case "/mission":
-      component = <MissionText/>
+      component = <Home/>
       color= "black"
       break
+    case "/admin-page":
+      component = <AdminCalendarPage/>
+      color="white"
+      break
+
     case "/account":
       component = <Account/>
       color= "black"
@@ -68,6 +57,7 @@ function App() {
       component = <NewHome/>
       color = "white"
       break 
+
 
   }
 
