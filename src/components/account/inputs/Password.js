@@ -10,7 +10,6 @@ import Button from 'react-bootstrap/Button';
 
 
 export const Password = () => {
-    const {msg} = useMsg();
     const {setMsg} = useMsg();
 
     const {setAuth} = useAuth();
@@ -68,6 +67,12 @@ export const Password = () => {
                     }
                     else if(err.response?.status === 400){
                       setMsg("New Password Must Have 6 Characters")
+                    }
+                    else if(err.response?.status === 395){
+                      setMsg("New Password Can Not Contain Spaces")
+                    }
+                    else if(err.response?.status === 390){
+                      setMsg("Username Can Not Contain Spaces")
                     }
                    else{
                      setMsg("Update Failed")

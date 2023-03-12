@@ -10,9 +10,13 @@ import { HomeTitle } from './HomeTitle';
 import { Description } from './Description';
 
 export const NewHome = () => {
+  const {setlastWindow} = useAuth()
+  const{lastWindow} = useAuth();
   const {setAuth} = useAuth();
   const {auth} = useAuth()
   useEffect(() => {
+    setlastWindow("/join-lesson")
+    console.log(lastWindow)
     if(auth != undefined && !auth?.keepLogin){
         setAuth({})
     }

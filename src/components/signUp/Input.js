@@ -58,6 +58,12 @@ export const Input = () => {
             case 399:
               setErrMsg("Password must be at least 6 characters")
               break
+            case 390:
+              setErrMsg("Username Can Not Contain Spaces")
+              break
+            case 388:
+              setErrMsg("Password Can Not Contain Spaces")
+              break
             case 395:
               setErrMsg("Invalid Email")
               break

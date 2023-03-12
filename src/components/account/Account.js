@@ -50,8 +50,7 @@ export const Account = () => {
         )
     }
     else{
-        if(lastWindow == "/home"){
-            setlastWindow("/account")
+        if(lastWindow === "/home"){
             return (
                 window.location.href = '/home'
             );
