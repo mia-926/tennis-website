@@ -14,6 +14,7 @@ import{NewHome} from "./components/newHomepage/NewHome";
 import { AdminCalendarPage } from './components/calendar/AdminCalendarPage';
 import {Home} from './components/homepage/Home';
 import {LearnMorePage} from './components/learnMore/LearMorePage';
+import {Instructors} from './components/instructors/Instructors';
 
 
 
@@ -78,12 +79,20 @@ function App() {
       rightColor="white";
       background="white";
       break
+    case "/instructors":
+      component = <Instructors/>
+      color = "white"
+      rightColor="white";
+      background="white";
+      break
     default:
       component = <NewHome/>
       color = "white"
       rightColor="white";
       background="transparent";
       break 
+    
+    
 
 
   }
