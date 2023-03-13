@@ -1,3 +1,8 @@
 .roundedInput{
     border-radius: 20px;
 }
+
+.FormControl.requests::placeholder {
+    font-weight: bold;
+    color:black;
+  }

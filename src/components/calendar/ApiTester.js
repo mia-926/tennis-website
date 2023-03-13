@@ -31,7 +31,7 @@ export const ApiTester = (props) => {
             date = (lessons[i].date).substring(8, 10);
             month = (lessons[i].date).substring(5, 7); 
             year = (lessons[i].date).substring(0, 4);
-            console.log(lessons[i].date);
+           
 
             newDateList.push(month + '/' + date + '/' +year);
             newInstructor.push(lessons[i].instructors);
@@ -54,7 +54,7 @@ export const ApiTester = (props) => {
         setLessonIds(newLessonIds);
     }, [lessons])
 
-    console.log(coordinates[0])
+ 
     return (
         <div>
             <MyCalendar
@@ -71,24 +71,3 @@ export const ApiTester = (props) => {
         </div>
     );
 }
-
-
-
-    // if(lessons.length > 0){
-    //     return (
-    //         lessons.map((lesson, index) => {
-    //             console.log(lesson);
-    //             return (
-    //                 <div key ={lesson.id}>
-    //                     <h3>{lesson.date}</h3>
-    //                     <p>{lesson.studentsNames[0]}</p>
-    //                 </div>
-
-    //                 )
-    //         })
-    //     )}else{
-    //         return (<h3>No Lessons</h3>)
-    //     }
-    // return(
-    //     <p>{currentLesson}</p>
-    // )
