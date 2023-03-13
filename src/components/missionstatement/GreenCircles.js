@@ -5,12 +5,14 @@ export const GreenCircles = (props) =>
 {
     return (
         <div >
-            <svg style = {{position: 'absolute'}} height = {window.innerHeight} width = {window.innerWidth} >
+            <svg style = {{position: 'absolute', height:window.innerHeight, width:400, left:window.innerWidth-400}} >
             
             
-            <circle cx="1400" cy="100" r = "300" fill = "#233831"/>
+            <circle cx="500" cy="200" r = "400" fill = "#294539"/>
             
-            <circle cx="1380" cy="500" r = "360" fill = "#294539"/></svg>
+            <circle cx="450" cy="600" r = "400" fill = "#233831"/>
+            
+           </svg>
             
         </div>
     );

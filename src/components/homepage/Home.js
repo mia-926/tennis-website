@@ -1,5 +1,5 @@
 
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { MyCarousel } from '../calendar/MyCarousel';
 import { Footer } from '../Footer';
 
@@ -22,6 +22,30 @@ export const Home = () => {
     }
   }, []);
 
+  const footer = () => {
+    if(window.innerWidth > 990){
+        return(true);
+    }
+    else{
+        return(false);
+    }
+}
+
+  const [showFooter, setShowFooter] = useState(() => footer());
+
+
+  useEffect(() =>{
+      const handleResize = () => {
+          setShowFooter(footer());
+      }
+      window.addEventListener('resize', handleResize)
+
+      return () => {
+          window.removeEventListener('resize', handleResize)
+      }
+  }, [])
+
+  if(showFooter){
   return (
     <div>
       <div>
@@ -32,7 +56,22 @@ export const Home = () => {
       </h2>
       {/* <MyCarousel/> */}
       </div>
-    <Footer/>
+    <Footer style={{ opacity:  0}}/>
     </div>
   );
+  }
+  else{
+    return(
+      <div>
+      <div>
+      <Background/>
+      </div>
+      <div>
+      <h2 style={{background: "#294539", margin:0, padding:0}}>
+      </h2>
+      {/* <MyCarousel/> */}
+      </div>
+    </div>
+    );
+  }
 }

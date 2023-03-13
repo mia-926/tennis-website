@@ -18,7 +18,7 @@ export const Account = () => {
     return (
         <MsgProvider>
         <div>
-            <div className='accountGreenCircles'>
+            <div className='accountGreenCircles' style={{position:"absolute", paddingRight:-200}}>
             <GreenCircles/>
             </div>
             <div className = "accountFullContainer" style = {{paddingTop: 75, height: window.innerHeight}}>
