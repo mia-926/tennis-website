@@ -13,6 +13,7 @@ import{Account} from "./components/account/Account";
 import{NewHome} from "./components/newHomepage/NewHome";
 import { AdminCalendarPage } from './components/calendar/AdminCalendarPage';
 import {Home} from './components/homepage/Home';
+import {Instructors} from './components/instructors/Instructors';
 
 
 
@@ -54,10 +55,16 @@ function App() {
       component = <Account/>
       color= "black"
       break
+    case "/instructors":
+      component = <Instructors/>
+      color = "white"
+      break
     default:
       component = <NewHome/>
       color = "white"
       break 
+    
+    
 
 
   }
