@@ -13,7 +13,8 @@ export const AdminCalendar = (props) => {
     const [inputAddress, setInputAddress] = useState('');
     const [inputInstructors, setInputInstructors] = useState([]);
     const [inputLimit, setInputLimit] = useState('');
-    const [inputNotes, setInputNotes] = useState('');
+    const [requests, setRequests] = useState("");
+    
 
     
 
@@ -22,21 +23,44 @@ export const AdminCalendar = (props) => {
   function handleChangeAddress(event) { setInputAddress(event.target.value);}
   function handleChangeInstructors(event) {setInputInstructors(event.target.value.split(","));}
   function handleChangeLimit(event) { setInputLimit(event.target.value);}
-  function handleChangeNotes(event) { setInputNotes(event.target.value);}
 
 
 
-  function patch(){
+
+  function post(){
     const data = {date: String(props.value), time:String(inputTime), instructors:(inputInstructors), studentNames:([]), location: String(inputLocation), maxStudents: parseInt(inputLimit) };
     console.log(data);
     axios.post("https://tennis-backend-bnldi3x7oq-uw.a.run.app/api/lesson", data)
     .then(response => {
-      console.log("lesson added")
+      console.log("lesson added" + response);
     })
     .catch(err => {
       console.log(err)
     })
   }
+
+  useEffect(() => {
+  function get(){
+    console.log(String(props.value.toISOString()))
+    axios.get("https://tennis-backend-bnldi3x7oq-uw.a.run.app/api/requestByDate?date=" + String(props.value.toISOString()))
+    .then(response => {
+        console.log(response.data)
+        let messageList = "";
+        if(response.data != "No Request"){
+            for(let i = 0; i < response.data.messages.length; i++){
+                messageList += response.data.messages[i] + '\n';
+            }
+        }
+      setRequests(messageList);
+
+    })
+    .catch(err => {
+      console.log(err.response)
+    })
+  }
+
+  get()
+}, [props.value])
 
     return(
         <div className='inter myContain' style={{width: '800px'}}>
@@ -70,13 +94,13 @@ export const AdminCalendar = (props) => {
                     </Form.Group>
 
                     </div>
-                    {/* Instructors */}
+                    {/* Requests */}
 
                     
                     <div style={{display: 'flex', flexDirection: "row", justifyContent: "space-between"}}>
                     <Form.Group className="mb-3" controlId="formBasicNotes">
-                        <Form.Label>Notes</Form.Label>
-                        <Form.Control as="textarea" rows = {5}autoComplete = "off" value = {inputNotes} onChange = {handleChangeNotes} placeholder="Enter Notes"  style={{height: '200px'}}/>
+                        <Form.Label>Requests</Form.Label>
+                        <Form.Control disabled as="textarea" rows = {5}autoComplete = "off" style={{height: '200px'}} placeholder={requests} className="FormControl requests"/>
                     </Form.Group>
 
 
@@ -91,7 +115,7 @@ export const AdminCalendar = (props) => {
 
 
 
-                    {/* Notes */}
+                    {/* Instructors */}
                     <Form.Group className="mb-3" controlId="formBasicInstructors">
                         <Form.Label>Instructors</Form.Label>
                         <Form.Control as="textarea" rows = {5} autoComplete = "off" value = {inputInstructors} onChange = {handleChangeInstructors} placeholder="Enter Instructors with comma in bewtween" style={{width:200, height:100}}/>
@@ -99,7 +123,7 @@ export const AdminCalendar = (props) => {
                     </div>
                     </div>
                 <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                <Button style={{width:'300px'}} onClick={patch} className= "button roundedInput" variant="success" >
+                <Button style={{width:'300px'}} onClick={post} className= "button roundedInput" variant="success" >
                     Add Lesson
                 </Button>
                 </div>

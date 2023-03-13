@@ -3,7 +3,9 @@ import Nav from 'react-bootstrap/Nav';
 import "./NavStyles.css";
 import useAuth from '../hooks/useAuth';
 
-function BootstrapNav() {
+function BootstrapNav(props) {
+  const myColor = props.color;
+  const background = props.background;
   const {setAuth} = useAuth();
   const {auth} = useAuth()
   function signOut(){
@@ -12,17 +14,17 @@ function BootstrapNav() {
   }
   if(auth === undefined || auth?._id === undefined){
     return (
-          <Nav className>
-              <Nav.Link className = "white" href="/create-account">Create Account</Nav.Link>
-              <Nav.Link className = "white" href="/login">Login</Nav.Link>
+          <Nav style={{ backgroundColor:'transparent', borderRadius:"40%"}}>
+              <Nav.Link  style={{color:myColor}}className = "white" href="/create-account">Create Account</Nav.Link>
+              <Nav.Link  style={{color:myColor}} className = "white" href="/login">Login</Nav.Link>
           </Nav>
     );
   }
   else{
   return (
-    <Nav className>
-        <Nav.Link className = "white" href="/create-account">Create Account</Nav.Link>
-        <Nav.Link className = "white" onClick = {signOut}>Sign Out</Nav.Link>
+    <Nav className  style={{ backgroundColor:'transparent', borderRadius:"40%"}}>
+        <Nav.Link  style={{color:myColor}}className = "white" href="/create-account">Create Account</Nav.Link>
+        <Nav.Link style={{color:myColor}} className = "white" onClick = {signOut}>Sign Out</Nav.Link>
     </Nav>
 );
   }

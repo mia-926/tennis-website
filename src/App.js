@@ -8,66 +8,83 @@ import React  from 'react';
 import { MyNavBar } from './components/navBar/MyNavBar';
 import { CalendarPage } from './components/calendar/CalendarPage';
 import { SignUp } from './components/signUp/SignUp';
-import { MissionText } from './components/missionstatement/MissionText';
 import{Login} from "./components/login/Login";
 import{Account} from "./components/account/Account";
 import{NewHome} from "./components/newHomepage/NewHome";
-//import { Routes, Route, BrowserRouter as Router } from 'react-router-dom';
+import { AdminCalendarPage } from './components/calendar/AdminCalendarPage';
+import {Home} from './components/homepage/Home';
+import {LearnMorePage} from './components/learnMore/LearMorePage';
 
-/*function App() {
-  return (
-    <Router>
-      <div className="App">
-        <MyNavBar />
-        <Routes>
-          <Route exact path={['/', '/home']} component={Home} />
-          <Route exact path="/join-lesson" component={CalendarPage} />
-          <Route exact path="/create-account" component={SignUp} />
-          <Route exact path="/login" component={Login} />
-        </Routes>
-      </div>
-    </Router>
-  );
-}*/
 
 
 function App() {
   let component
   let color = "white";
+  let rightColor="white";
+  let background="transparent";
   switch (window.location.pathname) {
     case "/%257Btennis-website%257D":
       component = <NewHome/>
       color = "white";
+      rightColor="white";
+      background="transparent"
       break
     case "/home":
       component = <NewHome/>
       color = "white"
+      rightColor="white";
+      background="transparent";
       break 
     case "/join-lesson":
       component = <CalendarPage/>
       color= "white"
+      rightColor="black";
+      background="transparent";
       break
     case "/create-account":
       component = <SignUp/>
       color= "black"
+      rightColor="white";
+      background="transparent";
       break
 
     case "/login":
       component = <Login/>
       color= "black"
+      rightColor="white";
+      background="transparent";
       break
     case "/mission":
-      component = <MissionText/>
+      component = <Home/>
       color= "black"
+      rightColor="white";
+      background="white";
+      break
+    case "/admin-page":
+      component = <AdminCalendarPage/>
+      color="white"
+      rightColor="black";
+      background="transparent";
+      break
+    case "/learn-more":
+      component = <LearnMorePage/>
+      color="black"
+      rightColor="black";
+      background="white";
       break
     case "/account":
       component = <Account/>
       color= "black"
+      rightColor="white";
+      background="white";
       break
     default:
       component = <NewHome/>
       color = "white"
+      rightColor="white";
+      background="transparent";
       break 
+
 
   }
 
@@ -75,7 +92,7 @@ function App() {
     <div className = "App">
       {/*<Background/>*/}
       {/*<Circles/>*/}
-      <MyNavBar color = {color}/>
+      <MyNavBar background = {background} rightColor = {rightColor} color = {color}/>
       {/*<Text/>*/}
       
       {component}
