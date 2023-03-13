@@ -5,12 +5,13 @@ import useAuth from '../hooks/useAuth';
 import "./NavStyles.css";
 
 function BootstrapNav(props) {
+  const background = props.background;
   const myColor = props.color;
   const {auth} = useAuth()
   console.log(myColor)
   if(auth != undefined && auth.admin === true){
     return (
-      <Nav className="me-auto color">
+      <Nav className="me-auto color" style={{backgroundColor:background}}>
         <Nav.Link  style={{color:myColor}} href="/home ">Home</Nav.Link>
         <Nav.Link  style={{color:myColor}} href="/instructors">Instructors</Nav.Link>
         <Nav.Link  style={{color:myColor}} href="/mission">Mission</Nav.Link>
@@ -23,7 +24,7 @@ function BootstrapNav(props) {
   }
   else{
     return (
-      <Nav className="me-auto color">
+      <Nav className="me-auto color" style={{backgroundColor:background}}>
         <Nav.Link  style={{color:myColor}} href="/home ">Home</Nav.Link>
         <Nav.Link  style={{color:myColor}} href="/instructors">Instructors</Nav.Link>
         <Nav.Link  style={{color:myColor}} href="/mission">Mission</Nav.Link>

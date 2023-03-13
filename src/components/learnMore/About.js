@@ -10,7 +10,7 @@ export const About = () => {
             </div>
             <div style={{backgroundColor:"#e9e9e9"}}>
             <h1>HOW TO SIGN UP</h1>
-            <p style={{width:window.innerWidth/1.8}}>Signing up for our classes is very straightforward. Simply click [join a lesson], and select an available lesson day. Enter the participant(s) you wish to enroll and submit. You’re all good to go! A reminder email will be sent the day before your lesson.
+            <p style={{width:window.innerWidth/1.8}}>Signing up for our classes is very straightforward. Simply click <a style={{textDecoration:'none'}}href = "./join-lesson">Join a Lesson</a>, and select an available lesson day. Enter the participant(s) you wish to enroll and submit. You’re all good to go! A reminder email will be sent the day before your lesson.
                 <br></br><br></br>No lesson on a day that’s most convenient for you? No worries! Click on the desired date and you can request for a lesson on that day, along with a message to the instructors if you wish.</p>
             </div>
         </div>
