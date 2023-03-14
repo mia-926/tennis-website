@@ -1,8 +1,7 @@
 import axios from "axios";
 
-import React, { useEffect, useRef, useState, useContext} from 'react';
+import React, { useEffect, useRef, useState} from 'react';
 
-import AuthContext from "../../context/AuthProvider";
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import useAuth from "../hooks/useAuth";
