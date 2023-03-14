@@ -10,11 +10,12 @@ export const Footer = () => {
           <h2 style={{fontSize:25, fontWeight:400}}>WESTLAKE HIGH SCHOOL</h2>
           <h2 style={{fontSize:25,fontWeight:400}}>100 N LAKEVIEW CANYON ROAD</h2>
           <h2 style={{fontSize:25,fontWeight:400}}>WESTLAKE VILLAGE, CA, 91362</h2>
+          <a href="/sources" style={{ fontSize: 20, fontWeight: 200, textDecoration:"none", color: "white" }}>Website Sources</a>
        </div>
        <div style = {{display:"flex", flexDirection:"column",justifyContent:"flex-start"}}>{/* contact */}
         <h5 style={{fontWeight:200, paddingBottom:50}}>CONTACT</h5>
-        <h5 style={{fontWeight:200, paddingBottom:10}}>wta@gmail.com</h5>
         <h5 style={{fontWeight:200, paddingBottom:10}}>(805) 630-6881</h5>
+        <a href= "mailto:thewestlaketennisacademy@gmail.com" style={{fontWeight:200, paddingBottom:10, textDecoration:"none", color: "white"}}>TheWestlakeTennisAcademy@gmail.com</a>
        </div>
        <div style = {{display:"flex", flexDirection:"column",justifyContent:"flex-start"}}>{/* instructors */}
        <h5 style={{fontWeight:200, paddingBottom:50}}>INSTRUCTORS</h5>

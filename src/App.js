@@ -15,7 +15,7 @@ import { AdminCalendarPage } from './components/calendar/AdminCalendarPage';
 import {Home} from './components/homepage/Home';
 import {LearnMorePage} from './components/learnMore/LearMorePage';
 import {Instructors} from './components/instructors/Instructors';
-
+import {Sources} from "./components/sources/Sources"
 
 
 function App() {
@@ -83,6 +83,12 @@ function App() {
       component = <Instructors/>
       color = "white"
       rightColor="white";
+      background="white";
+      break
+    case "/sources":
+      component = <Sources/>
+      color = "black"
+      rightColor="black";
       background="white";
       break
     default:

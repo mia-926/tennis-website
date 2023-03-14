@@ -1,0 +1,21 @@
+.SourcesColumns{
+    flex-direction: row; 
+    width: 100%;
+    float:left;
+    display: flex; 
+    flex-wrap:nowarp;
+    justify-content: space-around;
+}
+.SourcesLeft{
+    flex:1;
+    display:flex;
+    margin-left: 4%;
+    justify-content: left;
+    align-items: left;
+}
+.SourcesRight{
+    flex:1;
+    display:flex;
+    justify-content: left;
+    align-items: left;
+}
