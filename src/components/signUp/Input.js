@@ -121,27 +121,27 @@ export const Input = () => {
     <div>
       <Form style ={{width: 600}}>
       <Form.Group className="mb-3" controlId="formUsername">
-        <Form.Label>Username</Form.Label>
-        <Form.Control autoComplete = "off" value={username} onChange={handleUsernameChange} type="Username" placeholder="Enter Username" />
+        <Form.Label className = "railwayMedium">Username</Form.Label>
+        <Form.Control className = "railway" autoComplete = "off" value={username} onChange={handleUsernameChange} type="Username" placeholder="Enter Username" />
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="formEmail">
-        <Form.Label>Email</Form.Label>
-        <Form.Control autoComplete = "off" value={email} onChange={handleEmailChange} type="email" placeholder="Enter Email" />
+        <Form.Label className = "railwayMedium" >Email</Form.Label>
+        <Form.Control className = "railway" autoComplete = "off" value={email} onChange={handleEmailChange} type="email" placeholder="Enter Email" />
       </Form.Group>
 
-      <Form.Group className="mb-3" controlId="formPassword">
-        <Form.Label>Password</Form.Label>
-        <Form.Control autoComplete = "off" value={password} onChange={handlePasswordChange} type="password" placeholder="Enter Password" />
+      <Form.Group className="mb-3 railway" controlId="formPassword">
+        <Form.Label className = "railwayMedium">Password</Form.Label>
+        <Form.Control className = "railway" autoComplete = "off" value={password} onChange={handlePasswordChange} type="password" placeholder="Enter Password" />
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="formEmailList">
     <div className="form-check-checkbox-container">
-      <label  className="form-check-label" htmlFor="formCheck-1">Sign me up for mailing list</label>
+      <label  className="form-check-label railwayMedium" htmlFor="formCheck-1">Sign me up for mailing list</label>
       <input value={emailList} onChange={handleEmailList} className="form-check-input" type="checkbox" id="formCheck-1" />
     </div>
       </Form.Group>
-      <Button onClick={make} className="submit-Button" style = {{height: 60}} variant="primary">
+      <Button onClick={make} className="submit-Button railwaySemiBold" style = {{height: 60}} variant="primary">
         Sign Up
       </Button>
     </Form>

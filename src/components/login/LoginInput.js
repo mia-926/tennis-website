@@ -71,25 +71,25 @@ export const LoginInput = () => {
     <div>
     <Form style ={{width: 600}}>
     <Form.Group  className=  "mb-3"  controlId="formEmail" >
-      <Form.Label>Username or Email</Form.Label>
-      <Form.Control autoComplete = "off" value={username} onChange={handleUsernameChange} type="Username" placeholder="Enter Username or Password" />
+      <Form.Label className = "railwayMedium">Username or Email</Form.Label>
+      <Form.Control className = "railway" autoComplete = "off" value={username} onChange={handleUsernameChange} type="Username" placeholder="Enter Username or Password" />
     </Form.Group>
 
-    <Form.Group  className= "mb-3" controlId="formPassword">
+    <Form.Group  className= "mb-3 railway" controlId="formPassword">
       <div>
-      <Form.Label>Password</Form.Label>
+      <Form.Label className = "railwayMedium">Password</Form.Label>
       <a href= "/forgot-password" className='forgot'>Forgot Password?</a>
       </div>
-      <Form.Control autoComplete = "off" value={password} onChange={handlePasswordChange} type="password" placeholder="Enter Password" />
+      <Form.Control className = "railway" autoComplete = "off" value={password} onChange={handlePasswordChange} type="password" placeholder="Enter Password" />
     </Form.Group>
 
     <Form.Group className="mb-3" controlId="formEmailList">
   <div className="form-check-checkbox-container">
-    <label className="form-check-label" htmlFor="formCheck-1">Keep me logged in</label>
+    <label className="form-check-label railwayMedium" htmlFor="formCheck-1">Keep me logged in</label>
     <input value={keepLogin} onChange={handlekeepLogin} className="form-check-input" type="checkbox" id="formCheck-1" checked= {keepLogin}/>
   </div>
     </Form.Group>
-    <Button onClick={submit} className="submit-Button" style = {{height: 60}} variant="primary">
+    <Button onClick={submit} className="submit-Button railwaySemiBold" style = {{height: 60}} variant="primary">
       Login
     </Button>
     
