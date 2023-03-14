@@ -1,18 +1,32 @@
 .CitationsFullContainer{
-
+    height: max-content;
+    flex-direction: row; 
+    width: 100%;
+    float:left;
+    display: flex; 
+    flex-wrap:nowarp;
+    justify-content: space-around;
 }
 .CitationsTitleDiv{
-
+    flex: 1
 }
 .CitationsTitleText{
-
+    color: green;
 }
 .CitationsLine{
-
+    color: green;
 }
 .CitationsParagraphContainer{
-
+    flex: 8;
+    height: max-content;
+    flex-direction: row; 
+    width: 100%;
+    float:left;
+    display: flex; 
+    flex-wrap:nowarp;
+    justify-content: space-around;
 }
 .CitationsParagraph{
-        
+    flex: 1;
+    text-align: left;
 }
