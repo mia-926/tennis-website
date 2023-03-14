@@ -36,14 +36,18 @@
     justify-content: space-around;
 }
 .LicensingParagraph{
+    min-height: 330px;
+    max-height: 330px;
     flex: 3;
     overflow: auto;
     text-align: left;
 }
 .LicensingBlock{
-    min-height: 400px;
-    max-height: 400px; /* set a maximum height */
-    overflow-y: auto;
+    height: 400px;
+    padding-top: 3%;
+    padding-left: 3%;
+    padding-right: 3%;
+    padding-bottom: 1%; /* set a maximum height */
     background-color: #E3E3E3;
     border-radius: 20px;
     padding: 3%;
