@@ -12,7 +12,7 @@ import{Login} from "./components/login/Login";
 import{Account} from "./components/account/Account";
 import{NewHome} from "./components/newHomepage/NewHome";
 import { AdminCalendarPage } from './components/calendar/AdminCalendarPage';
-import {Home} from './components/homepage/Home';
+import {MissionStatement} from './components/MissionStatement/MissionStatement';
 import {LearnMorePage} from './components/learnMore/LearMorePage';
 import {Instructors} from './components/instructors/Instructors';
 import {Sources} from "./components/sources/Sources"
@@ -63,7 +63,7 @@ function App() {
       rightbackground="transparent"
       break
     case "/mission":
-      component = <Home/>
+      component = <MissionStatement/>
       color= "black"
       rightColor="white";
       background="white";

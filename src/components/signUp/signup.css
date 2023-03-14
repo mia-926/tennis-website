@@ -1,4 +1,4 @@
-.c{
+.signUpContainer{
     flex-direction: column; 
     width: 70%;
     float:left;
@@ -7,14 +7,14 @@
     justify-content: space-around;  
 }
 
-.t {
+.signUpTitle {
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 0;
   }
 
-.f{
+.signUpForm{
     display: flex;
     justify-content: center;
     align-items: center;

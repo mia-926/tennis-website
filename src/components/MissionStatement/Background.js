@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import "./homepage.css";
+import "./missionStatement.css";
 import backgroundPic from'../../images/rings.jpg';
 import widePic from '../../images/rings.jpg';
 import { Circles } from './Circles';

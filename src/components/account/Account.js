@@ -1,5 +1,5 @@
 import React from 'react'
-import { GreenCircles } from '../missionstatement/GreenCircles';
+import { GreenCircles } from './GreenCircles';
 import "./accountcss/account.css";
 import { Title } from "./Title"
 import {UserInfo} from "./inputs/UserInfo"

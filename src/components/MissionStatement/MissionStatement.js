@@ -9,7 +9,7 @@ import { Circles } from './Circles';
 import { Text } from './Text';
 import useAuth from "../hooks/useAuth";
 
-export const Home = () => {
+export const MissionStatement = () => {
   const {setlastWindow} = useAuth()
   const{lastWindow} = useAuth();
   const {setAuth} = useAuth();

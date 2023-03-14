@@ -1,13 +1,13 @@
 import React from 'react'
 import { LoginInput } from './LoginInput';
 import { Title } from './Title';
-import { GreenCircles } from '../missionstatement/GreenCircles';
+import { LoginGreenCircles } from './LoginGreenCircles';
 import "./login.css";
 
 export const Login = () => {
   return (
     <div >
-        <GreenCircles/>
+        <LoginGreenCircles/>
         <div className='l' style = {{paddingTop: 150}}>
             <div className='b' style = {{flex: 3}}>
             <Title/>
