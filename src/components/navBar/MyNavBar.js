@@ -15,8 +15,8 @@ export const MyNavBar = (props) => {
         {/* <Container> */}
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
-            <LeftNav color = {props.color}/>
-            <RightNav/>
+            <LeftNav color = {props.color} background = {props.background}/>
+            <RightNav color = {props.rightColor}  background = {props.background}/>
           </Navbar.Collapse>
         {/* </Container> */}
       </Navbar>
