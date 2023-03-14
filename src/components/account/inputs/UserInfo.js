@@ -6,6 +6,7 @@ import Form from 'react-bootstrap/Form';
 import useAuth from "../../hooks/useAuth";
 import Button from 'react-bootstrap/Button';
 import useMsg from "../../hooks/useMsg";
+import "../../newHomepage/newHomepage.css";
 
 
 export const UserInfo = () => {
@@ -94,40 +95,40 @@ export const UserInfo = () => {
     return (
         <div className = "accountFullUserInfo">
             <div style = {{display: "flex", flexDirection: "row", alignItems: "center"}}>
-                <h4 className = "accountUserInfoTitle">USER INFORMATION</h4>
+                <h4 className = "accountUserInfoTitle railwaySemiBold">USER INFORMATION</h4>
                 <p ref ={errRef} style = {{height: 20}} className= {msg ? (msg == "Account Updated"? "accountvalidatedmsg":"accounterrmsg") : "accountoffscreen"} aria-live= "assertive"> {"*"+ msg} </p> 
             </div>
             <form>
                 <div class="Infoform-row">
                     <div class="InfoFormColumn">
-                        <label for="inputEmail4">Current Username</label>
-                        <input  type="email" style = {{height: 35 }} class="form-control constant" id="ConstUsername4" placeholder={auth.username} readOnly/>
+                        <label className = "railwayMedium"for="inputEmail4">Current Username</label>
+                        <input  type="email" style = {{height: 35 }} class="form-control constant railway" id="ConstUsername4" placeholder={auth.username} readOnly/>
                     </div>
                     <div class="InfoFormColumn">
-                        <label for="inputPassword4">Current Email</label>
-                        <input type="email" style = {{height: 35}} class="form-control constant" id="ConstEmail4" placeholder={auth.email} readOnly/>
+                        <label className = "railwayMedium" for="inputPassword4">Current Email</label>
+                        <input type="email" style = {{height: 35}} class="form-control constant railway" id="ConstEmail4" placeholder={auth.email} readOnly/>
                     </div>
                 </div>
                 <div class="Infoform-row" style = {{paddingTop: 10}}>
                     <div class="InfoFormColumn">
-                        <label for="inputEmail4">Change Username</label>
-                        <input type="email" autoComplete = "off" value={username} onChange={handleUsernameChange} style = {{height: 35}} class="form-control" id="inputUsername4" placeholder="New Username"/>
+                        <label className = "railwayMedium" for="inputEmail4">Change Username</label>
+                        <input type="email" autoComplete = "off" value={username} onChange={handleUsernameChange} style = {{height: 35}} class="form-control railway" id="inputUsername4" placeholder="New Username"/>
                     </div>
                     <div class="InfoFormColumn">
-                        <label for="inputPassword4">Change Email</label>
-                        <input type="email" autoComplete = "off" value={email} onChange={handleEmailChange} style = {{height: 35}} class="form-control" id="inputEmail4" placeholder="New Email"/>
+                        <label className = "railwayMedium" for="inputPassword4">Change Email</label>
+                        <input type="email" autoComplete = "off" value={email} onChange={handleEmailChange} style = {{height: 35}} class="form-control railway" id="inputEmail4" placeholder="New Email"/>
                     </div>
                 </div>
                 <div>
-                    <Button onClick={UsernameSubmit} className="accountButton" style = {{height: 25}} variant="primary">
+                    <Button onClick={UsernameSubmit} className="accountButton railwaySemiBold" style = {{height: 25}} variant="primary">
                         Change
                     </Button>
-                    <Button onClick={EmailSubmit}  className="accountButton right" style = {{height: 25}} variant="primary">
+                    <Button onClick={EmailSubmit}  className="accountButton right railwaySemiBold" style = {{height: 25}} variant="primary">
                         Change
                     </Button>
                 </div>
                 <div style = {{paddingTop: 25, display: "flex", alignItems:"center"}}>
-                    <label className="acccount-form-check-label" htmlFor="formCheck-1">Sign me up for mailing list</label>
+                    <label className="acccount-form-check-label railwayMedium" htmlFor="formCheck-1">Sign me up for mailing list</label>
                     <input value={auth?.emailList} onChange={handleEmailListChange} className="form-check-input account" type="checkbox" id="formCheck-1" checked= {auth?.emailList}/>
                 </div>
             </form>

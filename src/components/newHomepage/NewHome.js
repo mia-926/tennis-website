@@ -66,8 +66,10 @@ export const NewHome = () => {
   return (
     <div>
     <div className='homeBody' style={{marginBottom:800, paddingBottom: showFooter ? 100 : 0}}>
+      <div style = {{zIndex:1}}>
       <Testimonials/>
-    <div style={{display:'flex', flexDirection: 'column', height:imageHeight, background: '#D3D3D3'}}>
+      </div>
+      <div style={{display:'flex', flexDirection: 'column', height:imageHeight, background: '#D3D3D3'}}>
    
 
     <HomeTitle style={{zIndex:3}}/>

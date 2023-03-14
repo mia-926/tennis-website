@@ -29,6 +29,14 @@
   font-family: 'Raleway', sans-serif;
   font-weight: 500;
 }
+
+.railwayMediumDigits{
+  -webkit-font-feature-settings: "lnum";
+  -moz-font-feature-settings: "lnum";
+  font-feature-settings: "lnum";  
+  font-family: 'Raleway', sans-serif;
+  font-weight: 500;
+}
 .railwayBold{
   font-family: 'Raleway', sans-serif;
   font-weight: bold;

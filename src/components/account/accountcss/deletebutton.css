@@ -1,7 +1,7 @@
 .account-delete-button{
     align-self: flex-end;
     width: 17%;
-    margin-left: 48%;
+    margin-left: 44%;
     margin-bottom: 1%;
     text-align: center;
     line-height: 50%;
@@ -17,4 +17,17 @@
 
 .account-delete-button:active{
     background-color: #4b1616 !important;
+}
+
+.cancelButton{
+    background-color: #6c757d;
+}
+.cancelButton:hover{
+    background-color: #3b4044;
+}
+.deleteButton{
+    background-color: #dc3444;
+}
+.deleteButton:hover{
+    background-color: #83212b;
 }

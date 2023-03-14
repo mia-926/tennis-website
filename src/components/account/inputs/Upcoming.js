@@ -26,11 +26,11 @@ export const Upcoming = () => {
   if(allFutureLessons.length >0){
     return (
       <div className="accountFullUpcoming">
-        <h4 className="accountUpcomingTitle">UPCOMING LESSONS</h4>
+        <h4 className="accountUpcomingTitle railwaySemiBold">UPCOMING LESSONS</h4>
           <div className="accountUpcomingList" style={{ height: 220, overflow: "auto" }}>
             {allFutureLessons.map((lesson, index) => (
               <div key={index}>
-                <p className='futureLesson'>{lesson}</p>
+                <p className='futureLesson railwayMediumDigits'>{lesson}</p>
               </div>
             ))}
         </div>
@@ -40,9 +40,9 @@ export const Upcoming = () => {
   else{
     return (
       <div className="accountFullUpcoming">
-      <h4 className="accountUpcomingTitle">UPCOMING LESSONS</h4>
+      <h4 className="accountUpcomingTitle railwaySemiBold">UPCOMING LESSONS</h4>
         <div className="accountUpcomingList" style={{ height: 220, overflow: "auto" }}>
-                <p className='futureLesson'>No Upcoming Lessons</p>
+                <p className='futureLesson railwayMediumDigits'>No Upcoming Lessons</p>
         </div>
     </div>
     )

@@ -21,7 +21,7 @@ export const Account = () => {
             <div className='accountGreenCircles' style={{position:"absolute", paddingRight:-200}}>
             <GreenCircles/>
             </div>
-            <div className = "accountFullContainer" style = {{paddingTop: 75, height: window.innerHeight}}>
+            <div className = "accountFullContainer" style = {{paddingTop: 100, height: window.innerHeight}}>
                 <div  className = "accountTitleDiv">
                     <Title/>
                     <DeleteButton/>

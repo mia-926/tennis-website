@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState} from 'react';
 import "../accountcss/history.css"
 import useAuth from "../../hooks/useAuth";
 import axios from "axios";
+import "../../newHomepage/newHomepage.css";
 
 export const History = () => {
   const {setAuth} = useAuth();
@@ -26,11 +27,11 @@ export const History = () => {
   if(allPastLessons.length >0){
     return (
       <div className="accountFullHistory">
-        <h4 className="accountHistoryTitle">LESSON HISTORY</h4>
+        <h4 className="accountHistoryTitle railwaySemiBold">LESSON HISTORY</h4>
           <div className="accountHistoryList" style={{ height: 220, overflow: "auto" }}>
             {allPastLessons.map((lesson, index) => (
               <div key={index}>
-                <p className='pastLesson'>{lesson}</p>
+                <p className='pastLesson railwayMediumDigits'>{lesson}</p>
               </div>
             ))}
         </div>
@@ -40,9 +41,9 @@ export const History = () => {
   else{
     return (
       <div className="accountFullHistory">
-        <h4 className="accountHistoryTitle">LESSON HISTORY</h4>
+        <h4 className="accountHistoryTitle railwaySemiBold">LESSON HISTORY</h4>
           <div className="accountHistoryList" style={{ height: 220, overflow: "auto" }}>
-                <p className='pastLesson'>No Past Lessons</p>
+                <p className='pastLesson railwayMediumDigits'>No Past Lessons</p>
         </div>
     </div>
     )

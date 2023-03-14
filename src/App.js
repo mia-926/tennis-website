@@ -23,30 +23,36 @@ function App() {
   let color = "white";
   let rightColor="white";
   let background="transparent";
+  let rightbackground = "transparent"
+
   switch (window.location.pathname) {
     case "/%257Btennis-website%257D":
       component = <NewHome/>
       color = "white";
       rightColor="white";
       background="transparent"
+      rightbackground="transparent"
       break
     case "/home":
       component = <NewHome/>
       color = "white"
       rightColor="white";
       background="transparent";
+      rightbackground="transparent"
       break 
     case "/join-lesson":
       component = <CalendarPage/>
       color= "white"
       rightColor="black";
       background="transparent";
+      rightbackground="transparent"
       break
     case "/create-account":
       component = <SignUp/>
       color= "black"
       rightColor="white";
       background="transparent";
+      rightbackground="transparent"
       break
 
     case "/login":
@@ -54,60 +60,68 @@ function App() {
       color= "black"
       rightColor="white";
       background="transparent";
+      rightbackground="transparent"
       break
     case "/mission":
       component = <Home/>
       color= "black"
       rightColor="white";
       background="white";
+      rightbackground="transparent";
       break
     case "/admin-page":
       component = <AdminCalendarPage/>
       color="white"
       rightColor="black";
       background="transparent";
+      rightbackground="transparent"
       break
     case "/learn-more":
       component = <LearnMorePage/>
       color="black"
       rightColor="black";
       background="white";
+      rightbackground="white"
       break
     case "/account":
       component = <Account/>
       color= "black"
       rightColor="white";
       background="white";
+      rightbackground="transparent"
       break
     case "/instructors":
       component = <Instructors/>
       color = "white"
       rightColor="white";
       background="white";
+      rightbackground="white"
       break
     case "/sources":
       component = <Sources/>
       color = "black"
       rightColor="black";
       background="white";
+      rightbackground="white"
       break
     default:
       component = <NewHome/>
       color = "white"
       rightColor="white";
       background="transparent";
+      rightbackground="transparent"
       break 
     
     
 
 
   }
-
+  console.log("app "+ rightbackground)
   return (
     <div className = "App">
       {/*<Background/>*/}
       {/*<Circles/>*/}
-      <MyNavBar background = {background} rightColor = {rightColor} color = {color}/>
+      <MyNavBar background = {background} rightbackground = {rightbackground} rightColor = {rightColor} color = {color}/>
       {/*<Text/>*/}
       
       {component}
