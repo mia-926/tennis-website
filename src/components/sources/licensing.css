@@ -1,4 +1,4 @@
-.CitationsFullContainer{
+.LicensingFullContainer{
     flex-direction: column; 
     width: 100%;
     float:left;
@@ -6,26 +6,26 @@
     flex-wrap: nowrap;
     justify-content: space-around;
 }
-.CitationsTitleDiv{
+.LicensingTitleDiv{
     flex: 1
 }
-.CitationsTitleText{  
+.LicensingTitleText{  
     font-size: 300%;
     color: #294539;
 }
-.CitationsSubTitle{
+.LicensingSubTitle{
     flex: 1;
     font-size: 200%;
     font-weight: 501;
     color: #000000;
 }
-.CitationsLine{
+.LicensingLine{
     border-radius: 3px;
     border-width: 9px;
     width: 65%;
     color: #294539;
 }
-.CitationsParagraphContainer{
+.LicensingParagraphContainer{
     flex: 9;
     height: max-content;
     flex-direction: column; 
@@ -35,11 +35,12 @@
     flex-wrap:nowarp;
     justify-content: space-around;
 }
-.CitationsParagraph{
+.LicensingParagraph{
     flex: 3;
+    overflow: auto;
     text-align: left;
 }
-.CitationsBlock{
+.LicensingBlock{
     min-height: 400px;
     max-height: 400px; /* set a maximum height */
     overflow-y: auto;
