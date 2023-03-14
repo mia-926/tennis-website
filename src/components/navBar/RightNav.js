@@ -15,16 +15,17 @@ function BootstrapNav(props) {
   if(auth === undefined || auth?._id === undefined){
     return (
           <Nav style={{ backgroundColor:'transparent', borderRadius:"40%"}}>
-              <Nav.Link  style={{color:myColor}}className = "white" href="/create-account">Create Account</Nav.Link>
-              <Nav.Link  style={{color:myColor}} className = "white" href="/login">Login</Nav.Link>
+              <Nav.Link  style={{color:myColor}} href="/admin-page">Admin</Nav.Link>
+              <Nav.Link  style={{color:myColor, fontWeight:800, fontSize:'90%'}}className = "white" href="/create-account">Create Account</Nav.Link>
+              <Nav.Link  style={{color:myColor, fontWeight:800, fontSize:'90%'}}className = "white" href="/login">Login</Nav.Link>
           </Nav>
     );
   }
   else{
   return (
     <Nav className  style={{ backgroundColor:'transparent', borderRadius:"40%"}}>
-        <Nav.Link  style={{color:myColor}}className = "white" href="/create-account">Create Account</Nav.Link>
-        <Nav.Link style={{color:myColor}} className = "white" onClick = {signOut}>Sign Out</Nav.Link>
+        <Nav.Link  style={{color:myColor, fontWeight:800, fontSize:'90%'}}className = "white" href="/create-account">Create Account</Nav.Link>
+        <Nav.Link style={{color:myColor, fontWeight:800, fontSize:'90%'}} className = "white" onClick = {signOut}>Sign Out</Nav.Link>
     </Nav>
 );
   }
