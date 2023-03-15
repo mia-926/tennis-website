@@ -68,7 +68,7 @@ export const AdminEdit = (props) => {
     return(
         <div className='inter myContain' style={{width: '800px'}}>
             <div style={{display: 'flex', flexDirection: "column", justifyContent:"center"}}>
-            <h2 style={{textAlign:"center"}}>{props.weekDay}, {props.month} {props.day}</h2>
+            <h2 className = "railwaySemiBold"style={{textAlign:"center"}}>{props.weekDay}, {props.month} {props.day}</h2>
     
 
                 <Form>

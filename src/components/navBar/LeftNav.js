@@ -25,7 +25,7 @@ useEffect(() =>{
 }, [props.color])
     return (
       <div>
-          <img style={{width:'6%', paddingLeft:10, position:"absolute", marginTop: ".7%"}}src ={image}></img>
+        <a href = "/home"> <img  style={{width:'6%', paddingLeft:10, position:"absolute", marginTop: ".7%"}}src ={image}></img> </a>
       <Nav className="me-auto color railway" style={{backgroundColor:background, borderRadius:"0 15px 15px 0"}}>
         <Nav.Link  style={{color:myColor, paddingLeft:120, fontWeight:800, fontSize:'90%',marginTop: ".7%"}} href="/home ">Home</Nav.Link>
         <Nav.Link  style={{color:myColor, fontWeight:800, fontSize:'90%', marginTop: ".7%"}} href="/instructors">Instructors</Nav.Link>
