@@ -92,8 +92,8 @@ function App() {
       break
     case "/instructors":
       component = <Instructors/>
-      color = "white"
-      rightColor="white";
+      color = "black"
+      rightColor="black";
       background="white";
       rightbackground="white"
       break
