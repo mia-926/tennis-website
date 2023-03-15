@@ -13,7 +13,7 @@ import{Account} from "./components/account/Account";
 import{NewHome} from "./components/newHomepage/NewHome";
 import { AdminCalendarPage } from './components/calendar/AdminCalendarPage';
 import {MissionStatement} from './components/MissionStatement/MissionStatement';
-import {LearnMorePage} from './components/learnMore/LearMorePage';
+import {LearnMorePage} from './components/learnMore/LearnMorePage';
 import {Instructors} from './components/instructors/Instructors';
 import {Sources} from "./components/sources/Sources"
 
