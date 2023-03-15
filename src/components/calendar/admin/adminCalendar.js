@@ -5,7 +5,7 @@ import Button from 'react-bootstrap/Button';
 import './admin.css';
 import axios from 'axios';
 import { Instructors } from '../right/Instructors';
-
+import useRequest from '../../hooks/useRequest';
 
 export const AdminCalendar = (props) => {
     const [inputTime, setInputTime] = useState('');
@@ -15,7 +15,6 @@ export const AdminCalendar = (props) => {
     const [inputLimit, setInputLimit] = useState('');
     const [requests, setRequests] = useState("");
     const [requestNum, setRequestNum] = useState(0);
-    
 
     
 
@@ -30,7 +29,7 @@ export const AdminCalendar = (props) => {
 
   function post(){
     const data = {date: String(props.value), time:String(inputTime), instructors:(inputInstructors), studentNames:([]), location: String(inputLocation), maxStudents: parseInt(inputLimit) };
-    console.log(data);
+    
     axios.post("https://tennis-backend-bnldi3x7oq-uw.a.run.app/api/lesson", data)
     .then(response => {
       console.log("lesson added" + response);
@@ -42,7 +41,7 @@ export const AdminCalendar = (props) => {
 
   useEffect(() => {
   function get(){
-    console.log(String(props.value.toISOString()))
+  
     axios.get("https://tennis-backend-bnldi3x7oq-uw.a.run.app/api/requestByDate?date=" + String(props.value.toISOString()))
     .then(response => {
         console.log(response.data)
