@@ -19,7 +19,7 @@ export const TestimonialCard = () => {
           alt="First slide"
         />
          <Carousel.Caption style={{ textAlign: "center" , width:800 }}>
-          <h3 style={{color:"white", textAlign:"center", fontSize:40, letterSpacing:8}}>“I was thrilled by WTA’s amazing lessons. Perfect for middle-sch00l age kids looking to take tennis to the next level."</h3>
+          <h3 style={{color:"white", textAlign:"center", fontSize:40, letterSpacing:8}}>“I was thrilled by WTA’s amazing lessons. Perfect for middle-school age kids looking to take tennis to the next level."</h3>
           <p style={{textAlign: "center",color:"white", fontWeight: 300, paddingTop:50}}>Dhilen Mistry, Class of 2023</p>
         </Carousel.Caption>
       </Carousel.Item>

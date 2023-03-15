@@ -51,7 +51,7 @@ export const MyCalendar = (props) => {
     const [lessonTime, setLessonTime] = useState(0);
     const [isLesson, setIsLesson] = useState(false);
     const [nextDay, setNextDay] = useState(()=>firstDay());
-   
+
     
     useEffect(() => {
         
@@ -82,8 +82,9 @@ export const MyCalendar = (props) => {
     
 
     }, [value])
- 
- 
+  let today = new Date(Date.now());
+  today.setDate(today.getDate() - 1);
+  if(isLesson){
     return (
         <div style={{position:'relative', paddingLeft:50, paddingRight:50, paddingTop: 150}} className='myContainer'>
             <div style={{flex:1, alignSelf: 'center', paddingRight:250}} className='myContain'>
@@ -122,8 +123,88 @@ export const MyCalendar = (props) => {
              </div>
         </div>
     );
-}
+  }
+  if(value < today){
+    return (
+      <div style={{position:'relative', paddingLeft:50, paddingRight:50, paddingTop: 150}} className='myContainer'>
+          <div style={{flex:1, alignSelf: 'center', paddingRight:250}} className='myContain'>
+            <h3 style={{color:"white"}}>Find a Lesson</h3>
+          <Calendar onChange={onChange} value={value} style={{height: 'auto', width: '50%'}}
+          
+          tileClassName={({ date, view }) => {
+              if(mark.find(x=>x===moment(date).format("MM/DD/YYYY"))){
+               return  'highlight'
+              }
+              }}
+          />
+          </div>
+          <div style={{flex:1}}>
+          <DateText 
+            index = {lessonTime}
+            coordinates={props.coordinates[lessonTime]} 
+            isLesson = {isLesson} 
+            location = {props.location[lessonTime]} 
+            address = {props.address[lessonTime]}
+            time = {props.times[lessonTime]} 
+            weekDay = {getDayName(value)} 
+            day = {value.getDate()} 
+            month = {getMonthName(value)} 
+            nextDay = {nextDay}
+            />
+          </div>
+          <div style={{flex:1}}>
+           <Instructors 
+            lessonId = {props.lessonId[lessonTime]} 
+            isLesson = {isLesson} max = {props.max[lessonTime]} 
+            students = {props.students[lessonTime]} 
+            people = {props.instructor[lessonTime]}
+            value = {value}/>
 
+           </div>
+      </div>
+    );
+  }
+  else {
+    return (
+      <div style={{position:'relative', paddingLeft:50, paddingRight:50, paddingTop: 150}} className='myContainer'>
+          <div style={{flex:1, alignSelf: 'center', paddingRight:250}} className='myContain'>
+            <h3 style={{color:"white"}}>Request a Lesson</h3>
+          <Calendar onChange={onChange} value={value} style={{height: 'auto', width: '50%'}}
+          
+          tileClassName={({ date, view }) => {
+              if(mark.find(x=>x===moment(date).format("MM/DD/YYYY"))){
+               return  'highlight'
+              }
+              }}
+          />
+          </div>
+          <div style={{flex:1}}>
+          <DateText 
+            index = {lessonTime}
+            coordinates={props.coordinates[lessonTime]} 
+            isLesson = {isLesson} 
+            location = {props.location[lessonTime]} 
+            address = {props.address[lessonTime]}
+            time = {props.times[lessonTime]} 
+            weekDay = {getDayName(value)} 
+            day = {value.getDate()} 
+            month = {getMonthName(value)} 
+            nextDay = {nextDay}
+            />
+          </div>
+          <div style={{flex:1}}>
+           <Instructors 
+            lessonId = {props.lessonId[lessonTime]} 
+            isLesson = {isLesson} max = {props.max[lessonTime]} 
+            students = {props.students[lessonTime]} 
+            people = {props.instructor[lessonTime]}
+            value = {value}/>
+
+           </div>
+      </div>
+  );
+}
+}
 
 // return (
 //   <div style={{position:'relative', paddingLeft:50, paddingRight:50}} className='myContainer'>

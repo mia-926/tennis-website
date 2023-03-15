@@ -32,7 +32,7 @@ useEffect(() =>{
         {/* <Container> */}
           <div>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
+          <Navbar.Collapse id="basic-navbar-nav" className="color-my-navbar-collapse">
             <div style={{width:window.innerWidth, display:"flex", flexDirection:"row", justifyContent:"space-between", alignContent:"center"}}>
             <LeftNav color = {props.color} background = {props.background}/>
             <RightNav color = {props.rightColor}  rightbackground = {props.rightbackground}/>
