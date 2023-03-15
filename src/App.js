@@ -57,7 +57,7 @@ function App() {
       break
     case "/instructors":
       component = <Instructors/>
-      color = "white"
+      color = "black"
       break
     default:
       component = <NewHome/>

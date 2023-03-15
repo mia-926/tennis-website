@@ -1,20 +1,36 @@
-.fullContainer
-{
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap');
+
+.fullContainer {
     display: flex;
     flex-direction: column;
     width: 85%;
     float: left;
     flex-wrap: nowrap;
-    justify-content: space-around;
+    
 }
 
-.instructBox
-{
+.instructBox {
     display: flex;
     flex-direction: row;
 }
 
-.titleAndTextBox{
+.titleAndTextBox {
     display: flex;
     flex-direction: column;
+
+}
+
+.greyBox {
+    width: 100%;
+
+    margin-right: 2%;
+    margin-left: 2%;
+    margin-bottom: 2%;
+    background-color: #E3E3E3;
+}
+
+.titleFont {
+    font-family: 'Raleway';
+
+
 }
