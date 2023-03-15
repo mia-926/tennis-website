@@ -14,6 +14,7 @@ export const AdminCalendar = (props) => {
     const [inputInstructors, setInputInstructors] = useState([]);
     const [inputLimit, setInputLimit] = useState('');
     const [requests, setRequests] = useState("");
+    const [requestNum, setRequestNum] = useState(0);
     
 
     
@@ -52,6 +53,7 @@ export const AdminCalendar = (props) => {
             }
         }
       setRequests(messageList);
+      setRequestNum(response.data.users.length)
 
     })
     .catch(err => {
@@ -99,7 +101,7 @@ export const AdminCalendar = (props) => {
                     
                     <div style={{display: 'flex', flexDirection: "row", justifyContent: "space-between"}}>
                     <Form.Group className="mb-3" controlId="formBasicNotes">
-                        <Form.Label>Requests</Form.Label>
+                        <Form.Label>{requestNum} Requests</Form.Label>
                         <Form.Control disabled as="textarea" rows = {5}autoComplete = "off" style={{height: '200px'}} placeholder={requests} className="FormControl requests"/>
                     </Form.Group>
 
