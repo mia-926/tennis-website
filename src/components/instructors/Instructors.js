@@ -38,6 +38,8 @@ export const Instructors = () => {
                    
                         
                     <div className = "titleAndTextBox" style = {{paddingTop: 10, paddingLeft: 30, paddingRight: 30, paddingBottom: 30}}>
+                        
+                        
                         <h2> TARUN SUBRAMANIAN </h2>
                         <div style = {{paddingTop: 20}}>
                         <p> Tarun Subramanian is an exceptional tennis player who has been honing his skills on the court since fourth grade. He is currently Ethan's doubles partner for the #2 varsity starter doubles team and his exceptional volleys make him a formidable doubles player. Capable of outsmarting and outplaying his opponents. With his dedication and passion for the sport, Tarun is sure to provide high-quality instructions to members. </p>
