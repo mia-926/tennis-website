@@ -3,9 +3,10 @@
 .fullContainer {
     display: flex;
     flex-direction: column;
-    width: 85%;
+    width: 90%;
     float: left;
     flex-wrap: nowrap;
+    padding-left: 5%;
     
 }
 
@@ -33,4 +34,19 @@
     font-family: 'Raleway';
 
 
+}
+
+.titleAndContactBox{
+    display: flex;
+    flex-direction: row;
+}
+
+.contactFont {
+    font-family: "Raleway";
+    color: #233831;
+}
+
+.descriptFont {
+    line-height: 2;
+    font-size: 115%;
 }
