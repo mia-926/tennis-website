@@ -23,7 +23,7 @@ function BootstrapNav(props) {
       </Nav>
 );
 }
-  if(auth === undefined || auth?._id === undefined){
+  else if(auth === undefined || auth?._id === undefined){
     return (
           <Nav style={{borderRadius:"15px 0 0 15px", backgroundColor:rightbackground}}>
               <Nav.Link  style={{color:myColor, fontWeight:800, fontSize:'90%', marginTop: ".7%"}}className = "white" href="/create-account">Create Account</Nav.Link>

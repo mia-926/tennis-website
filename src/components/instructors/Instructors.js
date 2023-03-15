@@ -1,7 +1,11 @@
 
  import React from 'react'
  import "./instructorscss/instruct.css";
- import ethanPic from '../../images/ethan.png';
+ import ethanPic from '../../images/DarkGreenEthan.png';
+ import jai from '../../images/DarkGreenJai.png';
+ import tarune from '../../images/DarkGreenSubmarine.png';
+ import lucas from '../../images/DarkGreenLucas.png';
+import { Footer } from '../Footer';
 
  export const Instructors = () => {
      return (
@@ -9,8 +13,8 @@
              <div className = "titleFont"style = {{paddingTop: 10, paddingLeft: 30, paddingRight: 10, paddingBottom: 20}}>
                  <h1> INSTRUCTORS </h1>
              </div>
-                <div className = "greyBox">
-                    <div className = "instructBox" style = {{paddingTop: 30, paddingLeft: 30, paddingRight: 30, paddingBottom:30}}>
+                <div className = "greyBox" style={{borderRadius:'30px', marginBottom:80, width:1200}}>
+                    <div className = "instructBox" style = {{paddingTop: 30, paddingLeft: 30, paddingRight: 30, paddingBottom:30, paddingBottom:30}}>
 
                      <img style = {{width: "25%", height : "25%"}} src={ethanPic} alt="ethan pic"/>
 
@@ -30,7 +34,7 @@
                         </div>
 
 
-                         <div className = "descriptFont" style = {{paddingTop: 20}}>
+                         <div className = "descriptFont" style = {{paddingTop: 20, fontSize:'1.2em'}}>
                          <p> As the founder of Westlake Tennis Academy, Ethan is excited to use his extensive experience in tennis to improve the skills of aspiring tennis athletes. Ethan has started playing tennis since second grade and has since participated in numerous tournaments. He now holds the spot as the #2 starter for his varsity tennis team.. With his instruction, members of WAC will gain one of the most valuable weapons in tennis on top of having a strong foundation in countering all types of tennis players. When he's not on the court, Ethan can be found competing in international piano competitions or participating in Future Business Leaders of America.
 
                          </p>
@@ -44,10 +48,10 @@
 
            
 
-             <div className = "greyBox" >
-                 <div className = "instructBox" style = {{paddingTop: 30, paddingLeft: 30, paddingRight: 30, paddingBottom:30}}>
+                <div className = "greyBox" style={{borderRadius:'30px', marginBottom:80, width:1200}}>
+                 <div className = "instructBox" style = {{paddingTop: 30, paddingLeft: 30, paddingRight: 30, borderRadius:"30px"}}>
 
-                     <img style = {{width: "25%", height : "25%"}} src={ethanPic} alt="ethan pic"/>
+                     <img style = {{width: "25%", height : "25%"}} src={tarune} alt="ethan pic"/>
 
 
                      <div className = "titleAndTextBox" style = {{paddingTop: 10, paddingLeft: 30, paddingRight: 30, paddingBottom: 0}}>
@@ -65,7 +69,7 @@
                         </div>
 
 
-                         <div className = "descriptFont" style = {{paddingTop: 20}}>
+                         <div className = "descriptFont" style = {{paddingTop: 20, fontSize:'1.2em'}}>
                          <p> Tarun Subramanian is an exceptional tennis player who has been honing his skills on the court since fourth grade. He is currently Ethan's doubles partner for the #2 varsity starter doubles team and his exceptional volleys make him a formidable doubles player, capable of outsmarting and outplaying his opponents. With his dedication and passion for the sport, Tarun is sure to provide high-quality instructions to members. Tarun is an avid member of Westlake High School’s orchestra. You can find him volunteering at Thousand Oaks’ local medical clinics, or playing basketball in his spare time.
                          </p>
                          </div>
@@ -80,10 +84,10 @@
 
             
 
-                 <div className = "greyBox" >
-                 <div className = "instructBox" style = {{paddingTop: 30, paddingLeft: 30, paddingRight: 30, paddingBottom:30}}>
+                <div className = "greyBox" style={{borderRadius:'30px', marginBottom:80, width:1200}}>
+                 <div className = "instructBox" style = {{paddingTop: 30, paddingLeft: 30, paddingRight: 30, paddingBottom:30, borderRadius:"30px"}}>
 
-                     <img style = {{width: "25%", height : "25%"}} src={ethanPic} alt="ethan pic"/>
+                     <img style = {{width: "25%", height : "25%"}} src={lucas} alt="ethan pic"/>
 
 
                      <div className = "titleAndTextBox" style = {{paddingTop: 10, paddingLeft: 30, paddingRight: 30, paddingBottom: 0}}>
@@ -93,7 +97,7 @@
                                     <h2>LUCAS VAN PARYS</h2>
                             </div>
 
-                            <div className = "contactFont" style = {{paddingLeft: 30, paddingTop:5}}>
+                            <div className = "contactFont" style = {{paddingLeft: 30, paddingTop:5, fontSize:'1.2em'}}>
                                     <p>email: lk45@gmail.com ~ phone: 8052093804</p>
         
                             </div>
@@ -111,10 +115,10 @@
                  </div>
                 </div>
 
-                <div className = "greyBox" >
+                <div className = "greyBox" style={{borderRadius:'30px', marginBottom:80, width:1200}}>
                  <div className = "instructBox" style = {{paddingTop: 30, paddingLeft: 30, paddingRight: 30, paddingBottom:30}}>
 
-                     <img style = {{width: "25%", height : "25%"}} src={ethanPic} alt="ethan pic"/>
+                     <img style = {{width: "25%", height : "25%"}} src={jai} alt="ethan pic"/>
 
 
                      <div className = "titleAndTextBox" style = {{paddingTop: 10, paddingLeft: 30, paddingRight: 30, paddingBottom: 0}}>
@@ -124,7 +128,7 @@
                                     <h2>JAI GARG</h2>
                             </div>
 
-                            <div className = "contactFont" style = {{paddingLeft: 30, paddingTop:5}}>
+                            <div className = "contactFont" style = {{paddingLeft: 30, paddingTop:5, fontSize:'1.2em'}}>
                                     <p>email: jjg_200@yahoo.com ~ phone: 8184528008</p>
         
                             </div>
@@ -142,7 +146,7 @@
                  </div>
                 </div>
 
-        
+
         </div>
       
     )

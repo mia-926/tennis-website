@@ -14,13 +14,13 @@ export const Names = (props) => {
           console.log(person);
           return (
               <div key ={index}>
-                  <p>{person}</p>
+                  <p className='railwaysemibold' style={{fontSize:'1.2em', padding:0, margin:3}}>{person}</p>
               </div>
 
               )
       }) )}
       else{
-        return(<h2>No Instructors</h2>)
+        return(<h2 className = "railway">No Instructors</h2>)
       }
 
  

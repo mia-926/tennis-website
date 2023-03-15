@@ -75,10 +75,10 @@ export const Instructors = (props) => {
         }
         return (
             <div className='myContain'>
-            <h2 className='inter'>INSTRUCTORS</h2>
+            <h2 className='railway'>INSTRUCTORS</h2>
             <Names names = {instructorNames}/>
             <div >
-            <h2 className='inter'>PARTICIPANTS</h2>
+            <h2 className='railway' style={{textAlign:"center"}}>PARTICIPANTS</h2>
             <Participants max = {props.max} students = {studentNames}/>
             <Input max = {props.max} students = {studentNames} lessonId = {props.lessonId}/>
             </div>
@@ -90,8 +90,8 @@ export const Instructors = (props) => {
         return (
             <div className='myContain' style = {{marginTop:20}}>
             <p>Click on a circled day to join a lesson!</p>
-            <p className='inter'>Can't make other days?</p>
-            <h5 style={{textAlign:'center'}}className='inter'>Request a lesson on the selected day and add an optional message.</h5>
+            <p className='railway'>Can't make other days?</p>
+            <h5 style={{textAlign:'center'}}className='railway'>Request a lesson on the selected day and add an optional message.</h5>
             {/* <label  style={{ padding: 30, display: 'flex', alignItems: 'center' }}>
                 <div>
                     <textArea style={{borderRadius:'20px', width:200, textAlign:"center",borderWidth:"0",  minHeight: 60,  verticalAlign: 'middle' }}type="text" value={inputValue} onChange={handleChange} placeholder="add optional message"/>
@@ -102,14 +102,14 @@ export const Instructors = (props) => {
                         <Form.Control as="textarea" rows = {5} autoComplete = "off" value = {inputValue} onChange = {handleChange} placeholder="add optional message" style={{width:200, height:100, borderWidth:0}}/>
                 </Form.Group>
             </Form>
-            <Button className="greenb btn btn-primary buttonHover"onClick={email}>{requestMessage}</Button>
+            <Button className="greenb btn btn-primary buttonHover railway"onClick={email}>{requestMessage}</Button>
             <p style={{height:20, textAlign:"center", marginTop:40}}>{message}</p>
             
             </div>
         );}
         else{
             return (
-                <div className='myContain' style = {{marginTop:20}}>
+                <div className='myContain railway' style = {{marginTop:20}}>
                 <p>Click on a circled day to join a lesson!</p>
                 </div>
             );

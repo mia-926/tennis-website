@@ -16,6 +16,7 @@ import {MissionStatement} from './components/MissionStatement/MissionStatement';
 import {LearnMorePage} from './components/learnMore/LearnMorePage';
 import {Instructors} from './components/instructors/Instructors';
 import {Sources} from "./components/sources/Sources"
+import { InstructorPage } from './components/instructors/InstructorPage';
 
 
 function App() {
@@ -91,9 +92,9 @@ function App() {
       rightbackground="transparent"
       break
     case "/instructors":
-      component = <Instructors/>
+      component = <InstructorPage/>
       color = "black"
-      rightColor="black";
+      rightColor="white";
       background="white";
       rightbackground="white"
       break
