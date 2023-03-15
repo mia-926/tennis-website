@@ -36,6 +36,8 @@ export const AdminCalendarPage = () => {
 
 export const AdminPage = (props) => {
     const mark = props.dateList
+    const requests = props.requests;
+    console.log(mark)
 
     function getMonthName(monthNumber) {
       const date = new Date(monthNumber);
@@ -107,7 +109,13 @@ if(isLesson){
                 if(mark.find(x=>x===moment(date).format("MM/DD/YYYY"))){
                  return  'highlight'
                 }
-                }}
+                if(requests.find(x=>x===moment(date).format("MM/DD/YYYY"))){
+                    return  'requestDate'
+                   }
+
+                }
+            
+            }
             />
             </div>
             <div style = {{flex:1}}>
@@ -141,6 +149,9 @@ if(isLesson){
                 if(mark.find(x=>x===moment(date).format("MM/DD/YYYY"))){
                  return  'highlight'
                 }
+                if(requests.find(x=>x===moment(date).format("MM/DD/YYYY"))){
+                    return  'requestDate'
+                   }
                 }}
             />
             </div>
@@ -163,6 +174,7 @@ if(isLesson){
 
 export const AdminApiCall = () => {
     const[lessons, getLessons] = useState('');
+    const[requests, getRequests] = useState('');
     const {reload} = useReload()
 
     const delay = ms => new Promise(
@@ -170,9 +182,10 @@ export const AdminApiCall = () => {
       );
 
     useEffect(() => {
-        console.log("recallings")
+       
         getAllLessons();
-        console.log(lessons)
+        getAllRequests();
+       
     }, [reload]);
 
     const getAllLessons = () => {
@@ -183,8 +196,17 @@ export const AdminApiCall = () => {
         })
         .catch(error => console.error(`Error: $(error)`));
     }
+    const getAllRequests = () => {
+        axios.get('https://tennis-backend-bnldi3x7oq-uw.a.run.app/api/getAllRequests')
+        .then((response) => {
+            const allRequests = response.data;
+            getRequests(allRequests);
+            console.log(requests);
+        })
+        .catch(error => console.error(`Error: $(error)`));
+    }
     return(
-        <AdminApiTester lessons={lessons}/> )
+        <AdminApiTester lessons={lessons} requests = {requests}/> )
 }
 
 
@@ -197,6 +219,7 @@ export const AdminApiTester = (props) => {
     const [lessonIds, setLessonIds] = useState([]);
     const [dateList, setDateList] = useState([]);
     const [kids, setKids] = useState([]);
+    const [requestDates, setRequestDates] = useState([]);
     const {menu, lessons} = props;
 
     useEffect(() => {
@@ -208,6 +231,19 @@ export const AdminApiTester = (props) => {
         const newInstructor = [];
         const newDateList = [];
         const newLessonIds = [];
+        const newRequestDates = [];
+
+        for(let i = 0; i < props.requests.length; i++){
+            let date, month, year;
+
+            date = (props.requests[i].date).substring(8, 10);
+            month = (props.requests[i].date).substring(5, 7); 
+            year = (props.requests[i].date).substring(0, 4);
+          
+
+            newRequestDates.push(month + '/' + date + '/' +year);
+          
+        }
 
         for(let i = 0; i < lessons.length; i++){
             newTime.push(lessons[i].time);
@@ -216,7 +252,7 @@ export const AdminApiTester = (props) => {
             date = (lessons[i].date).substring(8, 10);
             month = (lessons[i].date).substring(5, 7); 
             year = (lessons[i].date).substring(0, 4);
-            console.log(lessons[i].date);
+          
 
             newDateList.push(month + '/' + date + '/' +year);
             newInstructor.push(lessons[i].instructors);
@@ -236,6 +272,7 @@ export const AdminApiTester = (props) => {
         setInstructor(newInstructor);
         setDateList(newDateList);
         setLessonIds(newLessonIds);
+        setRequestDates(newRequestDates);
     }, [lessons])
     return (
         <div>
@@ -246,7 +283,7 @@ export const AdminApiTester = (props) => {
                 address={address}
                 
                 max={max}
-                
+                requests = {requestDates}
                 instructor={instructor}
                 dateList={dateList}
                 times={time}
