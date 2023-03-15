@@ -7,7 +7,6 @@
     float: left;
     flex-wrap: nowrap;
     padding-left: 5%;
-    
 }
 
 .instructBox {
@@ -23,11 +22,12 @@
 
 .greyBox {
     width: 100%;
-
-    margin-right: 2%;
-    margin-left: 2%;
-    margin-bottom: 2%;
+    /*background-color: white;*/
     background-color: #E3E3E3;
+    border-radius: 30px;
+    border: 3px solid #294539;
+    padding-bottom: 3%;
+      
 }
 
 .titleFont {

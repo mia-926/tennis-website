@@ -6,7 +6,7 @@ function FAQ() {
   return (
     <div style={{paddingRight:100, paddingLeft:100, marginBottom:100, paddingTop:25}}>
       <h1 className='railwaySemiBold'>FAQs</h1>
-    <Accordion defaultActiveKey="0">
+    <Accordion /*defaultActiveKey="0"*/>
       <Accordion.Item eventKey="0">
         <Accordion.Header  >Are the lessons 100% free?</Accordion.Header>
         <Accordion.Body >

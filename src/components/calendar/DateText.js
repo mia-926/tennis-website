@@ -17,7 +17,7 @@ if(props.isLesson){
         <div>
          
 
-        <div className='inter myContain' style={{height:500}}>
+        <div className='railwayMediumDigits myContain' style={{height:500}}>
            <h2>{props.weekDay}, {props.month} {props.day}</h2>
            <hr
          style={{
@@ -55,8 +55,8 @@ if(props.isLesson){
 }
 else{
     return(<div>
-                <div className='inter myContain' style={{height:500}}>
-           <h2>{props.weekDay}, {props.month} {props.day}</h2>
+                <div className='railway myContain' style={{height:500}}>
+           <h2 >{props.weekDay}, {props.month} {props.day}</h2>
            <hr
          style={{
          background: '#294539',
@@ -69,7 +69,7 @@ else{
          />
   
             <div style={{padding:0, margin:0}}>
-                <h3>{"No Lesson"}</h3>
+                <h3 className='railway' style={{fontWeight:200}}>{"No Lesson"}</h3>
             </div>
             <hr
          style={{
@@ -83,7 +83,7 @@ else{
          />
 
         <div style={{padding:0, margin:0, textAlign:'center'}}>
-                <h3>Next Available <br></br> Lesson:</h3>
+                <h3 style={{fontWeight:400}}>Next Available <br></br> Lesson:</h3>
             </div>
 
             <div style={{padding:0, margin:0, textAlign:'center'}}>

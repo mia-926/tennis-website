@@ -55,8 +55,8 @@ export const Input = (props) => {
   }
   else{
     return(
-      <div className='inter' style={{alignSelf:'center'}}>
-        <h1>Lesson is Full</h1>
+      <div className='railway' style={{alignSelf:'center'}}>
+        <h1 style={{fontSize:'2em', textAlign:'center', fontWeight:400, paddingTop:10}}>Lesson is Full</h1>
       </div>
     )
   }
