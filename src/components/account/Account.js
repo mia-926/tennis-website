@@ -1,5 +1,5 @@
 import React from 'react'
-import { GreenCircles } from '../missionstatement/GreenCircles';
+import { GreenCircles } from './GreenCircles';
 import "./accountcss/account.css";
 import { Title } from "./Title"
 import {UserInfo} from "./inputs/UserInfo"
@@ -18,10 +18,10 @@ export const Account = () => {
     return (
         <MsgProvider>
         <div>
-            <div className='accountGreenCircles'>
+            <div className='accountGreenCircles' style={{position:"absolute", paddingRight:-200}}>
             <GreenCircles/>
             </div>
-            <div className = "accountFullContainer" style = {{paddingTop: 75, height: window.innerHeight}}>
+            <div className = "accountFullContainer" style = {{paddingTop: 100, height: window.innerHeight}}>
                 <div  className = "accountTitleDiv">
                     <Title/>
                     <DeleteButton/>

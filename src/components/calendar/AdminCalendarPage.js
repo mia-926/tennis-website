@@ -15,7 +15,7 @@ import { GreyCircle } from './GreyCircle';
 export const AdminCalendarPage = () => {
     const {auth} = useAuth()
 
-    if(auth?._id != undefined){
+    if(auth?._id != undefined && auth?.admin == true){
         return (
             <div style = {{height:window.innerHeight, background: '#294539'}}>
             <div style={{paddingTop: 0}}>

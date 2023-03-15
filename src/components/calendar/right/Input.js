@@ -5,8 +5,10 @@ import './right.css';
 import './fonts.css';
 import axios from 'axios';
 import useReload from '../../hooks/useReload';
+import useAuth from "../../hooks/useAuth";
 
 export const Input = (props) => {
+  const {auth} = useAuth();
   const [inputValue, setInputValue] = useState('');
   const [didRegister, setDidRegiser] = useState('');
   const [newNames, setNewNames] = useState("");
@@ -17,7 +19,7 @@ export const Input = (props) => {
     setInputValue(event.target.value);
   }
   function patch(){
-    const data = {_id: String(props.lessonId), studentName:String(inputValue), student: String("666")};
+    const data = {_id: String(props.lessonId), studentName:String(inputValue), student: String(auth._id)};
     console.log(data);
     axios.patch("https://tennis-backend-bnldi3x7oq-uw.a.run.app/api/lessonAddStudent", data)
     .then(response => {

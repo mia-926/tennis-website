@@ -5,6 +5,7 @@ import "../accountcss/deletebutton.css"
 import axios from "axios";
 import useAuth from "../../hooks/useAuth";
 import useMsg from "../../hooks/useMsg";
+import "../../newHomepage/newHomepage.css";
 
 export const DeleteButton = () => {
   const {setMsg} = useMsg();
@@ -35,22 +36,22 @@ export const DeleteButton = () => {
 
   return (
     <>
-      <Button onClick={() => setShowModal(true)} className="account-delete-button" style={{ height: 35 }} variant="primary">
+      <Button onClick={() => setShowModal(true)} className="account-delete-button railwaySemiBold" style={{ height: 35 }} variant="primary">
         Delete Account
       </Button>
 
       <Modal show={showModal} onHide={handleClose} centered>
         <Modal.Header closeButton>
-          <Modal.Title>Are you sure you want to delete your account?</Modal.Title>
+          <Modal.Title className = "railwaySemiBold">Are you sure you want to delete your account?</Modal.Title>
         </Modal.Header>
-        <Modal.Body>
+        <Modal.Body className = "railwayMedium">
           This action is irreversible and will delete all your data. Are you sure you want to proceed?
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
+          <Button variant="secondary" className = "cancelButton railwayBold" onClick={handleClose}>
             Cancel
           </Button>
-          <Button variant="danger" onClick={handleDelete}>
+          <Button variant="danger" className = "deleteButton railwayBold" onClick={handleDelete}>
             Delete account
           </Button>
         </Modal.Footer>

@@ -24,6 +24,31 @@ export const NewHome = () => {
     }
   }, []);
 
+  const [showFooter, setShowFooter] = useState(0);
+
+  useEffect(() => {
+    function handleScroll() {
+      const scrollTop = window.pageYOffset;
+    const scrollHeight = document.documentElement.scrollHeight;
+    const clientHeight = document.documentElement.clientHeight;
+
+      if (scrollTop + clientHeight === scrollHeight) {
+        setShowFooter(true);
+          } else {
+            setShowFooter(false);
+          }
+        
+
+        
+        }
+  
+      window.addEventListener('scroll', handleScroll);
+  
+      return () => {
+      window.removeEventListener('scroll', handleScroll);
+      };
+  }, []);
+
   const [imageHeight, setimageHeight] = useState(window.innerHeight);
 
   useEffect(() =>{
@@ -39,9 +64,12 @@ export const NewHome = () => {
 
 
   return (
-    <div className='homeBody' style={{marginBottom:400}}>
+    <div>
+    <div className='homeBody' style={{marginBottom:800, paddingBottom: showFooter ? 100 : 0}}>
+      <div style = {{zIndex:1}}>
       <Testimonials/>
-    <div style={{display:'flex', flexDirection: 'column', height:imageHeight, background: '#D3D3D3'}}>
+      </div>
+      <div style={{display:'flex', flexDirection: 'column', height:imageHeight, background: '#D3D3D3'}}>
    
 
     <HomeTitle style={{zIndex:3}}/>
@@ -57,9 +85,15 @@ export const NewHome = () => {
     </div> */}
 
     </div>
-    <div style={{marginTop:400}}>
-    <Footer/>
+
     </div>
+    <div style={{position: 'fixed', bottom: 0, width: '100%', opacity: showFooter ? 1 : 0, transition: 'opacity 0.3s ease'}}>
+   
+  <Footer />
+</div>
+
+
+
     </div>
   );
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-
+import {Footer} from '../../components/Footer';
 export const Banner = () => {
     return (<div>
         <Banner1/>
@@ -17,7 +17,7 @@ export const Banner1 = () => {
 
     return (
         <div>
-        <div style={{position:'absolute', top:window.innerHeight+700, marginLeft:window.innerWidth*1/3-300}}>
+        <div style={{position:'absolute', top:window.innerHeight+690, marginLeft:window.innerWidth*1/3-300, paddingBottom:600}}>
         <svg viewBox={`0 0 ${bannerWidth} ${bannerHeight}`} height={bannerHeight} width={bannerWidth}>
             <path d={path} fill="#233831" stroke="#233831" strokeWidth="2" />
             <BannerOverlay1 />
@@ -63,7 +63,7 @@ export const Banner2 = () => {
 
     return (
         <div>
-        <div style={{position:'absolute', top:window.innerHeight+740, marginLeft:window.innerWidth/2-150}}>
+        <div style={{position:'absolute', top:window.innerHeight+720, marginLeft:window.innerWidth/2-150}}>
         <svg viewBox={`0 0 ${bannerWidth} ${bannerHeight}`} height={bannerHeight} width={bannerWidth}>
             <path d={path} fill="#233831" stroke="#233831" strokeWidth="2" />
             <BannerOverlay2 />
@@ -110,7 +110,7 @@ export const Banner3 = () => {
     
     return (
         <div>
-        <div style={{position:'absolute', top:window.innerHeight+700, marginLeft:window.innerWidth*2/3}}>
+        <div style={{position:'absolute', top:window.innerHeight+690, marginLeft:window.innerWidth*2/3}}>
         <svg viewBox={`0 0 ${bannerWidth} ${bannerHeight}`} height={bannerHeight} width={bannerWidth}>
             <path d={path} fill="#233831" stroke="#233831" strokeWidth="2" />
             <BannerOverlay />

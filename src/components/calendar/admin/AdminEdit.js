@@ -127,7 +127,7 @@ export const AdminEdit = (props) => {
                     </div>
                     </div>
                 <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                <Button style={{width:'300px'}} onClick={patch} className= "button" variant="success" >
+                <Button style={{width:'300px'}} onClick={patch} className= "button roundedInput" variant="success" >
                     Edit Lesson
                 </Button>
                 </div>

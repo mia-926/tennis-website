@@ -2,6 +2,7 @@ import axios from "axios";
 
 import React, { useEffect, useRef, useState} from 'react';
 import "../accountcss/password.css";
+import "../../newHomepage/newHomepage.css";
 import Form from 'react-bootstrap/Form';
 import useAuth from "../../hooks/useAuth";
 import useMsg from "../../hooks/useMsg";
@@ -101,18 +102,18 @@ export const Password = () => {
 
     return (
         <div className = "accountFullPassword">
-            <h4 className = "accountPasswordTitle">CHANGE PASSWORD</h4>
+            <h4 className = "accountPasswordTitle railwaySemiBold">CHANGE PASSWORD</h4>
             <form>
                     <div class="InfoFormColumn">
-                        <label for="inputPassword4">Enter Current Password</label>
-                        <input type="password" autoComplete = "off" value={oldPassword} onChange={handleOldPasswordChange} style = {{height: 35}} class="form-control" id="currentPasswordForm" placeholder="Current Password"/>
+                        <label className ="railwayMedium" for="inputPassword4">Enter Current Password</label>
+                        <input type="password" autoComplete = "off" value={oldPassword} onChange={handleOldPasswordChange} style = {{height: 35}} class="form-control railway" id="currentPasswordForm" placeholder="Current Password"/>
                     </div>
                     <div class="InfoFormColumn" style = {{paddingTop: 10}}>
-                        <label for="inputPassword4">New Password</label>
-                        <input type="password" autoComplete = "off" value={newPassword} onChange={handleNewPasswordChange} style = {{height: 35}} class="form-control" id="newPasswordForm" placeholder="New Password"/>
+                        <label className ="railwayMedium" for="inputPassword4">New Password</label>
+                        <input type="password" autoComplete = "off" value={newPassword} onChange={handleNewPasswordChange} style = {{height: 35}} class="form-control railway" id="newPasswordForm" placeholder="New Password"/>
                     </div>
-                  <a href= "/forgot-password" className='account-password-forgot'>Forgot Password?</a>
-                    <Button onClick={PasswordSubmit} className="accountPasswordButton" style = {{height: 25}} variant="primary">
+                  <a href= "/forgot-password" className='account-password-forgot railwayMedium' style ={{textDecoration: "none"}}>Forgot Password?</a>
+                    <Button onClick={PasswordSubmit} className="accountPasswordButton railwaySemiBold" style = {{height: 25}} variant="primary">
                         Change
                     </Button>
             </form>

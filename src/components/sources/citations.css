@@ -1,0 +1,55 @@
+.CitationsFullContainer{
+    flex-direction: column; 
+    width: 100%;
+    float:left;
+    display: flex; 
+    flex-wrap: nowrap;
+    justify-content: space-around;
+}
+.CitationsTitleDiv{
+    flex: 1
+}
+.CitationsTitleText{  
+    font-size: 300%;
+    color: #294539;
+}
+.CitationsSubTitle{
+    flex: 1;
+    font-size: 200%;
+    font-weight: 501;
+    color: #000000;
+}
+.CitationsLine{
+    border-radius: 3px;
+    border-width: 9px;
+    width: 65%;
+    color: #294539;
+}
+.CitationsParagraphContainer{
+    flex: 9;
+    height: max-content;
+    flex-direction: column; 
+    width: 100%;
+    float:left;
+    display: flex; 
+    flex-wrap:nowarp;
+    justify-content: space-around;
+}
+.CitationsParagraph{
+    min-height: 330px;
+    max-height: 330px;
+    overflow-y: auto;
+    flex: 3;
+    text-align: left;
+}
+.CitationsBlock{
+    height: 400px;
+    background-color: #E3E3E3;
+    border-radius: 20px;
+    padding-top: 3%;
+    padding-left: 3%;
+    padding-right: 3%;
+    padding-bottom: 1%;
+    margin-bottom: 4%;
+    width: 90%;
+}
