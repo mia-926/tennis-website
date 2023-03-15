@@ -209,3 +209,44 @@ hr{
     margin-top: -3%;
     margin-bottom: -3%;
   }
+
+  .react-calendar__navigation__prev-button:hover,
+  .react-calendar__navigation__next-button:hover {
+    background-color: "#e3e3e3"!important;
+    border-radius: 20px;
+  }
+  .react-calendar__navigation__label:hover {
+    border-radius: 20px;
+    background-color: "#e3e3e3"!important;
+  }
+  .react-calendar__navigation__label{
+    height: 100%;
+    font-size: 150% !important;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .react-calendar__navigation__arrow {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 250% !important;
+    padding: 5px;
+    height: 100%;
+    width: 40px; /* set a fixed width for the navigation button */
+  }
+  
+  .react-calendar__navigation__next-button {
+    /* center the arrow horizontally within the button */
+    justify-content: flex-end;
+    padding-right: 4%;
+  }
+  
+  .react-calendar__navigation__prev-button {
+    /* center the arrow horizontally within the button */
+    justify-content: flex-start;
+    padding-left: 4%;
+  }

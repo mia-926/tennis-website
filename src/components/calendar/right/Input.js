@@ -42,7 +42,7 @@ export const Input = (props) => {
         <label  className='myContain'>
             Participant Name
             <div>
-                <input type="text" value={inputValue} onChange={handleChange} />
+                <input className = "ParticipantForm" type="text" value={inputValue} onChange={handleChange} />
             </div>
         </label>
        <p></p>

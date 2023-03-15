@@ -101,7 +101,8 @@ if(isLesson){
             <div style={{flex:1, alignSelf: 'center', paddingRight:250}} className='myContain'>
               <h3 className = "railwayBold" style={{color:"white"}}>Edit a Lesson</h3>
             <Calendar calendarType="US" onChange={onChange} value={value} style={{height: 'auto', width: '50%'}}
-            
+                        next2Label = {null}
+                        prev2Label = {null}
             tileClassName={({ date, view }) => {
                 if(mark.find(x=>x===moment(date).format("MM/DD/YYYY"))){
                  return  'highlight'
@@ -133,6 +134,8 @@ if(isLesson){
             <div style={{flex:1, alignSelf: 'center', paddingRight:250}} className='myContain'>
               <h3 className = "railwayBold"style={{color:"white"}}>Add a Lesson</h3>
             <Calendar onChange={onChange} value={value} style={{height: 'auto', width: '50%'}}
+                        next2Label = {null}
+                        prev2Label = {null}
             calendarType="US"
             tileClassName={({ date, view }) => {
                 if(mark.find(x=>x===moment(date).format("MM/DD/YYYY"))){

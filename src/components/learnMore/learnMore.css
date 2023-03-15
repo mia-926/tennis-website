@@ -1,3 +1,7 @@
 .accordion-button {
     background-color: red;
 }
+.greenBorder{
+    border: 5px solid #294539;
+
+}
