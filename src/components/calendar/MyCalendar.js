@@ -89,8 +89,10 @@ export const MyCalendar = (props) => {
         <div style={{position:'relative', paddingLeft:50, paddingRight:50, paddingTop: 150}} className='myContainer'>
             <div style={{flex:1, alignSelf: 'center', paddingRight:250}} className='myContain'>
               <h3 style={{color:"white"}}>Join a Lesson</h3>
-            <Calendar onChange={onChange} value={value} style={{height: 'auto', width: '50%'}}
-            
+            <Calendar className="react-calendar" onChange={onChange} value={value} style={{height: 'auto', width: '50%'}}
+            next2Label = {null}
+            prev2Label = {null}
+            calendarType="US"
             tileClassName={({ date, view }) => {
                 if(mark.find(x=>x===moment(date).format("MM/DD/YYYY"))){
                  return  'highlight'
@@ -130,7 +132,7 @@ export const MyCalendar = (props) => {
           <div style={{flex:1, alignSelf: 'center', paddingRight:250}} className='myContain'>
             <h3 style={{color:"white"}}>Find a Lesson</h3>
           <Calendar onChange={onChange} value={value} style={{height: 'auto', width: '50%'}}
-          
+          calendarType="US"
           tileClassName={({ date, view }) => {
               if(mark.find(x=>x===moment(date).format("MM/DD/YYYY"))){
                return  'highlight'
@@ -170,7 +172,7 @@ export const MyCalendar = (props) => {
           <div style={{flex:1, alignSelf: 'center', paddingRight:250}} className='myContain'>
             <h3 style={{color:"white"}}>Request a Lesson</h3>
           <Calendar onChange={onChange} value={value} style={{height: 'auto', width: '50%'}}
-          
+          calendarType="US"
           tileClassName={({ date, view }) => {
               if(mark.find(x=>x===moment(date).format("MM/DD/YYYY"))){
                return  'highlight'
