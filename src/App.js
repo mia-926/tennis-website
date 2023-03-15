@@ -103,6 +103,7 @@ function App() {
       rightColor="black";
       background="white";
       rightbackground="white"
+
       break
     default:
       component = <NewHome/>
