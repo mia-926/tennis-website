@@ -18,3 +18,8 @@
     width: 0%;
     opacity: 0;
 }
+
+.redDeleteHover:hover{
+    background-color:darkred !important;
+    color:white !important;
+}

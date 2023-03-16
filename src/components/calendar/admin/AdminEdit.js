@@ -1,19 +1,13 @@
-
-import React, { useEffect, useRef, useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import './admin.css';
 import axios from 'axios';
 import { Instructors } from '../right/Instructors';
-import moment from 'moment';
-import { unstable_renderSubtreeIntoContainer } from 'react-dom';
 
 
 export const AdminEdit = (props) => {
-    const errRef = useRef();
-    const [errMsg, setErrMsg] = useState('')
-
-    const [time, settime] = useState(moment(props.time, 'hh:mm A').format('HH:mm'));
+    const [time, settime] = useState(props.time);
     const [location, setlocation] = useState(props.location);
     const [address, setaddress] = useState(props.address);
     const [instructors, setinstructors] = useState(props.instructors);
@@ -23,12 +17,9 @@ export const AdminEdit = (props) => {
     const [studentCount, setStudentCount] = useState(0);
     const [edited, setEdited] = useState(0);
 
-    useEffect(()=>{
-        setErrMsg('')
-      }, [props.value])
-
-      useEffect(() => {
-        settime(moment(props.time, 'hh:mm A').format('HH:mm'));
+    
+    useEffect(() => {
+        settime(props.time);
         setlocation(props.location);
         setaddress(props.address);
         setinstructors(props.instructors);
@@ -39,7 +30,7 @@ export const AdminEdit = (props) => {
         }
         setStudents(studentFormatted);
         setStudentCount(props.students.length);
-        
+        setEdited(0);
         
 
     }, [props.lessonId])
@@ -66,7 +57,8 @@ export const AdminEdit = (props) => {
     console.log(data);
     axios.patch("https://tennis-backend-bnldi3x7oq-uw.a.run.app/api/lesson", data)
     .then(response => {
-        setErrMsg("*Lesson Added")
+      console.log("lesson edited")
+      console.log(response)
     })
     .catch(err => {
       console.log(err)
@@ -139,15 +131,13 @@ export const AdminEdit = (props) => {
                 <Button style={{width:'300px'}} onClick={patch} className= "button roundedInput" variant="success" >
                     Edit Lesson
                 </Button>
-                <Button style={{width:'300px', background:"darkred", marginTop:20}} className= "button roundedInput" variant="success" >
+                <Button style={{width:'300px', background:"transparent", marginTop:20, borderColor:"black", borderWidth:2, color:"black"}} className= "button roundedInput redDeleteHover" variant="success" >
                     Delete Lesson
                 </Button>
-                <p ref ={errRef} style = {{height: 20}} className= {errMsg ? (errMsg == "*Lesson Added"? "lessonvalidatedmsg":"lessonerrmsg") : "lessonoffscreen"} aria-live= "assertive"> {"*"+ errMsg} </p> 
+                <p style={{ marginTop:20, color:'green', opacity:edited}}>*Lesson Edited</p>
                 </div>
                 </Form>
             </div>
         </div>
     );
-    }
-
-
+}

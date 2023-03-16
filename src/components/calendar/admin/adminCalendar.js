@@ -1,5 +1,5 @@
 
-import React, {useState, useEffect} from 'react';
+import React, { useEffect, useRef, useState} from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import './admin.css';
@@ -7,6 +7,7 @@ import axios from 'axios';
 import { Instructors } from '../right/Instructors';
 
 export const AdminCalendar = (props) => {
+    const errRef = useRef();
     const [inputTime, setInputTime] = useState('');
     const [inputLocation, setInputLocation] = useState('');
     const [inputAddress, setInputAddress] = useState('');
@@ -14,6 +15,7 @@ export const AdminCalendar = (props) => {
     const [inputLimit, setInputLimit] = useState('');
     const [requests, setRequests] = useState("");
     const [requestNum, setRequestNum] = useState(0);
+    const [errMsg, setErrMsg] = useState("");
 
     
 
@@ -31,10 +33,55 @@ export const AdminCalendar = (props) => {
     console.log(data)
     axios.post("https://tennis-backend-bnldi3x7oq-uw.a.run.app/api/lesson", data)
     .then(response => {
-      console.log("lesson added" + response);
+      setErrMsg("*Lesson Added")
     })
     .catch(err => {
-      console.log(err)
+      if(!err?.response){
+        setErrMsg("No Server Response")
+      }
+      switch(err.response?.status){
+        case 401:
+          setErrMsg("Please Enter a Date")
+          break
+        case 402:
+          setErrMsg("A lesson is Already on That Date")
+          break
+        case 403:
+          setErrMsg("Invalid Time")
+          break
+        case 408:
+          setErrMsg("Please Enter a Time")
+          break
+        case 399:
+          setErrMsg("Max Students Must be Positive")
+          break
+        case 405:
+          setErrMsg("Please Enter Max Students")
+          break
+        case 406:
+          setErrMsg("Please Enter Instructors")
+          break
+        case 407:
+          setErrMsg("Please Enter Address")
+          break
+        case 409:
+          setErrMsg("Please Enter Location")
+          break
+        case 410:
+          setErrMsg("Invalid Address")
+          break
+        case 411:
+          setErrMsg("Try Changing Address")
+          break
+        case 412:
+          setErrMsg("Coordinate Error")
+          break
+        case 422:
+          setErrMsg("ERROR")
+          break
+        default:
+          setErrMsg("Error Try Again")
+      }
     })
   }
 
@@ -118,7 +165,7 @@ export const AdminCalendar = (props) => {
                     {/* Instructors */}
                     <Form.Group className="mb-3" controlId="formBasicInstructors">
                         <Form.Label>Instructors</Form.Label>
-                        <Form.Control as="textarea" rows = {5} autoComplete = "off" value = {inputInstructors} onChange = {handleChangeInstructors} placeholder="Enter Instructors with comma in bewtween" style={{width:200, height:100}}/>
+                        <Form.Control as="textarea" rows = {5} autoComplete = "off" value = {inputInstructors} onChange = {handleChangeInstructors} placeholder="Enter Instructors with comma in between" style={{width:200, height:100}}/>
                     </Form.Group>
                     </div>
                     </div>
@@ -126,7 +173,7 @@ export const AdminCalendar = (props) => {
                 <Button style={{width:'300px'}} onClick={post} className= "button roundedInput" variant="success" >
                     Add Lesson
                 </Button>
-                    <p style={{ marginTop:20, color:'green'}}>*Lesson Edited</p>
+                    <p ref ={errRef} style = {{height: 20}} className= {errMsg ? (errMsg == "*Lesson Added"? "lessonvalidatedmsg":"lessonerrmsg") : "lessonoffscreen"} aria-live= "assertive"> {"*"+ errMsg} </p> 
                 </div>
                 </Form>
             </div>
