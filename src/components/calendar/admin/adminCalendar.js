@@ -29,7 +29,7 @@ export const AdminCalendar = (props) => {
 
   function post(){
     const data = {date: String(props.value), time:String(inputTime), instructors:(inputInstructors), studentNames:([]), location: String(inputLocation), maxStudents: parseInt(inputLimit) };
-    
+    console.log(data)
     axios.post("https://tennis-backend-bnldi3x7oq-uw.a.run.app/api/lesson", data)
     .then(response => {
       console.log("lesson added" + response);

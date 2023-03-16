@@ -10,6 +10,14 @@ export const DateText = (props) => {
     let nextLesson = props.nextDay;
 
 
+    if(nextLesson ==="No upcoming Lessons"){
+
+        if(props.day === 15 && props.month === "March"){
+            nextLesson = "Friday, March 17";
+        }
+    }
+
+
 
 if(props.isLesson){
 
