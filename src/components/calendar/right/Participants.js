@@ -11,7 +11,7 @@ import Accordion from 'react-bootstrap/Accordion';
 export const Participants = (props) => {
   const taken = props.students.length;
   const total = props.max;
-    return (<div style={{maxHeight: 400}}>
+    return (<div style={{maxHeight: 400, borderWidth: 10, borderColor: "black"}}>
             <Accordion defaultActiveKey="0">
               <Accordion.Item eventKey="0">
                 <Accordion.Header className='inter'> {taken} out of {total} slots taken</Accordion.Header>

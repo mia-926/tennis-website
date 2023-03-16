@@ -45,5 +45,6 @@ li {
   }
 
   .ParticipantForm{
-      
+      border-radius: 10px;
+      border-color: #294539;
   }

@@ -1,4 +1,4 @@
-import React  from 'react';
+import { useEffect, useState } from 'react';
 
 // import { BrowserRouter as Router} from 'react-router-dom';
 
@@ -17,7 +17,7 @@ import {LearnMorePage} from './components/learnMore/LearnMorePage';
 import {Instructors} from './components/instructors/Instructors';
 import {Sources} from "./components/sources/Sources"
 import { InstructorPage } from './components/instructors/InstructorPage';
-
+import useScroll from "./components/hooks/useScroll"
 
 function App() {
   let component
@@ -25,100 +25,185 @@ function App() {
   let rightColor="white";
   let background="transparent";
   let rightbackground = "transparent"
+  let {scroll} = useScroll()
+    switch (window.location.pathname) {
+      case "/%257Btennis-website%257D":
+        component = <NewHome/>
+        color = "white";
+        rightColor="white";
+        background="transparent"
+        rightbackground="transparent"
+        break
+      case "/home":
+        component = <NewHome/>
+        color = "white"
+        rightColor="white";
+        background=String(scroll);
+        rightbackground=String(scroll);  
+        break 
+      case "/join-lesson":
+        component = <CalendarPage/>
+        color= "white"
+        rightColor="black";
+        background="transparent";
+        rightbackground="transparent"
+        break
+      case "/create-account":
+        component = <SignUp/>
+        color= "black"
+        rightColor="white";
+        background="transparent";
+        rightbackground="transparent"
+        break
 
-  switch (window.location.pathname) {
-    case "/%257Btennis-website%257D":
-      component = <NewHome/>
-      color = "white";
-      rightColor="white";
-      background="transparent"
-      rightbackground="transparent"
-      break
-    case "/home":
-      component = <NewHome/>
-      color = "white"
-      rightColor="white";
-      background="transparent";
-      rightbackground="transparent"
-      break 
-    case "/join-lesson":
-      component = <CalendarPage/>
-      color= "white"
-      rightColor="black";
-      background="transparent";
-      rightbackground="transparent"
-      break
-    case "/create-account":
-      component = <SignUp/>
-      color= "black"
-      rightColor="white";
-      background="transparent";
-      rightbackground="transparent"
-      break
+      case "/login":
+        component = <Login/>
+        color= "black"
+        rightColor="white";
+        background="transparent";
+        rightbackground="transparent"
+        break
+      case "/mission":
+        component = <MissionStatement/>
+        color= "black"
+        rightColor="white";
+        background="white";
+        rightbackground="transparent";
+        break
+      case "/admin-page":
+        component = <AdminCalendarPage/>
+        color="white"
+        rightColor="black";
+        background="transparent";
+        rightbackground="transparent"
+        break
+      case "/learn-more":
+        component = <LearnMorePage/>
+        color="black"
+        rightColor="black";
+        background="white";
+        rightbackground="white"
+        break
+      case "/account":
+        component = <Account/>
+        color= "black"
+        rightColor="white";
+        background="white";
+        rightbackground="transparent"
+        break
+      case "/instructors":
+        component = <InstructorPage/>
+        color = "black"
+        rightColor="black";
+        background="white";
+        rightbackground="white"
+        break
+      case "/sources":
+        component = <Sources/>
+        color = "black"
+        rightColor="black";
+        background="white";
+        rightbackground="white"
 
-    case "/login":
-      component = <Login/>
-      color= "black"
-      rightColor="white";
-      background="transparent";
-      rightbackground="transparent"
-      break
-    case "/mission":
-      component = <MissionStatement/>
-      color= "black"
-      rightColor="white";
-      background="white";
-      rightbackground="transparent";
-      break
-    case "/admin-page":
-      component = <AdminCalendarPage/>
-      color="white"
-      rightColor="black";
-      background="transparent";
-      rightbackground="transparent"
-      break
-    case "/learn-more":
-      component = <LearnMorePage/>
-      color="black"
-      rightColor="black";
-      background="white";
-      rightbackground="white"
-      break
-    case "/account":
-      component = <Account/>
-      color= "black"
-      rightColor="white";
-      background="white";
-      rightbackground="transparent"
-      break
-    case "/instructors":
-      component = <InstructorPage/>
-      color = "black"
-      rightColor="black";
-      background="white";
-      rightbackground="white"
-      break
-    case "/sources":
-      component = <Sources/>
-      color = "black"
-      rightColor="black";
-      background="white";
-      rightbackground="white"
+        break
+      default:
+        component = <NewHome/>
+        color = "white"
+        rightColor="white";
+        background="transparent";
+        rightbackground="transparent"
+        break 
+    }
+  useEffect(() => {
+    switch (window.location.pathname) {
+      case "/%257Btennis-website%257D":
+        component = <NewHome/>
+        color = "white";
+        rightColor="white";
+        background="transparent"
+        rightbackground="transparent"
+        break
+      case "/home":
+        component = <NewHome/>
+        color = "white"
+        rightColor="white";
+        background=String(scroll);
+        rightbackground=String(scroll);  
+        break 
+      case "/join-lesson":
+        component = <CalendarPage/>
+        color= "white"
+        rightColor="black";
+        background="transparent";
+        rightbackground="transparent"
+        break
+      case "/create-account":
+        component = <SignUp/>
+        color= "black"
+        rightColor="white";
+        background="transparent";
+        rightbackground="transparent"
+        break
+      case "/login":
+        component = <Login/>
+        color= "black"
+        rightColor="white";
+        background="transparent";
+        rightbackground="transparent"
+        break
+      case "/mission":
+        component = <MissionStatement/>
+        color= "black"
+        rightColor="white";
+        background="white";
+        rightbackground="transparent";
+        break
+      case "/admin-page":
+        component = <AdminCalendarPage/>
+        color="white"
+        rightColor="black";
+        background="transparent";
+        rightbackground="transparent"
+        break
+      case "/learn-more":
+        component = <LearnMorePage/>
+        color="black"
+        rightColor="black";
+        background="white";
+        rightbackground="white"
+        break
+      case "/account":
+        component = <Account/>
+        color= "black"
+        rightColor="white";
+        background="white";
+        rightbackground="transparent"
+        break
+      case "/instructors":
+        component = <InstructorPage/>
+        color = "black"
+        rightColor="black";
+        background="white";
+        rightbackground="white"
+        break
+      case "/sources":
+        component = <Sources/>
+        color = "black"
+        rightColor="black";
+        background="white";
+        rightbackground="white"
 
-      break
-    default:
-      component = <NewHome/>
-      color = "white"
-      rightColor="white";
-      background="transparent";
-      rightbackground="transparent"
-      break 
-    
-    
+        break
+      default:
+        component = <NewHome/>
+        color = "white"
+        rightColor="white";
+        background="transparent";
+        rightbackground="transparent"
+        break 
+    }
+    }, [scroll]);
 
-
-  }
-  console.log("app "+ rightbackground)
   return (
     <div className = "App">
       {/*<Background/>*/}

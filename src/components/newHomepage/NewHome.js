@@ -10,11 +10,13 @@ import { HomeTitle } from './HomeTitle';
 import { Description } from './Description';
 import {BottomCircle} from './BottomCircle';
 import { Banner } from './Banner';
+import useScroll from "../hooks/useScroll"
 
 export const NewHome = () => {
   const {setlastWindow} = useAuth()
   const{lastWindow} = useAuth();
   const {setAuth} = useAuth();
+  const {setScroll} = useScroll()
   const {auth} = useAuth()
   useEffect(() => {
     setlastWindow("/join-lesson")

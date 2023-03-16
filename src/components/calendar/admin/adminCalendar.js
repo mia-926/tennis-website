@@ -5,7 +5,6 @@ import Button from 'react-bootstrap/Button';
 import './admin.css';
 import axios from 'axios';
 import { Instructors } from '../right/Instructors';
-import useRequest from '../../hooks/useRequest';
 
 export const AdminCalendar = (props) => {
     const [inputTime, setInputTime] = useState('');
