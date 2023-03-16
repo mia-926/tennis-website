@@ -134,7 +134,7 @@ export const AdminEdit = (props) => {
                 <Button style={{width:'300px', background:"transparent", marginTop:20, borderColor:"black", borderWidth:2, color:"black"}} className= "button roundedInput redDeleteHover" variant="success" >
                     Delete Lesson
                 </Button>
-                <p style={{ marginTop:20, color:'green', opacity:edited}}>*Lesson Edited</p>
+                <p style={{height: 20, marginTop:20, color:'green', opacity:edited}}>*Lesson Edited</p>
                 </div>
                 </Form>
             </div>
