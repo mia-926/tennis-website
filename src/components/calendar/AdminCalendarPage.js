@@ -101,7 +101,7 @@ if(isLesson){
         <div style={{position:'relative', paddingLeft:50, paddingRight:50, paddingTop: 150}} className='myContainer'>
             <div style={{flex:1, alignSelf: 'center', paddingRight:250}} className='myContain'>
               <h3 className = "railwayBold" style={{color:"white"}}>Edit a Lesson</h3>
-            <Calendar calendarType="US" onChange={onChange} value={value} style={{height: 'auto', width: '50%'}}
+            <Calendar calendarType="US" onChange={onChange} value={value} style={{height: 'auto', width: '50%', paddingBottom:100}}
                         next2Label = {null}
                         prev2Label = {null}
             tileClassName={({ date, view }) => {
@@ -140,7 +140,7 @@ if(isLesson){
         <div style={{position:'relative', paddingLeft:50, paddingRight:50, paddingTop: 150}} className='myContainer'>
             <div style={{flex:1, alignSelf: 'center', paddingRight:250}} className='myContain'>
               <h3 className = "railwayBold"style={{color:"white"}}>Add a Lesson</h3>
-            <Calendar onChange={onChange} value={value} style={{height: 'auto', width: '50%'}}
+            <Calendar onChange={onChange} value={value} style={{height: 'auto', width: '50%', paddingBottom:100}}
                         next2Label = {null}
                         prev2Label = {null}
             calendarType="US"
