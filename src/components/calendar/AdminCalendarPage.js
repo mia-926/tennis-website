@@ -37,7 +37,6 @@ export const AdminCalendarPage = () => {
 export const AdminPage = (props) => {
     const mark = props.dateList
     const requests = props.requests;
-    console.log(mark)
 
     function getMonthName(monthNumber) {
       const date = new Date(monthNumber);
@@ -201,7 +200,6 @@ export const AdminApiCall = () => {
         .then((response) => {
             const allRequests = response.data;
             getRequests(allRequests);
-            console.log(requests);
         })
         .catch(error => console.error(`Error: $(error)`));
     }

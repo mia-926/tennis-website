@@ -42,7 +42,6 @@ export const UserInfo = () => {
             emailList !== null && { emailList },
             email !== null && { email },
         );
-        console.log(data)
         axios.patch('https://tennis-backend-bnldi3x7oq-uw.a.run.app/api/user', data)
             .then (response => {
                 console.log(response)

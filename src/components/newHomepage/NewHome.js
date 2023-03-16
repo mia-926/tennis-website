@@ -20,7 +20,6 @@ export const NewHome = () => {
   const {auth} = useAuth()
   useEffect(() => {
     setlastWindow("/join-lesson")
-    console.log(lastWindow)
     if(auth != undefined && !auth?.keepLogin){
         setAuth({})
     }

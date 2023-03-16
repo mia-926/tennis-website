@@ -5,10 +5,11 @@ import Button from 'react-bootstrap/Button';
 import './admin.css';
 import axios from 'axios';
 import { Instructors } from '../right/Instructors';
+import moment from 'moment';
 
 
 export const AdminEdit = (props) => {
-    const [time, settime] = useState(props.time);
+    const [time, settime] = useState(moment(props.time, 'hh:mm A').format('HH:mm'));
     const [location, setlocation] = useState(props.location);
     const [address, setaddress] = useState(props.address);
     const [instructors, setinstructors] = useState(props.instructors);
@@ -17,9 +18,9 @@ export const AdminEdit = (props) => {
     const [students, setStudents] = useState([]);
     const [studentCount, setStudentCount] = useState(0);
 
-    
+    console.log(time)
     useEffect(() => {
-        settime(props.time);
+        settime(moment(props.time, 'hh:mm A').format('HH:mm'));
         setlocation(props.location);
         setaddress(props.address);
         setinstructors(props.instructors);

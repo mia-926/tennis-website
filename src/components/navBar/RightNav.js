@@ -5,9 +5,7 @@ import useAuth from '../hooks/useAuth';
 
 function BootstrapNav(props) {
   const myColor = props.color;
-  console.log("prop "+props.rightbackground)
   const rightbackground = props.rightbackground;
-  console.log(rightbackground)
   const {setAuth} = useAuth();
   const {auth} = useAuth()
   function signOut(){

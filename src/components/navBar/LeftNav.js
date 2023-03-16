@@ -9,7 +9,6 @@ import whiteLogo from '../../../src/images/logowhite.png';
 function BootstrapNav(props) {
   const background = props.background;
   const myColor = props.color
-  console.log(myColor)
 
 
   const [image, setImage] = useState(window.innerWidth);

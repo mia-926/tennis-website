@@ -39,11 +39,9 @@ export const Password = () => {
 
     function updateUser(oldPassword, newPassword){
         const firstdata = {username: auth.username, password: oldPassword}
-        console.log(firstdata)
         axios.post('https://tennis-backend-bnldi3x7oq-uw.a.run.app/api/authPassword', firstdata)
         .then (response => {
           const data = {_id: auth._id, password: newPassword}
-          console.log(data)
           axios.patch('https://tennis-backend-bnldi3x7oq-uw.a.run.app/api/user', data)
               .then (response => {
                   console.log(response)
