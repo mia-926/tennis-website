@@ -8,3 +8,7 @@
   }
 
 
+.redDeleteHover:hover{
+    background-color:darkred !important;
+    color:white !important;
+}
