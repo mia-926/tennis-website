@@ -16,6 +16,7 @@ export const AdminEdit = (props) => {
     const [inputNotes, setInputNotes] = useState("");
     const [students, setStudents] = useState([]);
     const [studentCount, setStudentCount] = useState(0);
+    const [edited, setEdited] = useState(0);
 
     
     useEffect(() => {
@@ -45,6 +46,7 @@ export const AdminEdit = (props) => {
 
 
   function patch(){
+    setEdited(1);
     const data = Object.assign({ _id: String(props.lessonId) }, 
     time !== props.time && { time },
     location !== props.location && { location },
@@ -126,10 +128,14 @@ export const AdminEdit = (props) => {
                     </Form.Group>
                     </div>
                     </div>
-                <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' , flexDirection:"column"}}>
                 <Button style={{width:'300px'}} onClick={patch} className= "button roundedInput" variant="success" >
                     Edit Lesson
                 </Button>
+                <Button style={{width:'300px', background:"darkred", marginTop:20}} className= "button roundedInput" variant="success" >
+                    Delete Lesson
+                </Button>
+                <p style={{ marginTop:20, color:'green', opacity:edited}}>*Lesson Edited</p>
                 </div>
                 </Form>
             </div>
