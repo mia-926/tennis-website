@@ -39,9 +39,11 @@ export const NewHome = () => {
           } else {
             setShowFooter(false);
           }
-        
-
-        
+          if (scrollTop >= 500){
+            setScroll("#294539")
+          }else{
+            setScroll("transparent")
+          }
         }
   
       window.addEventListener('scroll', handleScroll);
