@@ -37,50 +37,50 @@ export const AdminCalendar = (props) => {
     })
     .catch(err => {
       if(!err?.response){
-        setErrMsg("No Server Response")
+        setErrMsg("*No Server Response")
       }
       switch(err.response?.status){
         case 401:
-          setErrMsg("Please Enter a Date")
+          setErrMsg("*Please Enter a Date")
           break
         case 402:
-          setErrMsg("A lesson is Already on That Date")
+          setErrMsg("*A lesson is Already on That Date")
           break
         case 403:
-          setErrMsg("Invalid Time")
+          setErrMsg("*Invalid Time")
           break
         case 408:
-          setErrMsg("Please Enter a Time")
+          setErrMsg("*Please Enter a Time")
           break
         case 399:
-          setErrMsg("Max Students Must be Positive")
+          setErrMsg("*Max Students Must be Positive")
           break
         case 405:
-          setErrMsg("Please Enter Max Students")
+          setErrMsg("*Please Enter Max Students")
           break
         case 406:
-          setErrMsg("Please Enter Instructors")
+          setErrMsg("*Please Enter Instructors")
           break
         case 407:
-          setErrMsg("Please Enter Address")
+          setErrMsg("*Please Enter Address")
           break
         case 409:
-          setErrMsg("Please Enter Location")
+          setErrMsg("*Please Enter Location")
           break
         case 410:
-          setErrMsg("Invalid Address")
+          setErrMsg("*Invalid Address")
           break
         case 411:
-          setErrMsg("Try Changing Address")
+          setErrMsg("*Try Changing Address")
           break
         case 412:
-          setErrMsg("Coordinate Error")
+          setErrMsg("*Coordinate Error")
           break
         case 422:
-          setErrMsg("ERROR")
+          setErrMsg("*ERROR")
           break
         default:
-          setErrMsg("Error Try Again")
+          setErrMsg("*Error Try Again")
       }
     })
   }
@@ -173,7 +173,10 @@ export const AdminCalendar = (props) => {
                 <Button style={{width:'300px'}} onClick={post} className= "button roundedInput" variant="success" >
                     Add Lesson
                 </Button>
-                    <p ref ={errRef} style = {{height: 20}} className= {errMsg ? (errMsg == "*Lesson Added"? "lessonvalidatedmsg":"lessonerrmsg") : "lessonoffscreen"} aria-live= "assertive"> {"*"+ errMsg} </p> 
+                <Button style={{opacity:0,width:'300px', background:"transparent", marginTop:20, borderColor:"black", borderWidth:2, color:"black"}} className= "button roundedInput redDeleteHover" variant="success" >
+                    Delete Lesson
+                </Button>
+                    <p ref ={errRef} style = {{marginTop:20,height: 20}} className= {errMsg ? (errMsg == "*Lesson Added"? "lessonvalidatedmsg":"lessonerrmsg") : "lessonoffscreen"} aria-live= "assertive"> {errMsg} </p> 
                 </div>
                 </Form>
             </div>
