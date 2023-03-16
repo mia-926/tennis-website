@@ -1,14 +1,18 @@
 
-import React, {useState, useEffect} from 'react';
+import React, { useEffect, useRef, useState} from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import './admin.css';
 import axios from 'axios';
 import { Instructors } from '../right/Instructors';
 import moment from 'moment';
+import { unstable_renderSubtreeIntoContainer } from 'react-dom';
 
 
 export const AdminEdit = (props) => {
+    const errRef = useRef();
+    const [errMsg, setErrMsg] = useState('')
+
     const [time, settime] = useState(moment(props.time, 'hh:mm A').format('HH:mm'));
     const [location, setlocation] = useState(props.location);
     const [address, setaddress] = useState(props.address);
@@ -17,9 +21,13 @@ export const AdminEdit = (props) => {
     const [inputNotes, setInputNotes] = useState("");
     const [students, setStudents] = useState([]);
     const [studentCount, setStudentCount] = useState(0);
+    const [edited, setEdited] = useState(0);
 
-    console.log(time)
-    useEffect(() => {
+    useEffect(()=>{
+        setErrMsg('')
+      }, [props.value])
+
+      useEffect(() => {
         settime(moment(props.time, 'hh:mm A').format('HH:mm'));
         setlocation(props.location);
         setaddress(props.address);
@@ -46,6 +54,7 @@ export const AdminEdit = (props) => {
 
 
   function patch(){
+    setEdited(1);
     const data = Object.assign({ _id: String(props.lessonId) }, 
     time !== props.time && { time },
     location !== props.location && { location },
@@ -57,8 +66,7 @@ export const AdminEdit = (props) => {
     console.log(data);
     axios.patch("https://tennis-backend-bnldi3x7oq-uw.a.run.app/api/lesson", data)
     .then(response => {
-      console.log("lesson edited")
-      console.log(response)
+        setErrMsg("*Lesson Added")
     })
     .catch(err => {
       console.log(err)
@@ -127,10 +135,14 @@ export const AdminEdit = (props) => {
                     </Form.Group>
                     </div>
                     </div>
-                <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' , flexDirection:"column"}}>
                 <Button style={{width:'300px'}} onClick={patch} className= "button roundedInput" variant="success" >
                     Edit Lesson
                 </Button>
+                <Button style={{width:'300px', background:"darkred", marginTop:20}} className= "button roundedInput" variant="success" >
+                    Delete Lesson
+                </Button>
+                <p ref ={errRef} style = {{height: 20}} className= {errMsg ? (errMsg == "*Lesson Added"? "lessonvalidatedmsg":"lessonerrmsg") : "lessonoffscreen"} aria-live= "assertive"> {"*"+ errMsg} </p> 
                 </div>
                 </Form>
             </div>

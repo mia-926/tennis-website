@@ -122,10 +122,11 @@ export const AdminCalendar = (props) => {
                     </Form.Group>
                     </div>
                     </div>
-                <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center',flexDirection:"column" }}>
                 <Button style={{width:'300px'}} onClick={post} className= "button roundedInput" variant="success" >
                     Add Lesson
                 </Button>
+                    <p style={{ marginTop:20, color:'green'}}>*Lesson Edited</p>
                 </div>
                 </Form>
             </div>

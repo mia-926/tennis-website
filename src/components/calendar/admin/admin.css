@@ -6,5 +6,15 @@
     font-weight: bold;
     color:black;
   }
-
-
+.lessonvalidatedmsg{
+    font-size:  110%;
+    color: #1c7a51;
+}
+.lessonerrmsg{
+    font-size:  110%;
+    color: #a52424;
+}
+.lessonoffscreen{
+    width: 0%;
+    opacity: 0;
+}
