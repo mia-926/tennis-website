@@ -13,7 +13,7 @@ export const DateText = (props) => {
     if(nextLesson ==="No upcoming Lessons"){
 
         if(props.day === 15 && props.month === "March"){
-            nextLesson = "Friday, March 17";
+            nextLesson = "Friday, March 16";
         }
     }
 

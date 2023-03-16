@@ -173,7 +173,10 @@ export const AdminCalendar = (props) => {
                 <Button style={{width:'300px'}} onClick={post} className= "button roundedInput" variant="success" >
                     Add Lesson
                 </Button>
-                    <p ref ={errRef} style = {{height: 20}} className= {errMsg ? (errMsg == "*Lesson Added"? "lessonvalidatedmsg":"lessonerrmsg") : "lessonoffscreen"} aria-live= "assertive"> {errMsg} </p> 
+                <Button style={{opacity:0,width:'300px', background:"transparent", marginTop:20, borderColor:"black", borderWidth:2, color:"black"}} className= "button roundedInput redDeleteHover" variant="success" >
+                    Delete Lesson
+                </Button>
+                    <p ref ={errRef} style = {{marginTop:20,height: 20}} className= {errMsg ? (errMsg == "*Lesson Added"? "lessonvalidatedmsg":"lessonerrmsg") : "lessonoffscreen"} aria-live= "assertive"> {errMsg} </p> 
                 </div>
                 </Form>
             </div>

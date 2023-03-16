@@ -27,7 +27,7 @@ import { Footer } from '../Footer';
                             </div>
 
                             <div className = "contactFont" style = {{paddingLeft: 30, paddingTop:5, fontSize:'1.2em'}}>
-                                    <p className='railwayMedium'>Email: <a style = {{color: "#000000", textDecoration: "none"}}href = "mailto:sweetes0214@gmail.com">sweetes0214@gmail.com</a> ~ Phone: (805) 660-3003</p>                
+                                    <p className='railwayMedium'>Email: <a style = {{color: "#000000", textDecoration: "none"}}href = "mailto:ethanKang532@gmail.com">ethanKang532@gmail.com</a> ~ Phone: (805) 660-3003</p>                
         
                             </div>
 
