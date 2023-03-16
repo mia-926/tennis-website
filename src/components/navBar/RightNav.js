@@ -31,7 +31,7 @@ function BootstrapNav(props) {
   }
   else{
   return (
-    <Nav className  style={{borderRadius:"0 0 0 15px", backgroundColor:rightbackground}}>
+    <Nav className  style={{borderRadius:"15px 0 0 15px", backgroundColor:rightbackground}}>
         <Nav.Link  style={{color:myColor, fontWeight:800, fontSize:'90%', marginTop: ".7%"}}className = "white" href="/create-account">Create Account</Nav.Link>
         <Nav.Link style={{color:myColor, fontWeight:800, fontSize:'90%', marginTop: ".7%"}} className = "white" onClick = {signOut}>Sign Out</Nav.Link>
     </Nav>
