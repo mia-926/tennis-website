@@ -83,7 +83,7 @@ fill = "red"
 fill-opacity="0"
  stroke="white" 
  opacity={opacity}
- stroke-width="40"/>
+ stroke-width="100"/>
 </svg>
         </div>
     );
