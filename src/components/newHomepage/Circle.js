@@ -73,7 +73,7 @@ export const Circle = (props) =>
             fill-opacity="0"
             stroke="white" 
             opacity={1}
-            stroke-width="40"
+            stroke-width="100"
    />       
             </svg>
             
