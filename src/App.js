@@ -31,8 +31,8 @@ function App() {
         component = <NewHome/>
         color = "white";
         rightColor="white";
-        background="transparent"
-        rightbackground="transparent"
+        background=String(scroll);
+        rightbackground=String(scroll); 
         break
       case "/home":
         component = <NewHome/>
@@ -110,8 +110,8 @@ function App() {
         component = <NewHome/>
         color = "white"
         rightColor="white";
-        background="transparent";
-        rightbackground="transparent"
+        background=String(scroll);
+        rightbackground=String(scroll); 
         break 
     }
   useEffect(() => {
