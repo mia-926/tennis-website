@@ -70,7 +70,7 @@ export const Banner1 = (props) => {
         <p style={{paddingTop:30, textAlign:"center",fontSize:'200%', marginLeft:100, marginLeft:window.innerWidth*1/3-250,}}>CIF-SS <br></br>STATE <br></br>CHAMPIONS</p>
      
             <h3  style={{fontSize:'100%', marginLeft:window.innerWidth*1/3-190, paddingTop:20}}>
-        2021-2022{window.innerHeight}
+        2021-2022
             </h3>
             </div>
         </div>
