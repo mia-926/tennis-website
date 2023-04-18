@@ -16,7 +16,7 @@ export const DeleteButton = () => {
 
   const handleClose = () => setShowModal(false);
   const handleDelete = () => {
-    axios.delete("https://tennis-backend-bnldi3x7oq-uw.a.run.app/api/user?_id="+ String(auth._id))
+    axios.delete("https://wta-backend-c6oszgtd6a-wl.a.run.app/api/user?_id="+ String(auth._id))
     .then((response) => {
     setlastWindow("/home")
     setAuth({})

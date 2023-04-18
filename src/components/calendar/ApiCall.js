@@ -4,7 +4,7 @@ import { ApiTester } from './ApiTester';
 import useReload from '../hooks/useReload';
 
 export const ApiCall = () => {
-    const[lessons, getLessons] = useState('');
+    const[lessons, setLessons] = useState('');
     const {reload} = useReload()
 
     const delay = ms => new Promise(
@@ -18,13 +18,14 @@ export const ApiCall = () => {
     }, [reload]);
 
     const getAllLessons = () => {
-        axios.get('https://tennis-backend-bnldi3x7oq-uw.a.run.app/api/allLessons')
+        axios.get('https://wta-backend-c6oszgtd6a-wl.a.run.app/api/allLessons')
         .then((response) => {
             const allLessons = response.data;
-            getLessons(allLessons);
+            setLessons(allLessons);
         })
         .catch(error => console.error(`Error: $(error)`));
     }
+    console.log(lessons)
     return(
         <ApiTester lessons={lessons}/> )
 }

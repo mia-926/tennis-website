@@ -54,7 +54,6 @@ export const MissionStatement = () => {
       <div>
       <h2 style={{background: "#294539", margin:0, padding:0}}>
       </h2>
-      {/* <MyCarousel/> */}
       </div>
     <Footer style={{ opacity:  0}}/>
     </div>
@@ -69,7 +68,6 @@ export const MissionStatement = () => {
       <div>
       <h2 style={{background: "#294539", margin:0, padding:0}}>
       </h2>
-      {/* <MyCarousel/> */}
       </div>
     </div>
     );

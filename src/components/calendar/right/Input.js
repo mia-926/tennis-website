@@ -21,7 +21,7 @@ export const Input = (props) => {
   function patch(){
     const data = {_id: String(props.lessonId), studentName:String(inputValue), student: String(auth._id)};
     console.log(data);
-    axios.patch("https://tennis-backend-bnldi3x7oq-uw.a.run.app/api/lessonAddStudent", data)
+    axios.patch("https://wta-backend-c6oszgtd6a-wl.a.run.app/api/lessonAddStudent", data)
     .then(response => {
       setNewNames(inputValue);
       console.log(reload)

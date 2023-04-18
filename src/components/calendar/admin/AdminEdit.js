@@ -55,7 +55,7 @@ export const AdminEdit = (props) => {
     inputNotes !== null && { inputNotes },
 );
     console.log(data);
-    axios.patch("https://tennis-backend-bnldi3x7oq-uw.a.run.app/api/lesson", data)
+    axios.patch("https://wta-backend-c6oszgtd6a-wl.a.run.app/api/lesson", data)
     .then(response => {
       console.log("lesson edited")
       console.log(response)
