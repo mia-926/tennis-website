@@ -11,7 +11,8 @@ import { AdminEdit } from './admin/AdminEdit';
 
 export const MyCalendar = (props) => {
     const mark = props.dateList
-
+   
+  console.log(mark)
     function getMonthName(monthNumber) {
       const date = new Date(monthNumber);
       return date.toLocaleString('en-US', { month: 'long' });
@@ -42,15 +43,16 @@ export const MyCalendar = (props) => {
     const firstDay = () => {
       if(mark.length > 0){
         let newDate = new Date(mark[0]);
-        setNextDay(mark[0]);
+        return(mark[0]);
       }
     }
 
     const [value, onChange] = useState(new Date());
     const [currentDay, setCurrentDay] = useState(0);
     const [lessonTime, setLessonTime] = useState(0);
-    const [isLesson, setIsLesson] = useState(false);
+    const [isLesson, setIsLesson] = useState(true);
     const [nextDay, setNextDay] = useState(()=>firstDay());
+    const [loading, setLoading] = useState(true);
 
     
     useEffect(() => {
@@ -79,11 +81,25 @@ export const MyCalendar = (props) => {
         if(run === true){
           setNextDay("No upcoming Lessons")
         }
-    
 
-    }, [value])
+
+    }, [value, loading])
+    console.log(props.times.length + "test")
   let today = new Date(Date.now());
+  useEffect(() => {
+      if(props.times.length > 0){
+            setLoading(false);
+      }
+}, [props.times])
+if(loading){
+  return(
+    <div>
+      <p>loading</p>
+    </div>
+  )
+}
   today.setDate(today.getDate() - 1);
+  console.log(isLesson + "lesson")
   if(isLesson){
     return (
         <div style={{position:'relative', paddingLeft:50, paddingRight:50, paddingTop: 150}} className='myContainer'>

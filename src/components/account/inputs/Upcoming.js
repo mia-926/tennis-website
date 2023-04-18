@@ -9,7 +9,7 @@ export const Upcoming = () => {
   const [allFutureLessons, setAllFutureLessons] = useState([]);
 
   useEffect(() => {
-    axios.get("https://tennis-backend-bnldi3x7oq-uw.a.run.app/api/futureLessonsByStudentID?studentID="+ String(auth._id))
+    axios.get("https://wta-backend-c6oszgtd6a-wl.a.run.app/api/futureLessonsByStudentID?studentID="+ String(auth._id))
     .then((response) => {
         let tempAllLessons = response.data;
         let tempFutureLessons = []

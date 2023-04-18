@@ -54,7 +54,7 @@ export const ApiTester = (props) => {
         setLessonIds(newLessonIds);
     }, [lessons])
 
- 
+ console.log(time)
     return (
         <div>
             <MyCalendar

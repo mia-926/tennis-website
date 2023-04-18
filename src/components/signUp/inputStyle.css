@@ -4,8 +4,29 @@
     border-width: 3px;
     border-color:   #000000;
   }
-  
-
+.inputFormWidth{
+  width:600px;
+}
+  @media only screen and (max-width: 600px) {
+    .inputFormWidth { 
+      width:400px;
+    }
+    .formPadding{
+      padding-left:100px;
+    }
+    .keepLogged{
+      left:-100!important;
+      align-items: left!important;
+      float: left !important;
+    }
+    .form-check-checkbox-container{
+      display: flex;  
+      flex-direction: row;   
+      align-items: left;
+      float: left;
+      padding-left: -100px;
+   }
+  }
   .form-check-input {
     float: center; 
     border-width: 1px;

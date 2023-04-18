@@ -4,7 +4,7 @@ import backgroundPic from'../../images/rings.jpg';
 import widePic from '../../images/rings.jpg';
 import { Circles } from './Circles';
 import { Text } from './Text';
-
+import logo from '../../images/greenlogo.png';
 export const Background = () => {
     const position = () => {
         if(window.innerWidth > 990){
@@ -31,10 +31,18 @@ export const Background = () => {
         }
     }
 
+    const size = () => {
+        if(window.innerWidth < 700){
+            return true;
+        }
+        return false;
+    }
+    const [iphoneSize, setIphoneSize] = useState(() => size())
     const [imageURL, setimageURL] = useState(window.innerWidth >= 900 ? backgroundPic : widePic);
     const [imageHeight, setimageHeight] = useState(() => height());
     const [imageWidth, setimageWidth] = useState(() => width());
     const [imagePosition, setImagePosition] = useState(() => position());
+   
 
 
     useEffect(() =>{
@@ -58,12 +66,36 @@ export const Background = () => {
         }
     }, [])
 
-    return(<div style={{height: imageHeight, background:"white"}}><div>
-        <img style={{height: imageHeight, width:imageWidth, float: imagePosition}} src = {imageURL} alt="background"/>
+    if(iphoneSize){
+        return (
+            <div style={{height: 600, background: "transparent"}}>
+              <div>
+   <div> <div className="white-rectangle"></div><div style={{height:100,display:"flex", flexDirection:"row", justifyContent:"center", alignContent:"center"}}><img style={{paddingTop:'20px',position:"absolute" , width:'15%'}}src = {logo}></img></div>
+                <h1 className='statementfonts railwayBold' style={{position: "absolute", fontSize: 40, backgroundColor: "transparent", color:"white", paddingTop:160,textAlign:"center", width:window.innerWidth}}>
+                  OUR<br></br> MISSION
+                </h1> <img style={{height: imageHeight, width: imageWidth, float: imagePosition}} src={imageURL} alt="background"/></div>:
+    <img style={{height: imageHeight, width: imageWidth, float: imagePosition}} src={imageURL} alt="background"/>
+               
+              </div>
+                <div style={{position:"absolute",top:100}}>
+                <Text/>
+                </div>
+            </div>
+          );
+          
+    }
+    return (
+        <div style={{height: imageHeight, background: "transparent"}}>
+          <div>
+            <img style={{height: imageHeight, width: imageWidth, float: imagePosition}} src={imageURL} alt="background"/>
+           
+          </div>
+            <div>
+              <Circles/>
+              <Text/>
+            </div>
         </div>
-        <Circles/>
-        <Text/>
-        </div>
-    );
+      );
+      
 }
 

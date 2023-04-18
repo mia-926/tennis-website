@@ -10,6 +10,7 @@ import '../newHomepage.css';
 
 export const TestimonialCard = () => {
   return (
+    <div className='large'>
     <Carousel slide={false}>
       <Carousel.Item interval={10000} >
       <img
@@ -63,5 +64,6 @@ export const TestimonialCard = () => {
       </Carousel.Item>
       
     </Carousel>
+    </div>
   );
 }

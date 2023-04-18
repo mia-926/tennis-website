@@ -25,7 +25,7 @@ export const Instructors = (props) => {
         data = {user: auth._id, date:props.value, message:String(inputValue)};}
         else {data = {user: auth._id, date:props.value};}
         console.log(data)
-        axios.post("https://tennis-backend-bnldi3x7oq-uw.a.run.app/api/request", data)
+        axios.post("https://wta-backend-c6oszgtd6a-wl.a.run.app/api/request", data)
         .then(response => {
           console.log(response)
         })

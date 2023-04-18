@@ -17,6 +17,7 @@ export const LoginInput = () => {
   const [username, setUsername] = useState('');
   const [errMsg, setErrMsg] = useState('')
   const [keepLogin, setkeepLogin] = useState(true);
+  
 
   useEffect(()=>{
     setErrMsg('')
@@ -33,7 +34,7 @@ export const LoginInput = () => {
   }
   function submit(){
     const data = { username: String(username), password: String(password)};
-    axios.post('https://tennis-backend-bnldi3x7oq-uw.a.run.app/api/authPassword', data)
+    axios.post('https://wta-backend-c6oszgtd6a-wl.a.run.app/api/authPassword', data)
         .then (response => {
           let _id = response.data._id
           let email = response.data.email
@@ -69,7 +70,7 @@ export const LoginInput = () => {
 
   return (
     <div>
-    <Form style ={{width: 600}}>
+    <Form className="formWidth formPadding">
     <Form.Group  className=  "mb-3"  controlId="formEmail" >
       <Form.Label className = "railwayMedium">Username or Email</Form.Label>
       <Form.Control className = "railway" autoComplete = "off" value={username} onChange={handleUsernameChange} type="Username" placeholder="Enter Username or Password" />
@@ -85,7 +86,7 @@ export const LoginInput = () => {
 
     <Form.Group className="mb-3" controlId="formEmailList">
   <div className="form-check-checkbox-container">
-    <label className="form-check-label railwayMedium" htmlFor="formCheck-1">Keep me logged in</label>
+    <label className="form-check-label railwayMedium keepLogged" htmlFor="formCheck-1">Keep me logged in</label>
     <input value={keepLogin} onChange={handlekeepLogin} className="form-check-input" type="checkbox" id="formCheck-1" checked= {keepLogin}/>
   </div>
     </Form.Group>

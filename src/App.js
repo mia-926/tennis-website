@@ -18,6 +18,8 @@ import {Instructors} from './components/instructors/Instructors';
 import {Sources} from "./components/sources/Sources"
 import { InstructorPage } from './components/instructors/InstructorPage';
 import useScroll from "./components/hooks/useScroll"
+import { IphoneHome } from './components/newHomepage/iphone/IphoneHome';
+import { HomePage } from './components/newHomepage/HomePage';
 
 function App() {
   let component
@@ -28,14 +30,14 @@ function App() {
   let {scroll} = useScroll()
     switch (window.location.pathname) {
       case "/%257Btennis-website%257D":
-        component = <NewHome/>
+        component = <HomePage/>
         color = "white";
         rightColor="white";
         background="transparent"
         rightbackground="transparent"
         break
       case "/home":
-        component = <NewHome/>
+        component = <HomePage/>
         color = "white"
         rightColor="white";
         background=String(scroll);
@@ -107,7 +109,7 @@ function App() {
 
         break
       default:
-        component = <NewHome/>
+        component = <HomePage/>
         color = "white"
         rightColor="white";
         background="transparent";
@@ -117,14 +119,14 @@ function App() {
   useEffect(() => {
     switch (window.location.pathname) {
       case "/%257Btennis-website%257D":
-        component = <NewHome/>
+        component =  <HomePage/>
         color = "white";
         rightColor="white";
         background="transparent"
         rightbackground="transparent"
         break
       case "/home":
-        component = <NewHome/>
+        component = <HomePage/>
         color = "white"
         rightColor="white";
         background=String(scroll);
@@ -195,7 +197,7 @@ function App() {
 
         break
       default:
-        component = <NewHome/>
+        component =  <HomePage/>
         color = "white"
         rightColor="white";
         background="transparent";

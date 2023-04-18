@@ -6,7 +6,7 @@ import './fonts.css';
 export const Names = (props) => {
    
     const names =props.names;
-    console.log(props.names)
+    console.log(props.names + "Name")
 
     if(names.length>0){
     return (
