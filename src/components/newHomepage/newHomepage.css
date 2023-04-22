@@ -110,8 +110,10 @@
     width: 40px !important;
   }
   
+
 .carousel-indicators{
     transform: translateY(-600);
+    z-index: 1000;
 }
 
 .carousel-indicators {

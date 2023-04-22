@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react';
 
 //import {Home} from './components/homepage/Home';
 import { MyNavBar } from './components/navBar/MyNavBar';
-import { CalendarPage } from './components/calendar/CalendarPage';
+import { CalendarReturnPage } from './components/calendar/CalendarReturnPage';
 import { SignUp } from './components/signUp/SignUp';
 import{Login} from "./components/login/Login";
 import{Account} from "./components/account/Account";
@@ -27,7 +27,8 @@ function App() {
   let color = "white";
   let rightColor="white";
   let background="transparent";
-  let rightbackground = "transparent"
+  let rightbackground = "transparent";
+
   let {scroll} = useScroll()
     switch (window.location.pathname) {
       case "/%257Btennis-website%257D":
@@ -45,7 +46,7 @@ function App() {
         rightbackground=String(scroll);  
         break 
       case "/join-lesson":
-        component = <CCalendarPage/>
+        component = <CalendarReturnPage/>
         color= "white"
         rightColor="black";
         background="transparent";
@@ -134,7 +135,7 @@ function App() {
         rightbackground=String(scroll);  
         break 
       case "/join-lesson":
-        component = <CalendarPage/>
+        component = <CalendarReturnPage/>
         color= "white"
         rightColor="black";
         background="transparent";
