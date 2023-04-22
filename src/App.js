@@ -20,6 +20,7 @@ import { InstructorPage } from './components/instructors/InstructorPage';
 import useScroll from "./components/hooks/useScroll"
 import { IphoneHome } from './components/newHomepage/iphone/IphoneHome';
 import { HomePage } from './components/newHomepage/HomePage';
+import { CCalendarPage } from './components/calendar copy/CCalendarPage';
 
 function App() {
   let component
@@ -44,7 +45,7 @@ function App() {
         rightbackground=String(scroll);  
         break 
       case "/join-lesson":
-        component = <CalendarPage/>
+        component = <CCalendarPage/>
         color= "white"
         rightColor="black";
         background="transparent";
