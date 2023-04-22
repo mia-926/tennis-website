@@ -8,7 +8,7 @@ import { Circle } from './IphoneCircle';
 import { HomeTitle } from './IphoneHomeTitle';
 import { Description } from './IphoneDescription';
 import {BottomCircle} from './IphoneBottomCircle';
-import { Banner } from './IphoneBanner';
+import { IphoneBanner } from './IphoneBanner';
 import { PhoneFooter } from './PhoneFooter';
 
 
@@ -50,7 +50,7 @@ export const IphoneHome = () => {
   
     <BottomCircle  style={{zIndex:1}}/>
     <Circle  style={{zIndex:4, position:'relative'}}/>
-      <Banner/>
+      <IphoneBanner/>
     <Description style={{position:'absolute'}}/>
    
 

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { PhoneFooter } from './PhoneFooter';
 
-export const Banner = () => {
+export const IphoneBanner = () => {
 
     return (<div style={{display:"flex", flexDirection:"column"}}>
         <Banner2/>

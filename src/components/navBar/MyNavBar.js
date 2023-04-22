@@ -12,11 +12,29 @@ import useAuth from '../hooks/useAuth';
 
 export const MyNavBar = (props) => {
 
+const setBackground = ()=>{
+  if(window.innerWidth < 700){
+    return "white";
+  }
+  else{
+    return props.background;
+  }
+}
 
+const setColor = ()=>{
+  if(window.innerWidth < 700){
+    return "black";
+  }
+  else{
+    return props.color;
+  }
+}
 
 const [imageWidth, setimageWidth] = useState(window.innerWidth);
 const {setAuth} = useAuth();
-const {auth} = useAuth()
+const {auth} = useAuth();
+const [navBackgroundColor, setNavBackgroundColor] = useState(()=>setBackground);
+const [navLinkColor, setNavLinkColor] = useState(()=>setColor);
 function signOut(){
   setAuth({})
   window.location.href = "/home";
@@ -32,6 +50,11 @@ useEffect(() =>{
         window.removeEventListener('resize', handleResize)
     }
 }, [])
+
+useEffect(() =>{
+  setNavBackgroundColor(setBackground());
+  setNavLinkColor(setColor());
+}, [])
   if(window.innerWidth >= 992)
   return (
     <div>
@@ -41,7 +64,7 @@ useEffect(() =>{
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <div style={{width:window.innerWidth, display:"flex", flexDirection:"row", justifyContent:"space-between", alignContent:"center"}}>
-            <LeftNav color = {props.color} background = {props.background}/>
+            <LeftNav color = {navLinkColor} background = {navBackgroundColor}/>
             <RightNav color = {props.rightColor}  rightbackground = {props.rightbackground}/>
             </div>
           </Navbar.Collapse>
@@ -57,18 +80,18 @@ useEffect(() =>{
         <Navbar fixed = "top" expand = "lg" style = {{marginTop: "-.7%"}}>
           {/* <Container> */}
             <div>
-            <Navbar.Toggle aria-controls="basic-navbar-nav" style = {{borderColor: props.color, backgroundColor: props.background}}></Navbar.Toggle>
+            <Navbar.Toggle aria-controls="basic-navbar-nav" style = {{borderColor: navLinkColor, backgroundColor: navBackgroundColor}}></Navbar.Toggle>
             <Navbar.Collapse id="basic-navbar-nav">
-              <div style={{width:window.innerWidth, width: "100%", borderRadius: "0 15px 0 15px", backgroundColor: props.background, paddingLeft:5,display:"flex", flexDirection:"column", justifyContent:"space-between", alignContent:"center"}}>
-                <Nav.Link  style={{color:props.color, fontWeight:800, fontSize:'90%',marginTop: ".7%"}} href="/home ">Home</Nav.Link>
-                <Nav.Link  style={{color:props.color, fontWeight:800, fontSize:'90%', marginTop: ".7%"}} href="/instructors">Instructors</Nav.Link>
-                <Nav.Link  style={{color:props.color, fontWeight:800, fontSize:'90%', marginTop: ".7%"}} href="/mission">Mission</Nav.Link>
-                <Nav.Link  style={{color:props.color, fontWeight:800, fontSize:'90%',marginTop: ".7%"}} href="/join-lesson">Join a lesson</Nav.Link>
-                <Nav.Link  style={{color:props.color, fontWeight:800, fontSize:'90%',marginTop: ".7%"}} href="/learn-more">Learn More</Nav.Link>
-                <Nav.Link  style={{color:props.color, fontWeight:800, fontSize:'90%',marginTop: ".7%"}} href="/account">Settings</Nav.Link>
-                <Nav.Link  style={{color:props.color, fontWeight:800, fontSize:'90%', marginTop: ".7%"}} href="/admin-page">Admin</Nav.Link>
-                <Nav.Link  style={{color:props.color, fontWeight:800, fontSize:'90%', marginTop: ".7%"}}className = "white" href="/create-account">Create Account</Nav.Link>
-                <Nav.Link style={{color:props.color, fontWeight:800, fontSize:'90%', marginTop: ".7%"}} className = "white" onClick = {signOut}>Sign Out</Nav.Link>
+              <div style={{width:window.innerWidth, width: "100%", borderRadius: "0 15px 0 15px", backgroundColor: navBackgroundColor, paddingLeft:5,display:"flex", flexDirection:"column", justifyContent:"space-between", alignContent:"center"}}>
+                <Nav.Link  style={{color:navLinkColor, fontWeight:800, fontSize:'90%',marginTop: ".7%"}} href="/home ">Home</Nav.Link>
+                <Nav.Link  style={{color:navLinkColor, fontWeight:800, fontSize:'90%', marginTop: ".7%"}} href="/instructors">Instructors</Nav.Link>
+                <Nav.Link  style={{color:navLinkColor, fontWeight:800, fontSize:'90%', marginTop: ".7%"}} href="/mission">Mission</Nav.Link>
+                <Nav.Link  style={{color:navLinkColor, fontWeight:800, fontSize:'90%',marginTop: ".7%"}} href="/join-lesson">Join a lesson</Nav.Link>
+                <Nav.Link  style={{color:navLinkColor, fontWeight:800, fontSize:'90%',marginTop: ".7%"}} href="/learn-more">Learn More</Nav.Link>
+                <Nav.Link  style={{color:navLinkColor, fontWeight:800, fontSize:'90%',marginTop: ".7%"}} href="/account">Settings</Nav.Link>
+                <Nav.Link  style={{color:navLinkColor, fontWeight:800, fontSize:'90%', marginTop: ".7%"}} href="/admin-page">Admin</Nav.Link>
+                <Nav.Link  style={{color:navLinkColor, fontWeight:800, fontSize:'90%', marginTop: ".7%"}}className = "white" href="/create-account">Create Account</Nav.Link>
+                <Nav.Link style={{color:navLinkColor, fontWeight:800, fontSize:'90%', marginTop: ".7%"}} className = "white" onClick = {signOut}>Sign Out</Nav.Link>
               </div>
             </Navbar.Collapse>
             </div>
@@ -83,17 +106,17 @@ useEffect(() =>{
       <Navbar fixed = "top" expand = "lg" style = {{marginTop: "-.7%"}}>
         {/* <Container> */}
           <div>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" style = {{borderColor: props.color, backgroundColor: props.background}}></Navbar.Toggle>
+          <Navbar.Toggle aria-controls="basic-navbar-nav" style = {{borderColor: navLinkColor, backgroundColor: navBackgroundColor}}></Navbar.Toggle>
           <Navbar.Collapse id="basic-navbar-nav">
-            <div style={{width:window.innerWidth, width: "100%", borderRadius: "0 15px 0 15px", backgroundColor: props.background, paddingLeft:5,display:"flex", flexDirection:"column", justifyContent:"space-between", alignContent:"center"}}>
-              <Nav.Link  style={{color:props.color, fontWeight:800, fontSize:'90%',marginTop: ".7%"}} href="/home ">Home</Nav.Link>
-              <Nav.Link  style={{color:props.color, fontWeight:800, fontSize:'90%', marginTop: ".7%"}} href="/instructors">Instructors</Nav.Link>
-              <Nav.Link  style={{color:props.color, fontWeight:800, fontSize:'90%', marginTop: ".7%"}} href="/mission">Mission</Nav.Link>
-              <Nav.Link  style={{color:props.color, fontWeight:800, fontSize:'90%',marginTop: ".7%"}} href="/join-lesson">Join a lesson</Nav.Link>
-              <Nav.Link  style={{color:props.color, fontWeight:800, fontSize:'90%',marginTop: ".7%"}} href="/learn-more">Learn More</Nav.Link>
-              <Nav.Link  style={{color:props.color, fontWeight:800, fontSize:'90%',marginTop: ".7%"}} href="/account">Settings</Nav.Link>
-              <Nav.Link  style={{color:props.color, fontWeight:800, fontSize:'90%', marginTop: ".7%"}}className = "white" href="/create-account">Create Account</Nav.Link>
-              <Nav.Link  style={{color:props.color, fontWeight:800, fontSize:'90%', marginTop: ".7%"}}className = "white" href="/login">Login</Nav.Link>
+            <div style={{width:window.innerWidth, width: "100%", borderRadius: "0 15px 0 15px", backgroundColor: navBackgroundColor, paddingLeft:5,display:"flex", flexDirection:"column", justifyContent:"space-between", alignContent:"center"}}>
+              <Nav.Link  style={{color:navLinkColor, fontWeight:800, fontSize:'90%',marginTop: ".7%"}} href="/home ">Home</Nav.Link>
+              <Nav.Link  style={{color:navLinkColor, fontWeight:800, fontSize:'90%', marginTop: ".7%"}} href="/instructors">Instructors</Nav.Link>
+              <Nav.Link  style={{color:navLinkColor, fontWeight:800, fontSize:'90%', marginTop: ".7%"}} href="/mission">Mission</Nav.Link>
+              <Nav.Link  style={{color:navLinkColor, fontWeight:800, fontSize:'90%',marginTop: ".7%"}} href="/join-lesson">Join a lesson</Nav.Link>
+              <Nav.Link  style={{color:navLinkColor, fontWeight:800, fontSize:'90%',marginTop: ".7%"}} href="/learn-more">Learn More</Nav.Link>
+              <Nav.Link  style={{color:navLinkColor, fontWeight:800, fontSize:'90%',marginTop: ".7%"}} href="/account">Settings</Nav.Link>
+              <Nav.Link  style={{color:navLinkColor, fontWeight:800, fontSize:'90%', marginTop: ".7%"}}className = "white" href="/create-account">Create Account</Nav.Link>
+              <Nav.Link  style={{color:navLinkColor, fontWeight:800, fontSize:'90%', marginTop: ".7%"}}className = "white" href="/login">Login</Nav.Link>
             </div>
           </Navbar.Collapse>
           </div>
@@ -108,17 +131,17 @@ useEffect(() =>{
         <Navbar fixed = "top" expand = "lg" style = {{marginTop: "-.7%"}}>
           {/* <Container> */}
             <div>
-            <Navbar.Toggle aria-controls="basic-navbar-nav" style = {{borderColor: props.color, backgroundColor: props.background}}></Navbar.Toggle>
+            <Navbar.Toggle aria-controls="basic-navbar-nav" style = {{borderColor: navLinkColor, backgroundColor: navBackgroundColor}}></Navbar.Toggle>
             <Navbar.Collapse id="basic-navbar-nav">
-              <div style={{width:window.innerWidth, width: "100%", borderRadius: "0 15px 0 15px", backgroundColor: props.background, paddingLeft:5,display:"flex", flexDirection:"column", justifyContent:"space-between", alignContent:"center"}}>
-                <Nav.Link  style={{color:props.color, fontWeight:800, fontSize:'90%',marginTop: ".7%"}} href="/home ">Home</Nav.Link>
-                <Nav.Link  style={{color:props.color, fontWeight:800, fontSize:'90%', marginTop: ".7%"}} href="/instructors">Instructors</Nav.Link>
-                <Nav.Link  style={{color:props.color, fontWeight:800, fontSize:'90%', marginTop: ".7%"}} href="/mission">Mission</Nav.Link>
-                <Nav.Link  style={{color:props.color, fontWeight:800, fontSize:'90%',marginTop: ".7%"}} href="/join-lesson">Join a lesson</Nav.Link>
-                <Nav.Link  style={{color:props.color, fontWeight:800, fontSize:'90%',marginTop: ".7%"}} href="/learn-more">Learn More</Nav.Link>
-                <Nav.Link  style={{color:props.color, fontWeight:800, fontSize:'90%',marginTop: ".7%"}} href="/account">Settings</Nav.Link>
-                <Nav.Link  style={{color:props.color, fontWeight:800, fontSize:'90%', marginTop: ".7%"}}className = "white" href="/create-account">Create Account</Nav.Link>
-                <Nav.Link style={{color:props.color, fontWeight:800, fontSize:'90%', marginTop: ".7%"}} className = "white" onClick = {signOut}>Sign Out</Nav.Link>
+              <div style={{width:window.innerWidth, width: "100%", borderRadius: "0 15px 0 15px", backgroundColor: navBackgroundColor, paddingLeft:5,display:"flex", flexDirection:"column", justifyContent:"space-between", alignContent:"center"}}>
+                <Nav.Link  style={{color:navLinkColor, fontWeight:800, fontSize:'90%',marginTop: ".7%"}} href="/home ">Home</Nav.Link>
+                <Nav.Link  style={{color:navLinkColor, fontWeight:800, fontSize:'90%', marginTop: ".7%"}} href="/instructors">Instructors</Nav.Link>
+                <Nav.Link  style={{color:navLinkColor, fontWeight:800, fontSize:'90%', marginTop: ".7%"}} href="/mission">Mission</Nav.Link>
+                <Nav.Link  style={{color:navLinkColor, fontWeight:800, fontSize:'90%',marginTop: ".7%"}} href="/join-lesson">Join a lesson</Nav.Link>
+                <Nav.Link  style={{color:navLinkColor, fontWeight:800, fontSize:'90%',marginTop: ".7%"}} href="/learn-more">Learn More</Nav.Link>
+                <Nav.Link  style={{color:navLinkColor, fontWeight:800, fontSize:'90%',marginTop: ".7%"}} href="/account">Settings</Nav.Link>
+                <Nav.Link  style={{color:navLinkColor, fontWeight:800, fontSize:'90%', marginTop: ".7%"}}className = "white" href="/create-account">Create Account</Nav.Link>
+                <Nav.Link style={{color:navLinkColor, fontWeight:800, fontSize:'90%', marginTop: ".7%"}} className = "white" onClick = {signOut}>Sign Out</Nav.Link>
               </div>
             </Navbar.Collapse>
             </div>

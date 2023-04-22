@@ -40,7 +40,7 @@ export const Description = () => {
     }, [])
 
     return(
-        <div className="railway descriptionContainer" style={{position: 'absolute',top: 580+position, width: window.innerWidth, color: "black"}}>
+        <div className="railway descriptionContainer" style={{position: 'absolute',top: 580+position, width: window.innerWidth, color: "black", zIndex:1000}}>
             <p>We provide free, quality group tennis lessons taught by <br></br>Westlake High School’s varsity tennis in Westlake Village, CA.</p>
             <div style={{flexDirection: 'row', paddingTop: 10, paddingBottom:50}}>
                 <a style = {{marginRight: 10, width: 150, paddingTop: 3, paddingBottom: 3, zIndex: 15}}className="greenb btn btn-primary railway" href="/join-lesson" role="button">Join <br></br>a Lesson</a>
