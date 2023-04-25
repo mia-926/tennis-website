@@ -2,7 +2,7 @@ import Accordion from 'react-bootstrap/Accordion';
 
 import './learnMore.css';
 
-function FAQ() {
+export const FAQ = () =>{
   return (
     <div style={{paddingRight:100, paddingLeft:100, marginBottom:100, paddingTop:10}}>
       <h1 className='railwaySemiBold'>FAQs</h1>

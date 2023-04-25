@@ -19,11 +19,28 @@
     font-weight: 501;
     color: #000000;
 }
+.phoneCitationsLine{
+    border-radius: 3px;
+    border-width: 3px;
+    width: 80%;
+    color: #294539;
+}
 .CitationsLine{
     border-radius: 3px;
     border-width: 9px;
     width: 65%;
     color: #294539;
+}
+.phoneCitationsParagraphContainer{
+    flex: 9;
+    height: max-content;
+    flex-direction: column; 
+    width: 90%;
+    float:left;
+    display: flex; 
+    flex-wrap:nowarp;
+    justify-content: space-around;
+    overflow-y: auto;
 }
 .CitationsParagraphContainer{
     flex: 9;

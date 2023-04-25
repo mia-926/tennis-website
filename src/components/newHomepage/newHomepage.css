@@ -62,6 +62,11 @@
     line-height: 90%;
 }
 
+.homeSubtitleComputer{
+  font-size: 110%;
+  letter-spacing: .5rem;
+  line-height: 90%;
+}
 .descriptionContainer{
     font-size: 150%;
     align-items: center;
@@ -141,4 +146,8 @@
   border-color: #294539;
   background-color: #294539;
   color: white;
+}
+
+.learnButton:hover {
+  color: white !important;
 }

@@ -64,7 +64,7 @@ useEffect(() =>{
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <div style={{width:window.innerWidth, display:"flex", flexDirection:"row", justifyContent:"space-between", alignContent:"center"}}>
-            <LeftNav color = {navLinkColor} background = {navBackgroundColor}/>
+            <LeftNav color = {props.color} background = {props.background}/>
             <RightNav color = {props.rightColor}  rightbackground = {props.rightbackground}/>
             </div>
           </Navbar.Collapse>
@@ -80,9 +80,9 @@ useEffect(() =>{
         <Navbar fixed = "top" expand = "lg" style = {{marginTop: "-.7%"}}>
           {/* <Container> */}
             <div>
-            <Navbar.Toggle aria-controls="basic-navbar-nav" style = {{borderColor: navLinkColor, backgroundColor: navBackgroundColor}}></Navbar.Toggle>
+            <Navbar.Toggle aria-controls="basic-navbar-nav" style = {{borderColor: navLinkColor, backgroundColor: navBackgroundColor, marginLeft: 5}}></Navbar.Toggle>
             <Navbar.Collapse id="basic-navbar-nav">
-              <div style={{width:window.innerWidth, width: "100%", borderRadius: "0 15px 0 15px", backgroundColor: navBackgroundColor, paddingLeft:5,display:"flex", flexDirection:"column", justifyContent:"space-between", alignContent:"center"}}>
+              <div style={{width:window.innerWidth, width: "100%", borderRadius: "15px 15px 15px 15px", backgroundColor: navBackgroundColor, paddingLeft:5, paddingRight: 5,display:"flex", flexDirection:"column", justifyContent:"space-between", alignContent:"center"}}>
                 <Nav.Link  style={{color:navLinkColor, fontWeight:800, fontSize:'90%',marginTop: ".7%"}} href="/home ">Home</Nav.Link>
                 <Nav.Link  style={{color:navLinkColor, fontWeight:800, fontSize:'90%', marginTop: ".7%"}} href="/instructors">Instructors</Nav.Link>
                 <Nav.Link  style={{color:navLinkColor, fontWeight:800, fontSize:'90%', marginTop: ".7%"}} href="/mission">Mission</Nav.Link>
@@ -106,9 +106,9 @@ useEffect(() =>{
       <Navbar fixed = "top" expand = "lg" style = {{marginTop: "-.7%"}}>
         {/* <Container> */}
           <div>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" style = {{borderColor: navLinkColor, backgroundColor: navBackgroundColor}}></Navbar.Toggle>
+          <Navbar.Toggle aria-controls="basic-navbar-nav" style = {{borderColor: navLinkColor, backgroundColor: navBackgroundColor, marginLeft: 5}}></Navbar.Toggle>
           <Navbar.Collapse id="basic-navbar-nav">
-            <div style={{width:window.innerWidth, width: "100%", borderRadius: "0 15px 0 15px", backgroundColor: navBackgroundColor, paddingLeft:5,display:"flex", flexDirection:"column", justifyContent:"space-between", alignContent:"center"}}>
+            <div style={{width:window.innerWidth, width: "100%", borderRadius: "15px 15px 15px 15px", backgroundColor: navBackgroundColor, paddingLeft:5, paddingRight: 5,display:"flex", flexDirection:"column", justifyContent:"space-between", alignContent:"center"}}>
               <Nav.Link  style={{color:navLinkColor, fontWeight:800, fontSize:'90%',marginTop: ".7%"}} href="/home ">Home</Nav.Link>
               <Nav.Link  style={{color:navLinkColor, fontWeight:800, fontSize:'90%', marginTop: ".7%"}} href="/instructors">Instructors</Nav.Link>
               <Nav.Link  style={{color:navLinkColor, fontWeight:800, fontSize:'90%', marginTop: ".7%"}} href="/mission">Mission</Nav.Link>
@@ -131,9 +131,9 @@ useEffect(() =>{
         <Navbar fixed = "top" expand = "lg" style = {{marginTop: "-.7%"}}>
           {/* <Container> */}
             <div>
-            <Navbar.Toggle aria-controls="basic-navbar-nav" style = {{borderColor: navLinkColor, backgroundColor: navBackgroundColor}}></Navbar.Toggle>
+            <Navbar.Toggle aria-controls="basic-navbar-nav" style = {{borderColor: navLinkColor, backgroundColor: navBackgroundColor, marginLeft: 5}}></Navbar.Toggle>
             <Navbar.Collapse id="basic-navbar-nav">
-              <div style={{width:window.innerWidth, width: "100%", borderRadius: "0 15px 0 15px", backgroundColor: navBackgroundColor, paddingLeft:5,display:"flex", flexDirection:"column", justifyContent:"space-between", alignContent:"center"}}>
+              <div style={{width:window.innerWidth, width: "100%", borderRadius: "15px 15px 15px 15px", backgroundColor: navBackgroundColor, paddingLeft:5,paddingRight: 5,display:"flex", flexDirection:"column", justifyContent:"space-between", alignContent:"center"}}>
                 <Nav.Link  style={{color:navLinkColor, fontWeight:800, fontSize:'90%',marginTop: ".7%"}} href="/home ">Home</Nav.Link>
                 <Nav.Link  style={{color:navLinkColor, fontWeight:800, fontSize:'90%', marginTop: ".7%"}} href="/instructors">Instructors</Nav.Link>
                 <Nav.Link  style={{color:navLinkColor, fontWeight:800, fontSize:'90%', marginTop: ".7%"}} href="/mission">Mission</Nav.Link>

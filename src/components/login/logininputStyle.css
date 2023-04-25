@@ -25,6 +25,10 @@
     float: left;
     padding-left: -100px;
  }
+ .keepLogged{
+  margin-left: 25% !important;
+  margin-right: 4% !important;
+ }
 }
 .forgot{
   padding-top: 1.0%;

@@ -1,0 +1,86 @@
+.accountFullUserInfo{
+    margin: 3%;
+}   
+.Infoform-row{
+    display: flex;
+    flex-direction: row;
+}
+
+.InfoFormColumn{
+    flex: 1;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+.account-form-control{
+    border-radius: 10px;
+    border-width: 3px;
+    border-color:   #000000;
+}
+.constant.form-control::placeholder {
+  color: black;
+}
+.accountButton{
+    border-color: #294539;
+    text-align: center;
+    background-color: #294539;
+    margin-left: 2%;
+    margin-top: 3%;
+    border-radius: 10px;
+    line-height: 50%;
+    width: 20%;
+}
+.accountButton.right{
+    margin-left: 30%;
+}
+
+.accountButton:hover{
+    background-color: #121e19;
+}
+
+.accountButton:active{
+    background-color: #121e19 !important;
+}
+
+.acccount-form-check-label{
+    font-size: 110%;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+.form-check-input.account{
+    float: center; 
+    border-width: 2px;
+    width: 20px;
+    height: 20px;
+    border-color: #000000;
+  }
+  .form-check-input:checked{
+    background-color: #294539;
+    border-width: 1px;
+    border-color: #000000;
+    margin-left: 0px;
+    margin-right: 10px;
+  } 
+
+.accountvalidatedmsg{
+    align-self: flex-end;
+    margin-left: auto;
+    font-size:  110%;
+    color: #1c7a51;
+}
+
+.accounterrmsg{
+    align-self: flex-end;
+    margin-left: auto;
+    font-size:  110%;
+    color: #a52424;
+}
+
+.accountoffscreen{
+    align-self: flex-end;
+    width: 0%;
+    opacity: 0;
+}
+.accountUserInfoTitle{
+    width: 100%;
+}
