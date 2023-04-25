@@ -7,31 +7,16 @@
     flex-wrap:nowarp;
     justify-content: space-around;
 }
-.phoneaccountGreenCircles{
-    width: 50%;
-    top: 0; 
-    left: 0;
-    z-index: 100;
-    border: 5px;
-    border-color: #FFFFFF
-}
-.phoneaccountTitleDiv {
-    flex:1;
-    display:flex;
-    margin-left: 6%;
-    justify-content: left;
-    align-items: left;
-  }
+
 
 .phoneaccountChangeDiv{
-    flex:8;
+    flex:1;
     display: flex;
     flex-direction: row; 
-    z-index: 10;
 }
 
 .phoneaccountViewDiv{
-    flex:8;
+    flex:1;
     display: flex;
     flex-direction: row; 
     justify-content: center;
@@ -39,7 +24,7 @@
 }
 .phoneaccountUserInfo{
     width: 90%;
-    border-radius: 20px;
+    border-radius: 20px!important;
     margin-right: 5%;
     margin-left: 5%;
     margin-bottom: 2%;

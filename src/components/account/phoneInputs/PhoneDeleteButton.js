@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
-import "../accountcss/deletebutton.css"
+import "../phoneaccountcss/phoneDeletebutton.css"
 import axios from "axios";
 import useAuth from "../../hooks/useAuth";
 import useMsg from "../../hooks/useMsg";

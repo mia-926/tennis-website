@@ -1,7 +1,7 @@
 import axios from "axios";
 
 import React, { useEffect, useRef, useState} from 'react';
-import "../accountcss/password.css";
+import "../phoneaccountcss/phonePassword.css";
 import "../../newHomepage/newHomepage.css";
 import Form from 'react-bootstrap/Form';
 import useAuth from "../../hooks/useAuth";

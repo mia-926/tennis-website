@@ -1,7 +1,7 @@
 import axios from "axios";
 
 import React, { useEffect, useRef, useState} from 'react';
-import "../accountcss/userinfo.css";
+import "../phoneaccountcss/phoneUserinfo.css";
 import Form from 'react-bootstrap/Form';
 import useAuth from "../../hooks/useAuth";
 import Button from 'react-bootstrap/Button';
@@ -92,18 +92,18 @@ export const PhoneUserInfo = () => {
         setUsername("")
     }
     return (
-        <div className = "accountFullUserInfo">
+        <div className = "phoneaccountFullUserInfo">
             <div style = {{display: "flex", flexDirection: "row", alignItems: "center"}}>
-                <h4 className = "accountUserInfoTitle railwaySemiBold">USER INFORMATION</h4>
+                <h4 className = "phoneaccountUserInfoTitle railwaySemiBold">USER INFORMATION</h4>
                 <p ref ={errRef} style = {{height: 20}} className= {msg ? (msg == "Account Updated"? "accountvalidatedmsg":"accounterrmsg") : "accountoffscreen"} aria-live= "assertive"> {"*"+ msg} </p> 
             </div>
             <form>
                 <div class="InfoFormColumn">
-                    <label className = "railwayMedium"for="inputEmail4">Current Username</label>
+                    <label className = "phonerailwayMedium"for="inputEmail4">Current Username</label>
                     <input  type="email" style = {{height: 35 }} class="form-control constant railway" id="ConstUsername4" placeholder={auth.username} readOnly/>
                 </div>
                 <div class="InfoFormColumn">
-                    <label className = "railwayMedium" for="inputPassword4">Current Email</label>
+                    <label className = "phonerailwayMedium" for="inputPassword4">Current Email</label>
                     <input type="email" style = {{height: 35}} class="form-control constant railway" id="ConstEmail4" placeholder={auth.email} readOnly/>
                 </div>
                 <Button onClick={UsernameSubmit} className="accountButton railwaySemiBold" style = {{height: 25}} variant="primary">
@@ -111,11 +111,11 @@ export const PhoneUserInfo = () => {
                 </Button>
                 <div style = {{paddingTop: 10}}>
                     <div class="InfoFormColumn">
-                        <label className = "railwayMedium" for="inputEmail4">Change Username</label>
+                        <label className = "phonerailwayMedium" for="inputEmail4">Change Username</label>
                         <input type="email" autoComplete = "off" value={username} onChange={handleUsernameChange} style = {{height: 35}} class="form-control railway" id="inputUsername4" placeholder="New Username"/>
                     </div>
                     <div class="InfoFormColumn">
-                        <label className = "railwayMedium" for="inputPassword4">Change Email</label>
+                        <label className = "phonerailwayMedium" for="inputPassword4">Change Email</label>
                         <input type="email" autoComplete = "off" value={email} onChange={handleEmailChange} style = {{height: 35}} class="form-control railway" id="inputEmail4" placeholder="New Email"/>
                     </div>
                 </div>

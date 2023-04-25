@@ -16,23 +16,24 @@ export const PhoneAccount = () => {
             <div>
                 <div className="white-rectangle"></div><div style={{height:0,display:"flex", flexDirection:"row", justifyContent:"center", alignContent:"center"}}><img style={{paddingTop:'20px',position:"absolute" , width:'15%'}}src = {logo}></img></div>
             </div>:
-            <div className = "phoneaccountFullContainer" style = {{paddingTop: 750, height: window.innerHeight}}>
-                    <div className = "phoneaccountUserInfo">
-                        <PhoneUserInfo/>
-                    </div>
+            <div style={{position:"absolute",top:100, width: "100%"}}>
+                <h2 className='railwayBold' style = {{textAlign: "center",  fontSize: "25  0%", color: "#294539"}}> ACCOUNT DETAILS</h2>
+                        <div className = "phoneaccountUserInfo">
+                            <PhoneUserInfo/>
+                        </div>
 
-                    <div className = "phoneaccountChangePassword">
-                        <PhonePassword/>
-                    </div>
+                        <div className = "phoneaccountChangePassword" >
+                            <PhonePassword/>
+                        </div>
 
-                    <div className = "phoneaccountLessonHistory">
-                        <PhoneHistory/>
-                    </div>
+                        <div className = "phoneaccountLessonHistory">
+                            <PhoneHistory/>
+                        </div>
 
-                    <div className = "phoneaccountUpcomingHistory">
-                        <PhoneUpcoming/>
-                    </div>
-                    <PhoneDeleteButton/>
+                        <div className = "phoneaccountUpcomingHistory">
+                            <PhoneUpcoming/>
+                        </div>
+                        <PhoneDeleteButton/>
             </div>
         </div>
     </MsgProvider>
