@@ -50,7 +50,7 @@ export const Citations = () => {
     }
     return false;
   }
-  const [isExpanded, setIsExpanded] = useState(true);
+  const [isExpanded, setIsExpanded] = useState(false);
 
   function toggleExpand() {
     setIsExpanded(!isExpanded);
@@ -63,7 +63,7 @@ const [iphoneSize, setIphoneSize] = useState(() => size())
             <div className='CitationsFullContainer'>
               <div className='phoneCitationsParagraphContainer' style={{marginBottom:'10%',marginTop:'5%', marginLeft: '5%', marginRight: '5%', borderRadius: 25, padding: '4%', backgroundColor: '#E3E3E3' }}>
                 <div style={{ display: 'flex', alignItems: 'center' }}>
-                  <div className='arrow' onClick={toggleExpand} style={{ width: 0, height: 0, borderTop: '10px solid transparent', borderBottom: '10px solid transparent', borderRight: isExpanded ? '10px solid #294539' : '10px solid #294539', transform: isExpanded ? 'rotate(180deg)' : 'rotate(90)deg)' }} />
+                  <div className='arrow' onClick={toggleExpand} style={{ width: 0, height: 0, borderTop: '10px solid transparent', borderBottom: '10px solid transparent', borderRight: isExpanded ? '10px solid #294539' : '10px solid #294539', transform: isExpanded ? 'rotate(180deg)' : 'rotate(270deg)' }} />
                   <h1 className='CitationsTitleText railwayBold' style={{fontSize:30,  backgroundColor: isExpanded ? '#E3E3E3' : '#E3E3E3', marginLeft: 10 }}>citations</h1>
                 </div>
                 <hr className='phoneCitationsLine' />

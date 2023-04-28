@@ -20,7 +20,7 @@ export const Sources = () => {
             <div style={{height: 600, background: "transparent"}}>
                     <div> 
                         <div className="white-rectangle"></div><div style={{height:100,display:"flex", flexDirection:"row", justifyContent:"center", alignContent:"center"}}><img style={{paddingTop:'20px',position:"absolute" , width:'15%'}}src = {logo}></img></div>
-                    </div>:
+                    </div>
                 <div style={{position:"absolute",top:100, width: "100%"}}>
                     <h2 className='railwayBold' style = {{marginLeft: "20%",   fontSize: "300%", color: "#294539"}}> SOURCES</h2>
                         <div style={{ paddingBottom: 20 }}>

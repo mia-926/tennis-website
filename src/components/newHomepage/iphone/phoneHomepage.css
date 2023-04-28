@@ -151,3 +151,8 @@
   background-color: #294539;
   color: white;
 }
+
+.btn-outline-primary:hover {
+  color: white !important;
+  background-color: #294539 !important;;
+}

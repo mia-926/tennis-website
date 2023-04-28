@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, { useEffect, useRef, useState} from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import './admin.css';
@@ -16,6 +16,8 @@ export const AdminEdit = (props) => {
     const [students, setStudents] = useState([]);
     const [studentCount, setStudentCount] = useState(0);
     const [edited, setEdited] = useState(0);
+    const [errMsg, setErrMsg] = useState("");
+    const errRef = useRef();
 
     
     useEffect(() => {
@@ -53,17 +55,63 @@ export const AdminEdit = (props) => {
     instructors !== null && { instructors },
     maxStudents !== props.max && { maxStudents },
     inputNotes !== null && { inputNotes },
-);
+    );
     console.log(data);
     axios.patch("https://wta-backend-c6oszgtd6a-wl.a.run.app/api/lesson", data)
     .then(response => {
       console.log("lesson edited")
+      setErrMsg("*Lesson Added")
       console.log(response)
     })
     .catch(err => {
-      console.log(err)
-    })
-  }
+        if(!err?.response){
+          setErrMsg("*No Server Response")
+        }
+        switch(err.response?.status){
+          case 401:
+            setErrMsg("*Please Enter a Date")
+            break
+          case 402:
+            setErrMsg("*A lesson is Already on That Date")
+            break
+          case 403:
+            setErrMsg("*Invalid Time")
+            break
+          case 408:
+            setErrMsg("*Please Enter a Time")
+            break
+          case 399:
+            setErrMsg("*Max Students Must be Positive")
+            break
+          case 405:
+            setErrMsg("*Please Enter Max Students")
+            break
+          case 406:
+            setErrMsg("*Please Enter Instructors")
+            break
+          case 407:
+            setErrMsg("*Please Enter Address")
+            break
+          case 409:
+            setErrMsg("*Please Enter Location")
+            break
+          case 410:
+            setErrMsg("*Invalid Address")
+            break
+          case 411:
+            setErrMsg("*Try Changing Address")
+            break
+          case 412:
+            setErrMsg("*Coordinate Error")
+            break
+          case 422:
+            setErrMsg("*ERROR")
+            break
+          default:
+            setErrMsg("*Error Try Again")
+        }
+      })
+    }
 
 //   if(!(props.isLesson)){
     return(
@@ -134,7 +182,7 @@ export const AdminEdit = (props) => {
                 <Button style={{width:'300px', background:"transparent", marginTop:20, borderColor:"black", borderWidth:2, color:"black"}} className= "button roundedInput redDeleteHover" variant="success" >
                     Delete Lesson
                 </Button>
-                <p style={{height: 20, marginTop:20, color:'green', opacity:edited}}>*Lesson Edited</p>
+                <p ref ={errRef} style = {{marginTop:20,height: 20, opacity:edited}} className= {errMsg ? (errMsg == "*Lesson Added"? "lessonvalidatedmsg":"lessonerrmsg") : "lessonoffscreen"} aria-live= "assertive"> {errMsg} </p> 
                 </div>
                 </Form>
             </div>

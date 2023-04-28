@@ -7,10 +7,10 @@ export const Banner = () => {
             return(-130);
         }else
             if(window.innerHeight < 750){
-                return(-90);
+                return(-30);
         }
         else if(window.innerHeight < 800){
-            return(-50)
+            return(0)
         }
         else if(window.innerHeight <900){
             return(30);

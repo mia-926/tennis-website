@@ -1,14 +1,14 @@
 
-.accountFullUpcoming{
+.phoneaccountFullUpcoming{
     margin: 3%;
-    width: 100%;
+    padding-top: 3%;
+    padding-bottom: 3%;
 }   
-.accountUpcomingList{
+.phoneaccountUpcomingList{
     background-color: #FFFFFF;
     border-radius: 20px;
-    width: 90%;
 }
-.futureLesson{
+.phonefutureLesson{
     background-color: #E3E3E3;
     border-color: #294539;
     border-width: 1px;
@@ -18,4 +18,8 @@
     font-size: 120%;
     border-style: solid;
     text-align: center;
+}
+.phoneaccountUpcomingTitle{
+    text-align: center;
+    width: 100%;
 }

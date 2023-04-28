@@ -8,6 +8,12 @@ export const PhoneHistory = () => {
   const {setAuth} = useAuth();
   const {auth} = useAuth();
   const [allPastLessons, setAllPastLessons] = useState([]);
+  const [isExpanded, setIsExpanded] = useState(false);
+
+
+  function toggleExpand() {
+    setIsExpanded(!isExpanded);
+  }
 
   useEffect(() => {
     axios.get("https://wta-backend-c6oszgtd6a-wl.a.run.app/api/pastLessonsByStudentID?studentID="+ String(auth._id))
@@ -26,24 +32,34 @@ export const PhoneHistory = () => {
   }, [auth._id]);
   if(allPastLessons.length >0){
     return (
-      <div className="accountFullHistory">
-        <h4 className="accountHistoryTitle railwaySemiBold">LESSON HISTORY</h4>
-          <div className="accountHistoryList" style={{ height: 220, overflow: "auto" }}>
+      <div className="phoneaccountFullHistory">
+        <div style={{ display: 'flex', alignItems: 'center' }}> 
+          <div className='arrow' onClick={toggleExpand} style={{marginLeft: 10,  width: 0, height: 0, borderTop: '10px solid transparent', borderBottom: '10px solid transparent', borderRight: isExpanded ? '10px solid #294539' : '10px solid #294539', transform: isExpanded ? 'rotate(180deg)' : 'rotate(270deg)' }} />
+          <h4 className="phoneaccountHistoryTitle railwaySemiBold">LESSON HISTORY</h4>
+        </div>
+        <div style={{ display: isExpanded ? 'block' : 'none' }}>
+          <div className="phoneaccountHistoryList" style={{ height: 220, overflow: "auto" }}>
             {allPastLessons.map((lesson, index) => (
               <div key={index}>
-                <p className='pastLesson railwayMediumDigits'>{lesson}</p>
+                <p className='pastLesson railwayMediumDigits' style = {{fontSize: "90%"}}>{lesson}</p>
               </div>
             ))}
+          </div>
         </div>
     </div>
     )
   }
   else{
     return (
-      <div className="accountFullHistory">
-        <h4 className="accountHistoryTitle railwaySemiBold">LESSON HISTORY</h4>
-          <div className="accountHistoryList" style={{ height: 220, overflow: "auto" }}>
-                <p className='pastLesson railwayMediumDigits'>No Past Lessons</p>
+      <div className="phoneaccountFullHistory">
+        <div style={{ display: 'flex', alignItems: 'center' }}> 
+          <div className='arrow' onClick={toggleExpand} style={{marginLeft: 10, width: 0, height: 0, borderTop: '10px solid transparent', borderBottom: '10px solid transparent', borderRight: isExpanded ? '10px solid #294539' : '10px solid #294539', transform: isExpanded ? 'rotate(180deg)' : 'rotate(270deg)' }} />
+          <h4 className="phoneaccountHistoryTitle railwaySemiBold">LESSON HISTORY</h4>
+        </div>
+        <div style={{ display: isExpanded ? 'block' : 'none' }}>
+          <div className="phoneaccountHistoryList" style={{ height: 220, overflow: "auto" }}>
+                <p className='phonepastLesson railwayMediumDigits'>No Past Lessons</p>
+          </div>
         </div>
     </div>
     )

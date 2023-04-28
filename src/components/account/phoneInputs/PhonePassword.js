@@ -5,13 +5,13 @@ import "../phoneaccountcss/phonePassword.css";
 import "../../newHomepage/newHomepage.css";
 import Form from 'react-bootstrap/Form';
 import useAuth from "../../hooks/useAuth";
-import useMsg from "../../hooks/useMsg";
 
 import Button from 'react-bootstrap/Button';
 
 
 export const PhonePassword = () => {
-    const {setMsg} = useMsg();
+    const errRef = useRef();
+    const [msg, setMsg] = useState('');
 
     const {setAuth} = useAuth();
     const {auth} = useAuth();
@@ -19,11 +19,17 @@ export const PhonePassword = () => {
     const [newPassword, setNewPassword] = useState('');
     const [oldPassword, setOldPassword] = useState('');
 
+    const [isExpanded, setIsExpanded] = useState(false);
+
     function handleNewPasswordChange(event) {
       setNewPassword(event.target.value);
     }
     function handleOldPasswordChange(event) {
       setOldPassword(event.target.value);
+    }
+    
+    function toggleExpand() {
+      setIsExpanded(!isExpanded);
     }
 
     function PasswordSubmit() {
@@ -35,7 +41,14 @@ export const PhonePassword = () => {
     useEffect(()=>{
         setMsg('')
     }, [newPassword, oldPassword])
+    
+    useEffect(()=>{
+      setMsg('')
+    }, [oldPassword])
 
+    useEffect(()=>{
+        errRef.current.focus()
+    }, [msg])
 
     function updateUser(oldPassword, newPassword){
         const firstdata = {username: auth.username, password: oldPassword}
@@ -99,22 +112,30 @@ export const PhonePassword = () => {
     }
 
     return (
-        <div className = "accountFullPassword">
-            <h4 className = "accountPasswordTitle railwaySemiBold">CHANGE PASSWORD</h4>
-            <form>
-                    <div class="InfoFormColumn">
-                        <label className ="railwayMedium" for="inputPassword4">Enter Current Password</label>
-                        <input type="password" autoComplete = "off" value={oldPassword} onChange={handleOldPasswordChange} style = {{height: 35}} class="form-control railway" id="currentPasswordForm" placeholder="Current Password"/>
-                    </div>
-                    <div class="InfoFormColumn" style = {{paddingTop: 10}}>
-                        <label className ="railwayMedium" for="inputPassword4">New Password</label>
-                        <input type="password" autoComplete = "off" value={newPassword} onChange={handleNewPasswordChange} style = {{height: 35}} class="form-control railway" id="newPasswordForm" placeholder="New Password"/>
-                    </div>
-                  <a href= "/forgot-password" className='account-password-forgot railwayMedium' style ={{textDecoration: "none"}}>Forgot Password?</a>
-                    <Button onClick={PasswordSubmit} className="accountPasswordButton railwaySemiBold" style = {{height: 25}} variant="primary">
+        <div className = "phoneaccountFullPassword">
+            <div style={{ display: 'flex', alignItems: 'center' }}> 
+                <div className='arrow' onClick={toggleExpand} style={{marginLeft: 10, width: 0, height: 0, borderTop: '10px solid transparent', borderBottom: '10px solid transparent', borderRight: isExpanded ? '10px solid #294539' : '10px solid #294539', transform: isExpanded ? 'rotate(180deg)' : 'rotate(270deg)' }} />
+                <h4 className = "phoneaccountPasswordTitle railwaySemiBold">CHANGE PASSWORD</h4>
+            </div>
+            <div style={{ display: isExpanded ? 'block' : 'none' }}>
+              <form>
+                      <div class="InfoFormColumn">
+                          <label className ="railwayMedium" for="inputPassword4">Enter Current Password</label>
+                          <input type="password" autoComplete = "off" value={oldPassword} onChange={handleOldPasswordChange} style = {{height: 35}} class="form-control railway" id="currentPasswordForm" placeholder="Current Password"/>
+                      </div>
+                      <div class="InfoFormColumn" style = {{paddingTop: 10}}>
+                          <label className ="railwayMedium" for="inputPassword4">New Password</label>
+                          <input type="password" autoComplete = "off" value={newPassword} onChange={handleNewPasswordChange} style = {{height: 35}} class="form-control railway" id="newPasswordForm" placeholder="New Password"/>
+                      </div>
+                  <div style = {{display: "flex", flexDirection: "row", alignItems: "center", width: "100%"}}>
+                    <a href= "/forgot-password" className='phoneaccount-password-forgot railwayMedium' style ={{textDecoration: "none"}}>Forgot Password?</a>
+                    <p ref ={errRef} style = {{height: 20}} className= {msg ? (msg == "Account Updated"? "phonepasswordaccountvalidatedmsg":"phonepasswordaccounterrmsg") : "phonepasswordaccountoffscreen"} aria-live= "assertive"> {"*"+ msg} </p> 
+                  </div>
+                    <Button onClick={PasswordSubmit} className="phoneaccountPasswordButton railwaySemiBold" style = {{height: 25}} variant="primary">
                         Change
                     </Button>
-            </form>
+              </form>
+            </div>
         </div>
     )
 }

@@ -1,6 +1,8 @@
 .phoneaccountFullUserInfo{
     margin: 3%;
-}   
+    padding-top: 3%;
+    padding-bottom: 3%;
+}      
 .Infoform-row{
     display: flex;
     flex-direction: row;
@@ -27,7 +29,7 @@
     margin-top: 3%;
     border-radius: 10px;
     line-height: 50%;
-    width: 20%;
+    width: 40%;
 }
 .phoneaccountButton.right{
     margin-left: 30%;
@@ -82,5 +84,10 @@
     opacity: 0;
 }
 .phoneaccountUserInfoTitle{
+    text-align: center;
     width: 100%;
+}
+
+.phonearrow{
+    z-index: 99;
 }

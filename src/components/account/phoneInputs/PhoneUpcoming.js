@@ -7,7 +7,12 @@ export const PhoneUpcoming = () => {
   const {setAuth} = useAuth();
   const {auth} = useAuth();
   const [allFutureLessons, setAllFutureLessons] = useState([]);
+  const [isExpanded, setIsExpanded] = useState(false);
 
+
+  function toggleExpand() {
+    setIsExpanded(!isExpanded);
+  }
   useEffect(() => {
     axios.get("https://wta-backend-c6oszgtd6a-wl.a.run.app/api/futureLessonsByStudentID?studentID="+ String(auth._id))
     .then((response) => {
@@ -25,25 +30,35 @@ export const PhoneUpcoming = () => {
   }, [auth._id]);
   if(allFutureLessons.length >0){
     return (
-      <div className="accountFullUpcoming">
-        <h4 className="accountUpcomingTitle railwaySemiBold">UPCOMING LESSONS</h4>
-          <div className="accountUpcomingList" style={{ height: 220, overflow: "auto" }}>
+      <div className="phoneaccountFullUpcoming">
+        <div style={{ display: 'flex', alignItems: 'center' }}>  
+          <div className='arrow' onClick={toggleExpand} style={{marginLeft: 10, width: 0, height: 0, borderTop: '10px solid transparent', borderBottom: '10px solid transparent', borderRight: isExpanded ? '10px solid #294539' : '10px solid #294539', transform: isExpanded ? 'rotate(180deg)' : 'rotate(270deg)' }} />
+          <h4 className="phoneaccountUpcomingTitle railwaySemiBold">UPCOMING LESSONS</h4>
+        </div>
+        <div style={{ display: isExpanded ? 'block' : 'none' }}>
+          <div className="phoneaccountUpcomingList" style={{ height: 220, overflow: "auto" }}>
             {allFutureLessons.map((lesson, index) => (
               <div key={index}>
-                <p className='futureLesson railwayMediumDigits'>{lesson}</p>
+                <p className='phonefutureLesson railwayMediumDigits' style = {{fontSize: "90%"}}>{lesson}</p>
               </div>
             ))}
+          </div>
         </div>
     </div>
     )
   }
   else{
     return (
-      <div className="accountFullUpcoming">
-      <h4 className="accountUpcomingTitle railwaySemiBold">UPCOMING LESSONS</h4>
-        <div className="accountUpcomingList" style={{ height: 220, overflow: "auto" }}>
-                <p className='futureLesson railwayMediumDigits'>No Upcoming Lessons</p>
+      <div className="phoneaccountFullUpcoming">
+      <div style={{ display: 'flex', alignItems: 'center' }}> 
+        <div className='arrow' onClick={toggleExpand} style={{marginLeft: 10, width: 0, height: 0, borderTop: '10px solid transparent', borderBottom: '10px solid transparent', borderRight: isExpanded ? '10px solid #294539' : '10px solid #294539', transform: isExpanded ? 'rotate(180deg)' : 'rotate(270deg)' }} />
+        <h4 className="phoneaccountUpcomingTitle railwaySemiBold">UPCOMING LESSONS</h4>
+      </div>
+      <div style={{ display: isExpanded ? 'block' : 'none' }}>
+        <div className="phoneaccountUpcomingList" style={{ height: 220, overflow: "auto" }}>
+                <p className='phonefutureLesson railwayMediumDigits'>No Upcoming Lessons</p>
         </div>
+      </div>
     </div>
     )
   }
