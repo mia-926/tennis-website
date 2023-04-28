@@ -26,6 +26,13 @@
       float: left;
       padding-left: -100px;
    }
+   .form-check-label{
+      margin-left: 15%!important;
+      margin-right: 2%;
+   }
+   .submit-Button{
+    margin-top: 5% !important;
+   }
   }
   .form-check-input {
     float: center; 

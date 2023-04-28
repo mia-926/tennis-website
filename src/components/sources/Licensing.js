@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react';
 import "./licensing.css";
 
 export const Licensing = () => {
@@ -404,24 +404,60 @@ export const Licensing = () => {
       This program uses several Node modules contained in the node_modules/ subdirectory, according to the terms of their respective licenses.`
     },
   ];
+  const size = () => {
+    if(window.innerWidth < 700){
+        return true;
+    }
+    return false;
+  }
+  const [isExpanded, setIsExpanded] = useState(false);
 
-  return (
-    <div className='LicensingFullContainer'> 
-        <div className='LicensingTitleDiv'>
-            <h1 className='LicensingTitleText railwayBold'>LICENSING</h1>
-        </div>
-        <hr className='LicensingLine' />
-        <div className='LicensingParagraphContainer'>
-            {textBlocks.map(block => (
-            <div key={block.title} className='LicensingBlock'>
-              <h4>{block.title}</h4>
-              <p className='LicensingParagraph railway'>{block.text}</p>
+  function toggleExpand() {
+    setIsExpanded(!isExpanded);
+  }
+
+const [iphoneSize, setIphoneSize] = useState(() => size())
+  if(iphoneSize){
+    return (
+      <div style={{ position: 'relative' }}>
+            <div className='LicensingFullContainer'>
+              <div className='phoneLicensingParagraphContainer' style={{ marginLeft: '5%', marginRight: '5%', borderRadius: 25, padding: '4%', backgroundColor: '#E3E3E3' }}>
+                <div style={{ display: 'flex', alignItems: 'center' }}>
+                  <div className='arrow' onClick={toggleExpand} style={{ width: 0, height: 0, borderTop: '10px solid transparent', borderBottom: '10px solid transparent', borderRight: isExpanded ? '10px solid #294539' : '10px solid #294539', transform: isExpanded ? 'rotate(180deg)' : 'rotate(270deg)' }} />
+                  <h1 className='LicensingTitleText railwayBold' style={{fontSize:30,  backgroundColor: isExpanded ? '#E3E3E3' : '#E3E3E3', marginLeft: 10 }}>licensing</h1>
+                </div>
+                <hr className='phoneLicensingLine' />
+                <div style={{ display: isExpanded ? 'block' : 'none' }}>
+                {textBlocks.map((block) => (
+                  <div key={block.title} className='LicensingBlock'>
+                    <h4>{block.title}</h4>
+                    <p className='LicensingParagraph railway'>{block.text}</p>
+                  </div>
+                ))}
+              </div>
+              </div>
             </div>
-          ))}
-        </div>
-    </div>
-  )
-
+          </div>
+    );
+  }
+  else{
+    return (
+      <div className='LicensingFullContainer'> 
+          <div className='LicensingTitleDiv'>
+              <h1 className='LicensingTitleText railwayBold'>LICENSING</h1>
+          </div>
+          <hr className='LicensingLine' />
+          <div className='LicensingParagraphContainer'>
+              {textBlocks.map(block => (
+              <div key={block.title} className='LicensingBlock'>
+                <h4>{block.title}</h4>
+                <p className='LicensingParagraph railway'>{block.text}</p>
+              </div>
+            ))}
+          </div>
+      </div>
+    )
+  }
   
 
 }

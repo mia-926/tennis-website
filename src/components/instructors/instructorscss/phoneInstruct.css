@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap');
+
+.phonefullContainer {
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    float: left;
+    flex-wrap: nowrap;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 5%;
+}
+
+.phoneinstructBox {
+    display: flex;
+    flex-direction: column;
+}
+
+.phonetitleAndTextBox {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.phonegreyBox {
+    display: flex;
+    flex-direction: column;
+    background-color: #E3E3E3;
+    border-radius: 30px;
+    border: 3px solid #294539;
+    padding-bottom: 3%;
+}
+
+.phonetitleFont {
+    font-family: 'Raleway';
+}
+
+.phonetitleAndContactBox{
+    display: flex;
+    flex-direction: row;
+}
+
+.phonecontactFont {
+    margin-top: 0%;
+    padding-top: 0%;
+    font-family: "Raleway";
+    color: #233831;
+}
+
+.phonedescriptFont {
+    margin-bottom: 0%;
+    padding-bottom: 0%;
+    line-height: 1.5;
+}

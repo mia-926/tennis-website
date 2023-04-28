@@ -54,3 +54,20 @@
     margin-bottom: 4%;
     width: 90%;
 }
+.phoneLicensingLine{
+    border-radius: 3px;
+    border-width: 3px;
+    width: 80%;
+    color: #294539;
+}
+.phoneLicensingParagraphContainer{
+    flex: 9;
+    height: max-content;
+    flex-direction: column; 
+    width: 90%;
+    float:left;
+    display: flex; 
+    flex-wrap:nowarp;
+    justify-content: space-around;
+    overflow-y: auto;
+}

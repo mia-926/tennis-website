@@ -1,0 +1,93 @@
+.phoneaccountFullUserInfo{
+    margin: 3%;
+    padding-top: 3%;
+    padding-bottom: 3%;
+}      
+.Infoform-row{
+    display: flex;
+    flex-direction: row;
+}
+
+.InfoFormColumn{
+    flex: 1;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+.phoneaccount-form-control{
+    border-radius: 10px;
+    border-width: 3px;
+    border-color:   #000000;
+}
+.constant.form-control::placeholder {
+  color: black;
+}
+.phoneaccountButton{
+    border-color: #294539;
+    text-align: center;
+    background-color: #294539;
+    margin-left: 2%;
+    margin-top: 3%;
+    border-radius: 10px;
+    line-height: 50%;
+    width: 40%;
+}
+.phoneaccountButton.right{
+    margin-left: 30%;
+}
+
+.phoneaccountButton:hover{
+    background-color: #121e19;
+}
+
+.phoneaccountButton:active{
+    background-color: #121e19 !important;
+}
+
+.phoneacccount-form-check-label{
+    font-size: 110%;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+.phoneform-check-input.account{
+    float: center; 
+    border-width: 2px;
+    width: 20px;
+    height: 20px;
+    border-color: #000000;
+  }
+  .phoneform-check-input:checked{
+    background-color: #294539;
+    border-width: 1px;
+    border-color: #000000;
+    margin-left: 0px;
+    margin-right: 10px;
+  } 
+
+.phoneaccountvalidatedmsg{
+    align-self: flex-end;
+    margin-left: auto;
+    font-size:  110%;
+    color: #1c7a51;
+}
+
+.phoneaccounterrmsg{
+    align-self: flex-end;
+    margin-left: auto;
+    font-size:  110%;
+    color: #a52424;
+}
+
+.phoneaccountoffscreen{
+    align-self: flex-end;
+    width: 0%;
+    opacity: 0;
+}
+.phoneaccountUserInfoTitle{
+    text-align: center;
+    width: 100%;
+}
+
+.phonearrow{
+    z-index: 99;
+}
