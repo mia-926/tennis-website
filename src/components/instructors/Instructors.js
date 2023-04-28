@@ -16,7 +16,7 @@ const instructors = [
    description: `As the founder of Westlake Tennis Academy, Ethan is excited to use his extensive experience in tennis to improve the skills of aspiring tennis athletes. Ethan has started playing tennis since second grade and has since participated in numerous tournaments. He now holds the spot as the #2 starter for his varsity tennis team.. With his instruction, members of WAC will gain one of the most valuable weapons in tennis on top of having a strong foundation in countering all types of tennis players. When he's not on the court, Ethan can be found competing in international piano competitions or participating in Future Business Leaders of America.`
  },
  {
-   name: 'TARUN SUBRAMANIAN',
+   name: 'TARUN SUBRAMAN',
    image: tarune,
    email: 'tsub@gmail.com',
    phone: '(805) 235-0891',
