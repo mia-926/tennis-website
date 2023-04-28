@@ -93,8 +93,8 @@ export const MyCalendar = (props) => {
 }, [props.times])
 if(loading){
   return(
-    <div>
-      <p>loading</p>
+    <div style={{display:"flex", flexDirection:"column", justifyContent:"center", height:window.innerHeight}}>
+      <p className='railwayBold' style={{color:"white", fontSize:"40px", paddingLeft:80}}>Loading Lessons...</p>
     </div>
   )
 }

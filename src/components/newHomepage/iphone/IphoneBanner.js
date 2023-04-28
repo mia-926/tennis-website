@@ -3,9 +3,11 @@ import { PhoneFooter } from './PhoneFooter';
 
 export const IphoneBanner = () => {
 
-    return (<div style={{display:"flex", flexDirection:"column"}}>
+    return (<div><div style={{display:"flex", flexDirection:"column"}}>
         <Banner2/>
-    </div>);
+    </div>
+    </div>
+    );
 };
 
 

@@ -52,12 +52,16 @@ export const IphoneHome = () => {
     <Circle  style={{zIndex:4, position:'relative'}}/>
       <IphoneBanner/>
     <Description style={{position:'absolute'}}/>
-   
+    
 
      {/* <div style={{position: 'absolute', top: 0, left: 0,  zIndex:1, borderRadius:"50%"}}>
         <Testimonials/>
     </div> */}
-
+    {/* <div style={{position: 'fixed', bottom: 0, width: '100%'}}>
+   
+   <PhoneFooter />
+ </div> */}
+ 
     </div>
 
     </div>
