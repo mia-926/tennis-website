@@ -31,7 +31,7 @@ useEffect(() =>{
         <Nav.Link  style={{color:myColor, fontWeight:800, fontSize:'90%', marginTop: ".7%"}} href="/mission">Mission</Nav.Link>
         <Nav.Link  style={{color:myColor, fontWeight:800, fontSize:'90%',marginTop: ".7%"}} href="/join-lesson">Join a Lesson</Nav.Link>
         <Nav.Link  style={{color:myColor, fontWeight:800, fontSize:'90%',marginTop: ".7%"}} href="/learn-more">Learn More</Nav.Link>
-        <Nav.Link  style={{color:myColor, fontWeight:800, fontSize:'90%',marginTop: ".7%"}} href="/account">Settings</Nav.Link>
+        <Nav.Link  style={{color:myColor, fontWeight:800, fontSize:'90%',marginTop: ".7%"}} href="/account">Account</Nav.Link>
 
       </Nav>
              
