@@ -1,0 +1,154 @@
+.instructor-flex-row{
+    display: flex;
+    flex-direction: row;
+}
+
+.instructor-flex-col{
+    display: flex;
+    flex-direction: column;
+}
+
+.instructor-flex-center{
+    justify-content: center;
+    align-content: center;
+    align-self: center;
+    text-align: center;
+}
+
+.background-image {
+    position: absolute;
+    z-index: 1; /* Behind the content */
+    width: 100%; /* Cover the container */
+    height: 100%; /* Cover the container */
+    object-fit: cover; /* Maintain aspect ratio while covering */
+}
+  
+  .content {
+    font-family: 'Raleway', sans-serif;
+    position: relative; /* Important for z-index to take effect */
+    z-index: 2; /* Above the background image */
+    color: white; /* Just an example to ensure visibility over the image */
+    /* Additional styling for your content */
+  }
+
+  .content-style{
+    font-family: 'Raleway', sans-serif;
+    text-align: center;
+  }
+
+  .main-font{
+    font-family: 'Raleway', sans-serif;
+  }
+
+  .black-text{
+    color:black !important;
+  }
+
+  .image-gradient {
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.606) 30%, rgb(255, 255, 255) 45%), url('../../images/instructor.jpeg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    width: 100%; /* Adjust based on your layout */
+}
+
+
+.instructor-bold{
+    font-weight: 700;
+}
+
+.instructor-title{
+    font-size: 30px;
+    padding-top:50px;
+}
+
+.application-instructor-title{
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.position-box {
+    border: 2px solid #000; /* Adjust the color and width as needed */
+    padding: 0px; /* Adds space inside the box */
+    margin: 0px; /* Adds space outside the box, between adjacent boxes */
+    border-radius: 40px; /* Optional: adds rounded corners */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Optional: adds a subtle shadow */
+    background-color: #fff; /* Optional: sets a background color */
+    width: 400px;
+    height: 80%;
+}
+
+.application-position-box{
+    padding: 0px; /* Adds space inside the box */
+    margin: 0px; /* Adds space outside the box, between adjacent boxes */
+    border-radius: 10px; /* Optional: adds rounded corners */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Optional: adds a subtle shadow */
+    background-color: #F1F1F1; /* Optional: sets a background color */
+    width: 95%;
+    height: 100%;
+}
+.application-button{
+    border-radius: 40px;
+    width: 90%;
+    padding:20px 20px;
+    background-color: #294539;
+    color:white;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    font-size: 25px;
+    margin-top: 20px;
+}
+
+.view-application-button{
+    border-radius: 40px;
+    font-size: 15px;
+    
+    border:none;
+    outline:none;
+    background-color: #42705C;
+    color:white;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    margin-top: 20px;
+}
+.view-application-button:hover{
+    border-radius: 40px;
+    font-size: 15px;
+    
+    border:none;
+    outline:none;
+    background-color: #51a480 !important;
+    color:white !important;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    margin-top: 20px;
+}
+.application-button-submit{
+    border-radius: 40px;
+    width: 90%;
+    padding:10px 10px;
+    background-color: #294539;
+    color:white;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    font-size: 25px;
+    margin-top: 20px;}
+
+.redirect-button{
+    border-radius: 30px;
+    background-color: white;
+    color:black;
+    font-family: 'Raleway', sans-serif;
+    padding: 10px;
+    box-shadow: none !important;
+    border:none;
+}
+
+.form-input-box{
+    border-radius: 10px;
+    border:solid;
+    border-width:1px;
+    padding-left: 10px;
+    color: #000;
+    font-weight: 700;
+}

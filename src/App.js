@@ -21,6 +21,13 @@ import useScroll from "./components/hooks/useScroll"
 import { IphoneHome } from './components/newHomepage/iphone/IphoneHome';
 import { HomePage } from './components/newHomepage/HomePage';
 import { CCalendarPage } from './components/calendar copy/CCalendarPage';
+import { Info } from './components/instructorSignUp/Info';
+import { Positions } from './components/instructorSignUp/Positions';
+import { JuniorApplication } from './components/instructorSignUp/JuniorApplication';
+import { SeniorApplication } from './components/instructorSignUp/SeniorApplication';
+import { AdvertismentApplication } from './components/instructorSignUp/AdvertismentApplication';
+import { ViewApplication } from './components/calendar/admin/ViewApplicaitons';
+import { FilledApplication } from './components/calendar/admin/FilledApplication';
 
 function App() {
   let component
@@ -45,9 +52,58 @@ function App() {
         background=String(scroll);
         rightbackground=String(scroll);  
         break 
+      case "/instructor-junior-application":
+          component = <JuniorApplication/>
+          color = "black"
+          rightColor="black";
+          background=String(scroll);
+          rightbackground=String(scroll);  
+          break 
+      case "/instructor-senior-application":
+        component = <SeniorApplication/>
+        color = "black"
+        rightColor="black";
+        background=String(scroll);
+        rightbackground=String(scroll);  
+        break 
+      case "/instructor-advertisement-application":
+        component = <AdvertismentApplication/>
+        color = "black"
+        rightColor="black";
+        background=String(scroll);
+        rightbackground=String(scroll);  
+        break 
+      case "/instructor-signup":
+          component = <Info/>
+          color = "white"
+          rightColor="white";
+          background=String(scroll);
+          rightbackground=String(scroll);  
+          break 
+      case "/instructor-positions":
+        component = <Positions/>
+        color = "black"
+        rightColor="white";
+        background=String(scroll);
+        rightbackground=String(scroll);  
+        break 
       case "/join-lesson":
         component = <CalendarReturnPage/>
         color= "white"
+        rightColor="black";
+        background="transparent";
+        rightbackground="transparent"
+        break
+      case "/view-applications":
+        component = <ViewApplication/>
+        color= "black"
+        rightColor="black";
+        background="transparent";
+        rightbackground="white"
+        break
+      case "/filled-application":
+        component = <FilledApplication/>
+        color= "black"
         rightColor="black";
         background="transparent";
         rightbackground="transparent"
@@ -91,9 +147,9 @@ function App() {
       case "/account":
         component = <Account/>
         color= "black"
-        rightColor="white";
+        rightColor="black";
         background="white";
-        rightbackground="transparent"
+        rightbackground="white"
         break
       case "/instructors":
         component = <InstructorPage/>
