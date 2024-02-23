@@ -75,7 +75,7 @@ export const SeniorApplication = () => {
                 </div>
                 <div className='instructor-flex-col' style={{flex: 1}}>
                     <div className='application-position-box instructor-flex-center' >
-                        <label style={{paddingTop:10}}>Why do you want to volunteer/sponsor Westlake Tennis Academy?</label>
+                        <label style={{paddingTop:10}}>Why do you want to volunteer with WTA?</label>
                         <textarea style={{height:"300px", width:"80%", margin:20}} name="reason" value={formData.reason} onChange={handleChange}></textarea>
 
                     </div>

@@ -53,9 +53,9 @@ export const Positions = () =>
                 {/* Advertimsement */}
                 <div>
                 <div className='position-box' style={{flex:1}}>
-                    <h1 className='instructor-title instructor-bold'>Advertimsement</h1>
+                    <h1 className='instructor-title instructor-bold'>Advertising Manager</h1>
                     <div className='instructor-flex-col' style={{alignContent:"space-between"}}> 
-                        <p  style={{padding:"60px 20px 70px"}}>Sponsors provide financial support to WTA, contributing to scholarships, equipment, and facility maintenance. They promote the academy's initiatives and attend events, fostering community partnerships. Various sponsorship levels are available to suit different budgets and preferences.</p>
+                        <p  style={{padding:"60px 20px 70px"}}>Advertising Managers oversee the development and execution of marketing and advertising campaigns to promote our lessons, requiring excellent communication skills and a strong passion for tennis and community engagement. Prior experience in marketing, advertising, or a related field is preferred, but not mandatory.</p>
                         <p>1 spots left</p>
                     </div>
                 </div>
