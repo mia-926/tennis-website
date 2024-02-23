@@ -99,6 +99,32 @@
     margin-top: 20px;
 }
 
+.application-button-accept{
+    border-radius: 40px;
+    width: 90%;
+    padding:10px 10px;
+    margin:20px;
+    background-color: #375548;
+    color:white;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    font-size: 25px;
+    margin-top: 20px;
+    border:none;
+}
+.application-button-reject{
+    border-radius: 40px;
+    width: 90%;
+    padding:10px 10px;
+    margin:20px;
+    background-color: #b27b7b;
+    color:white;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    font-size: 25px;
+    margin-top: 20px;
+    border:none;
+}
 .view-application-button{
     border-radius: 40px;
     font-size: 15px;

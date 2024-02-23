@@ -79,8 +79,18 @@ export const FilledApplication = () => {
                     <textarea placeholder='I have been looking for ways to give back to my community and this seems like a perfect opportunity!' style={{height:"300px", width:"80%", margin:20, padding:20}} name="reason" value={formData.reason} onChange={handleChange}></textarea>
 
                     </div>
-                </div>
+                    <div className='instructor-flex-row' style={{justifyContent:"space-around"}}>
+                <button type="submit" className='application-button-accept'>
+                            Accept
+                 </button>
+                 <button type="submit" className='application-button-reject'>
+                            Reject
+                 </button>
             </div>
+                </div>
+                
+            </div>
+           
         </form>
     );
 }
