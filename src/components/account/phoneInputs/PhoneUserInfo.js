@@ -45,7 +45,7 @@ export const PhoneUserInfo = () => {
             emailList !== null && { emailList },
             email !== null && { email },
         );
-        axios.patch('https://wta-backend-c6oszgtd6a-wl.a.run.app/api/user', data)
+        axios.patch('https://tennis-backend-c6oszgtd6a-uw.a.run.app/api/user', data)
             .then (response => {
                 console.log(response)
                 setAuth({username: response.data.username, password: response.data.password, keepLogin: auth.keepLogin, _id: response.data._id, emailList: response.data.emailList, email: response.data.email, admin: response.data.admin});

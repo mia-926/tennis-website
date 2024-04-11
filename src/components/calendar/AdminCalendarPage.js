@@ -188,7 +188,7 @@ export const AdminApiCall = () => {
     }, [reload]);
 
     const getAllLessons = () => {
-        axios.get('https://wta-backend-c6oszgtd6a-wl.a.run.app/api/allLessons')
+        axios.get('https://tennis-backend-c6oszgtd6a-uw.a.run.app/api/allLessons')
         .then((response) => {
             const allLessons = response.data;
             getLessons(allLessons);
@@ -196,7 +196,7 @@ export const AdminApiCall = () => {
         .catch(error => console.error(`Error: $(error)`));
     }
     const getAllRequests = () => {
-        axios.get('https://wta-backend-c6oszgtd6a-wl.a.run.app/api/getAllRequests')
+        axios.get('https://tennis-backend-c6oszgtd6a-uw.a.run.app/api/getAllRequests')
         .then((response) => {
             const allRequests = response.data;
             getRequests(allRequests);

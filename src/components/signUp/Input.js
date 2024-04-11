@@ -37,9 +37,9 @@ export const Input = () => {
 
   function make(){
     const data = { email: String(email), emailList: Boolean(emailList), username: String(username), password: String(password)};
-    axios.post('https://wta-backend-c6oszgtd6a-wl.a.run.app/api/authUser', data)
+    axios.post('https://tennis-backend-c6oszgtd6a-uw.a.run.app/api/authUser', data)
       .then (response => {
-        axios.post('https://wta-backend-c6oszgtd6a-wl.a.run.app/api/user', data)
+        axios.post('https://tennis-backend-c6oszgtd6a-uw.a.run.app/api/user', data)
           .then (response => {
             login(username, password)
           })
@@ -94,7 +94,7 @@ export const Input = () => {
 
   function login(user, pwd){
     const data = { username: String(user), password: String(pwd)};
-    axios.post('https://wta-backend-c6oszgtd6a-wl.a.run.app/api/authPassword', data)
+    axios.post('https://tennis-backend-c6oszgtd6a-uw.a.run.app/api/authPassword', data)
         .then (response => {
           let _id = response.data._id
           let email = response.data.email

@@ -10,7 +10,7 @@ export const History = () => {
   const [allPastLessons, setAllPastLessons] = useState([]);
 
   useEffect(() => {
-    axios.get("https://wta-backend-c6oszgtd6a-wl.a.run.app/api/pastLessonsByStudentID?studentID="+ String(auth._id))
+    axios.get("https://tennis-backend-c6oszgtd6a-uw.a.run.app/api/pastLessonsByStudentID?studentID="+ String(auth._id))
     .then((response) => {
         let tempAllLessons = response.data;
         let tempPastLessons = []

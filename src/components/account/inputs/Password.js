@@ -39,10 +39,10 @@ export const Password = () => {
 
     function updateUser(oldPassword, newPassword){
         const firstdata = {username: auth.username, password: oldPassword}
-        axios.post('https://wta-backend-c6oszgtd6a-wl.a.run.app/api/authPassword', firstdata)
+        axios.post('https://tennis-backend-c6oszgtd6a-uw.a.run.app/api/authPassword', firstdata)
         .then (response => {
           const data = {_id: auth._id, password: newPassword}
-          axios.patch('https://wta-backend-c6oszgtd6a-wl.a.run.app/api/user', data)
+          axios.patch('https://tennis-backend-c6oszgtd6a-uw.a.run.app/api/user', data)
               .then (response => {
                   console.log(response)
                   setAuth({username: response.data.username, password: response.data.password, keepLogin: auth.keepLogin, _id: response.data._id, emailList: response.data.emailList, email: response.data.email, admin: response.data.admin});

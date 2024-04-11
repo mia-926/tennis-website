@@ -1,120 +1,108 @@
-
-import React, { useEffect, useRef, useState} from 'react';
-import './admin.css';
-import {Table, Button} from "antd";
-import "../../../components/instructorSignUp/instructor.css"
+import React, { useEffect, useState } from 'react';
+import { Button, Table, Modal } from "antd";
 import { GreenCircles } from '../../account/GreenCircles';
+import { getAllApplications } from "../../../api/api";
+import { FilledApplication } from './FilledApplication';
+import './admin.css';
+import "../../../components/instructorSignUp/instructor.css";
 
-export const ViewApplication = (props) => {
-    const [firstName, setFirstName] = useState("");
+export const ViewApplication = () => {
+    const [isViewing, setIsViewing] = useState(false);
+    const [selectedRow, setSelectedRow] = useState(null);
+    const [data, setData] = useState([]);
+    const [reload, setReload] = useState(false);
 
-    const dummyData = [
-        {
-          key: '1',
-          name: 'John Doe',
-          email: 'johndoe@example.com',
-          position: 'Junior Instructor'
-        },
-        {
-          key: '2',
-          name: 'Jane Smith',
-          email: 'janesmith@example.com',
-          position:"Senior Instructor",
-        },
-        {
-          key: '3',
-          name: 'Emily Johnson',
-          email: 'emilyjohnson@example.com',
-          position: "Junior Instructor"
-        },
-      ];
-      
-      const [data, setData] = useState(dummyData);
-      
-    // const fetchDoctorData = async () => {
-    //     const res = await getDoctorPatientApi();
-    //     setData(res);
-    // }
-    // const fetchDoctorName = async () => {
-    //     const res = await getDoctorNameApi();
-    //     setFirstName(res);
-    //}
-    // useEffect(() => {
- 
-    //     fetchDoctorData();
-    //     fetchDoctorName();
-      
-    // },[]);
+    useEffect(() => {
+      const fetchData = async () => {
+          const result = await getAllApplications();
+          setData(result);
+      };
+      fetchData();
+  }, [reload]);  // dependency on reload state to refetch data
 
-    console.log(data)
-    const columns = [
-        {
+  const columns = [
+      {
           title: "Name",
-          dataIndex: "name",
+          dataIndex: "firstName",
           key: "name",
-          responsive: ["sm", "md", "lg", "xl"],
-          render: (name) => <h4 className="text-[15px]">{name}</h4>,
-        },
-        {
-            title: "Email Address",
-            dataIndex: "email",
-            key: "email",
-            responsive: ["sm", "md", "lg", "xl"],
-            render: (name) => <h4 className="text-[15px]">{name}</h4>,
-          },        {
-            title: "Position",
-            dataIndex: "position",
-            key: "position",
-            responsive: ["sm", "md", "lg", "xl"],
-            render: (position) => <h4 className="text-[15px]">{position}</h4>,
-          },
-          {
-            render: () => {
-              // Calculate the fraction
-              
-              return (
-                <div>
-                
-                  <Button
+          responsive: ["sm"],
+          render: text => <h4 className="text-[15px]">{text}</h4>,
+      },
+      {
+          title: "Email Address",
+          dataIndex: "email",
+          key: "email",
+          responsive: ["sm"],
+          render: text => <h4 className="text-[15px]">{text}</h4>,
+      },
+      {
+          title: "Position",
+          dataIndex: "type",
+          key: "position",
+          responsive: ["sm"],
+          render: text => <h4 className="text-[15px]">{text}</h4>,
+      },
+      {
+          key: "action",
+          render: (_, record) => (
+              <Button
                   className='view-application-button'
-                  onClick={() => window.location.href = "/filled-application"}
-                  >
-                    View Application
-                  </Button>
-                </div>
-              );
-            },
-          },
-    ]
-    
+                  onClick={() => {
+                      setSelectedRow(record);  // Update selectedRow state
+                      setIsViewing(true);
+                  }}
+              >
+                  View Application
+              </Button>
+          ),
+      },
+  ];
 
-    const handleRowClick = (record) => {
-       window.location.href = '/patientDoctorPortal'; 
-    };
-    
+  const handleCancel = () => {
+      setIsViewing(false);
+      setReload(!reload);  // toggle reload state to refetch data on modal close
+  };
 
-    return(
-        <div>
-            <GreenCircles/>
-        <div className='instructor-flex-col' style={{paddingLeft:'130px', paddingTop:"130px"}}>
-            <div>
-                <h1>VIEW APPLICATIONS</h1>
-            </div>
-            <div style={{width:"70%"}}>
-            {data && (
-                    <Table
-                    
-                    columns={columns}
-                    dataSource={data}
-            
-                    
-                    />
-                )}
+    if(window.innerWidth>1500){
+      return (
+        <div className='instructor-flex-col' style={{paddingLeft: '130px', paddingTop: "130px"}}>
 
-            </div>
-        </div>
+        <h1>VIEW APPLICATIONS</h1>
+        <Table
+            columns={columns}
+            dataSource={data}
+            rowKey="id"  // Assuming each data entry has a unique 'id'
+        />
+        <Modal
+            title="Application Details"
+            visible={isViewing}
+            onCancel={handleCancel}
+            width={800}
+            footer={null}
+        >
+            {selectedRow && <FilledApplication key={selectedRow.id} user={selectedRow} />}
+        </Modal>
+    </div>
+    );
+    }
+    else{ return (
+      <div className='instructor-flex-col' style={{paddingLeft: '130px', paddingTop: "130px"}}>
+            <GreenCircles />
+            <h1>VIEW APPLICATIONS</h1>
+            <Table
+                columns={columns}
+                dataSource={data}
+                rowKey="id"  // Assuming each data entry has a unique 'id'
+            />
+            <Modal
+                title="Application Details"
+                visible={isViewing}
+                onCancel={handleCancel}
+                width={800}
+                footer={null}
+            >
+                {selectedRow && <FilledApplication key={selectedRow.id} user={selectedRow} />}
+            </Modal>
         </div>
     );
-    
-
-}
+};}

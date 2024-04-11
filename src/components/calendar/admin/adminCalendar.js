@@ -31,7 +31,7 @@ export const AdminCalendar = (props) => {
   function post(){
     const data = {date: String(props.value),address:String(inputAddress), time:String(inputTime), instructors:(inputInstructors), studentNames:([]), location: String(inputLocation), maxStudents: parseInt(inputLimit) };
     console.log(data)
-    axios.post("https://wta-backend-c6oszgtd6a-wl.a.run.app/api/lesson", data)
+    axios.post("https://tennis-backend-c6oszgtd6a-uw.a.run.app/api/lesson", data)
     .then(response => {
       setErrMsg("*Lesson Added")
     })
@@ -88,7 +88,7 @@ export const AdminCalendar = (props) => {
   useEffect(() => {
   function get(){
   
-    axios.get("https://wta-backend-c6oszgtd6a-wl.a.run.app/api/requestByDate?date=" + String(props.value.toISOString()))
+    axios.get("https://tennis-backend-c6oszgtd6a-uw.a.run.app/api/requestByDate?date=" + String(props.value.toISOString()))
     .then(response => {
         console.log(response.data)
         let messageList = "";

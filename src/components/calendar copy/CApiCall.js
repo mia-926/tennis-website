@@ -18,7 +18,7 @@ export const CApiCall = () => {
     }, [reload]);
 
     const getAllLessons = () => {
-        axios.get('https://wta-backend-c6oszgtd6a-wl.a.run.app/api/allLessons')
+        axios.get('https://tennis-backend-c6oszgtd6a-uw.a.run.app/api/allLessons')
         .then((response) => {
             const allLessons = response.data;
             setLessons(allLessons);

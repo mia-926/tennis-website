@@ -34,7 +34,7 @@ export const LoginInput = () => {
   }
   function submit(){
     const data = { username: String(username), password: String(password)};
-    axios.post('https://wta-backend-c6oszgtd6a-wl.a.run.app/api/authPassword', data)
+    axios.post('https://tennis-backend-c6oszgtd6a-uw.a.run.app/api/authPassword', data)
         .then (response => {
           let _id = response.data._id
           let email = response.data.email
