@@ -34,8 +34,8 @@ export const JuniorApplication = () => {
         // Replace console.log with your form submission logic
 
         // Reset form data to initial state to clear the form
-        //setFormData(initialFormState);
-        //window.location.href = "/instructor-signup"
+        setFormData(initialFormState);
+        window.location.href = "/instructor-signup"
     };
 
     return (
