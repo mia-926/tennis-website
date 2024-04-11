@@ -36,7 +36,7 @@ export const AdvertismentApplication = () => {
 
     return (
         <form className='instructor-flex-col main-font' style={{padding:"130px 50px 20px"}} onSubmit={handleSubmit}>
-            <h1 className='application-instructor-title'>Application Form: Jr. Instructor</h1>
+            <h1 className='application-instructor-title'>Application Form: Advertising Manager</h1>
             <div className='instructor-flex-row' style={{width:"100%", justifyContent:"space-between"}}>
                 <div className='instructor-flex-col' style={{alignContent:"space-between",flex:2}}>
                     <div className='application-position-box'>

@@ -114,7 +114,7 @@ useEffect(() =>{
               <Nav.Link  style={{color:navLinkColor, fontWeight:800, fontSize:'90%', marginTop: ".7%"}} href="/mission">Mission</Nav.Link>
               <Nav.Link  style={{color:navLinkColor, fontWeight:800, fontSize:'90%',marginTop: ".7%"}} href="/join-lesson">Join a Lesson</Nav.Link>
               <Nav.Link  style={{color:navLinkColor, fontWeight:800, fontSize:'90%',marginTop: ".7%"}} href="/learn-more">Learn More</Nav.Link>
-              <Nav.Link  style={{color:navLinkColor, fontWeight:800, fontSize:'90%',marginTop: ".7%"}} href="/instructor-signup">Become Instrcutor</Nav.Link>
+              <Nav.Link  style={{color:navLinkColor, fontWeight:800, fontSize:'90%',marginTop: ".7%"}} href="/instructor-signup">Become Instructor</Nav.Link>
               <Nav.Link  style={{color:navLinkColor, fontWeight:800, fontSize:'90%',marginTop: ".7%"}} href="/account">Account</Nav.Link>
               <Nav.Link  style={{color:navLinkColor, fontWeight:800, fontSize:'90%', marginTop: ".7%"}}className = "white" href="/create-account">Create Account</Nav.Link>
               <Nav.Link  style={{color:navLinkColor, fontWeight:800, fontSize:'90%', marginTop: ".7%"}}className = "white" href="/login">Login</Nav.Link>
