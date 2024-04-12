@@ -27,8 +27,7 @@ export const JuniorApplication = () => {
         }));
     };
 
-    const handleSubmit = async(e) => {
-        e.preventDefault();
+    const handleSubmit = async() => {
         console.log('Form Data:', formData);
         const pendingUserResponse = await addApplication(formData);
         // Replace console.log with your form submission logic

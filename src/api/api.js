@@ -8,6 +8,7 @@ const endpoins = {
 
 export const addApplication = async (bodyData) => {
     try {
+      console.log(bodyData)
       const res = await axios.post(url + endpoins.addApplication, bodyData);
       console.log(res.data);
       return res.data;
